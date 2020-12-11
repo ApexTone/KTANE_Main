@@ -40,6 +40,7 @@ entity KTANE_Main is
 		segment_out: out std_logic_vector(7 downto 0);
 		segment_common: out std_logic_vector(3 downto 0);
 		strikeLED: out std_logic_vector(1 downto 0);
+		enableGame: out std_logic_vector(4 downto 0);
 		randomMode: out std_logic_vector(1 downto 0);-- 2 x n pins
 		resetModule: out std_logic_vector(4 downto 0);--1 x 5 pins
 		sec2_bigButton: out std_logic_vector(3 downto 0)
@@ -134,6 +135,8 @@ begin
 	begin
 		if debouncedReset = '1' then
 			currentState <= startState;
+			resetModule <= (others => '1');
+			enableGame <= (others => '0');
 		else
 			if rising_edge(clk) then
 				case currentState is
@@ -142,30 +145,58 @@ begin
 						if(debouncedStart = '1') then
 							currentState <= gameState;
 						else
-							state <= startState;
+							currentState <= startState;
 						end if;
 					--OFL
-				
+						resetModule <= (others => '1');
+						enableGame <= (others => '0');
 					when gameState =>
+					--NSL
 						if (debouncedReset = '1') then
-							state <= startState;
+							currentState <= startState;
+						elsif (isLoss = '1') then
+							currentState <= lossState;
+						elsif (isWin = '1') then
+							currentState <= winState;
+						else
+							currentState <= gameState;
 						end if;
-				
+					--OFL
+						resetModule <= (others => '0');
+						enableGame <= (others => '1');
 					when winState =>
-				
+					--NSL
+						if (debouncedReset = '1') then
+							currentState <= startState;
+						else
+							currentState <= winState;
+						end if;
+					--OFL
+						resetModule <= (others => '0');
+						enableGame <= (others => '0');
 					when lossState =>
-				
+					--NSL
+						if (debouncedReset = '1') then
+							currentState <= startState;
+						else
+							currentState <= lossState;
+						end if;
+					--OFL
+						resetModule <= (others => '0');
+						enableGame <= (others => '0');
 					when others =>
 						currentState <= startState;
+						resetModule <= (others => '0');
+						enableGame <= (others => '0');
 				end case;
 			end if;
 		end if;
 	end process;
 	
 	
-	--should this be in FSM?
-	resetModule <= (others => '1') when debouncedReset = '1' else
-						(others => '0');	
+--	--should this be in FSM?: for now, yes
+--	resetModule <= (others => '1') when debouncedReset = '1' else
+--						(others => '0');	
 
 	--controlling strike LEDs
 	with strikeCount select strikeLED <=

@@ -159,10 +159,7 @@ Elaborating entity <ClockDivider100K> (architecture <Behavioral>) from library <
 Elaborating entity <StrikeCounter> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <WinChecker> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:1127 - "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\KTANE_Main.vhd" Line 138: Assignment to isloss ignored, since the identifier is never used
-WARNING:Xst:2972 - "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\KTANE_Main.vhd" line 85. All outputs of instance <StartDebounce> of block <DebounceButton> are unconnected in block <KTANE_Main>. Underlying logic will be removed.
-WARNING:Xst:2972 - "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\KTANE_Main.vhd" line 97. All outputs of instance <ToggleDebounce> of block <DebounceButton> are unconnected in block <KTANE_Main>. Underlying logic will be removed.
-WARNING:Xst:2972 - "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\KTANE_Main.vhd" line 120. All outputs of instance <CheckWin> of block <WinChecker> are unconnected in block <KTANE_Main>. Underlying logic will be removed.
+WARNING:Xst:2972 - "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\KTANE_Main.vhd" line 104. All outputs of instance <ToggleDebounce> of block <DebounceButton> are unconnected in block <KTANE_Main>. Underlying logic will be removed.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -170,13 +167,30 @@ WARNING:Xst:2972 - "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\K
 
 Synthesizing Unit <KTANE_Main>.
     Related source file is "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\KTANE_Main.vhd".
-INFO:Xst:3210 - "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\KTANE_Main.vhd" line 85: Output port <deb_inp> of the instance <StartDebounce> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\KTANE_Main.vhd" line 97: Output port <deb_inp> of the instance <ToggleDebounce> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\KTANE_Main.vhd" line 104: Output port <timeout> of the instance <Segment> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\KTANE_Main.vhd" line 120: Output port <win_out> of the instance <CheckWin> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\KTANE_Main.vhd" line 104: Output port <deb_inp> of the instance <ToggleDebounce> is unconnected or connected to loadless signal.
+    Found 5-bit register for signal <resetModule>.
+    Found 5-bit register for signal <enableGame>.
+    Found 4-bit register for signal <currentState>.
+    Found finite state machine <FSM_0> for signal <currentState>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 10                                             |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | debouncedReset (positive)                      |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 0001                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
     Found 4x2-bit Read Only RAM for signal <strikeLED>
+    Found 2-bit comparator lessequal for signal <n0012> created at line 208
     Summary:
 	inferred   1 RAM(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   1 Finite State Machine(s).
 Unit <KTANE_Main> synthesized.
 
 Synthesizing Unit <DebounceButton>.
@@ -200,7 +214,7 @@ Synthesizing Unit <CountdownTimer_130>.
     Found 4-bit register for signal <sec2>.
     Found 4-bit register for signal <sec1>.
     Found 1-bit register for signal <tc>.
-    Found finite state machine <FSM_0> for signal <min>.
+    Found finite state machine <FSM_1> for signal <min>.
     -----------------------------------------------------------------------
     | States             | 2                                              |
     | Transitions        | 6                                              |
@@ -275,6 +289,12 @@ Synthesizing Unit <StrikeCounter>.
 	inferred   1 Multiplexer(s).
 Unit <StrikeCounter> synthesized.
 
+Synthesizing Unit <WinChecker>.
+    Related source file is "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\WinChecker.vhd".
+    Summary:
+	no macro.
+Unit <WinChecker> synthesized.
+
 =========================================================================
 HDL Synthesis Report
 
@@ -288,12 +308,15 @@ Macro Statistics
  2-bit adder                                           : 2
  24-bit adder                                          : 1
  4-bit subtractor                                      : 2
-# Registers                                            : 12
- 1-bit register                                        : 6
+# Registers                                            : 17
+ 1-bit register                                        : 9
  16-bit register                                       : 1
  2-bit register                                        : 2
  24-bit register                                       : 1
  4-bit register                                        : 2
+ 5-bit register                                        : 2
+# Comparators                                          : 1
+ 2-bit comparator lessequal                            : 1
 # Multiplexers                                         : 10
  1-bit 2-to-1 multiplexer                              : 2
  16-bit 2-to-1 multiplexer                             : 1
@@ -301,7 +324,7 @@ Macro Statistics
  24-bit 2-to-1 multiplexer                             : 1
  4-bit 2-to-1 multiplexer                              : 3
  8-bit 4-to-1 multiplexer                              : 1
-# FSMs                                                 : 1
+# FSMs                                                 : 2
 
 =========================================================================
 
@@ -381,13 +404,15 @@ Macro Statistics
  2-bit up counter                                      : 1
  24-bit up counter                                     : 1
  4-bit down counter                                    : 1
-# Registers                                            : 12
- Flip-Flops                                            : 12
+# Registers                                            : 25
+ Flip-Flops                                            : 25
+# Comparators                                          : 1
+ 2-bit comparator lessequal                            : 1
 # Multiplexers                                         : 5
  1-bit 2-to-1 multiplexer                              : 2
  4-bit 2-to-1 multiplexer                              : 2
  8-bit 4-to-1 multiplexer                              : 1
-# FSMs                                                 : 1
+# FSMs                                                 : 2
 
 =========================================================================
 
@@ -395,24 +420,35 @@ Macro Statistics
 *                         Low Level Synthesis                           *
 =========================================================================
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <Segment/Timer/FSM_0> on signal <min[1:1]> with sequential encoding.
+Optimizing FSM <FSM_0> on signal <currentState[1:4]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0001  | 0001
+ 0010  | 0010
+ 0100  | 0100
+ 1000  | 1000
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <Segment/Timer/FSM_1> on signal <min[1:1]> with sequential encoding.
 -------------------
  State | Encoding
 -------------------
  0001  | 0
  0000  | 1
 -------------------
+INFO:Xst:2261 - The FF/Latch <resetModule_0> in Unit <KTANE_Main> is equivalent to the following 4 FFs/Latches, which will be removed : <resetModule_1> <resetModule_2> <resetModule_3> <resetModule_4> 
+INFO:Xst:2261 - The FF/Latch <enableGame_0> in Unit <KTANE_Main> is equivalent to the following 4 FFs/Latches, which will be removed : <enableGame_1> <enableGame_2> <enableGame_3> <enableGame_4> 
 
 Optimizing unit <KTANE_Main> ...
 
 Optimizing unit <CountdownTimer_130> ...
 WARNING:Xst:1293 - FF/Latch <sec1_3> has a constant value of 0 in block <CountdownTimer_130>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <sec1_3> has a constant value of 0 in block <CountdownTimer_130>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <Segment/Timer/tc> of sequential type is unconnected in block <KTANE_Main>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block KTANE_Main, actual ratio is 2.
+Found area constraint ratio of 100 (+ 5) on block KTANE_Main, actual ratio is 3.
 
 Final Macro Processing ...
 
@@ -420,8 +456,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 57
- Flip-Flops                                            : 57
+# Registers                                            : 65
+ Flip-Flops                                            : 65
 
 =========================================================================
 
@@ -444,30 +480,31 @@ Top Level Output File Name         : KTANE_Main.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 207
+# BELS                             : 215
 #      GND                         : 1
 #      INV                         : 6
 #      LUT1                        : 38
 #      LUT2                        : 23
-#      LUT3                        : 4
+#      LUT3                        : 7
 #      LUT4                        : 8
-#      LUT5                        : 26
-#      LUT6                        : 22
+#      LUT5                        : 29
+#      LUT6                        : 24
 #      MUXCY                       : 38
 #      VCC                         : 1
 #      XORCY                       : 40
-# FlipFlops/Latches                : 57
-#      FD                          : 3
-#      FDC                         : 48
+# FlipFlops/Latches                : 65
+#      FD                          : 6
+#      FDC                         : 50
 #      FDC_1                       : 1
 #      FDCE                        : 2
-#      FDCE_1                      : 1
+#      FDCE_1                      : 2
+#      FDP                         : 2
 #      FDPE_1                      : 2
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 25
-#      IBUF                        : 6
-#      OBUF                        : 19
+# IO Buffers                       : 36
+#      IBUF                        : 12
+#      OBUF                        : 24
 
 Device utilization summary:
 ---------------------------
@@ -476,20 +513,20 @@ Selected Device : 6slx9tqg144-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              57  out of  11440     0%  
- Number of Slice LUTs:                  127  out of   5720     2%  
-    Number used as Logic:               127  out of   5720     2%  
+ Number of Slice Registers:              65  out of  11440     0%  
+ Number of Slice LUTs:                  135  out of   5720     2%  
+    Number used as Logic:               135  out of   5720     2%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    128
-   Number with an unused Flip Flop:      71  out of    128    55%  
-   Number with an unused LUT:             1  out of    128     0%  
-   Number of fully used LUT-FF pairs:    56  out of    128    43%  
-   Number of unique control sets:         9
+ Number of LUT Flip Flop pairs used:    141
+   Number with an unused Flip Flop:      76  out of    141    53%  
+   Number with an unused LUT:             6  out of    141     4%  
+   Number of fully used LUT-FF pairs:    59  out of    141    41%  
+   Number of unique control sets:        10
 
 IO Utilization: 
- Number of IOs:                          39
- Number of bonded IOBs:                  26  out of    102    25%  
+ Number of IOs:                          44
+ Number of bonded IOBs:                  37  out of    102    36%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
@@ -515,10 +552,10 @@ Clock Information:
 --------------------------------------------------+--------------------------------+-------+
 Clock Signal                                      | Clock buffer(FF name)          | Load  |
 --------------------------------------------------+--------------------------------+-------+
+clk                                               | BUFGP                          | 52    |
 StrikeResult/isStrike(StrikeResult/isStrike<0>1:O)| NONE(*)(StrikeResult/count_1)  | 2     |
-clk                                               | BUFGP                          | 45    |
 Segment/Multiplex/ClockDivider/tmp                | NONE(Segment/Multiplex/count_0)| 2     |
-Segment/Timer/ClockDivider/tmp                    | NONE(Segment/Timer/sec2_3)     | 8     |
+Segment/Timer/ClockDivider/tmp                    | NONE(Segment/Timer/sec2_3)     | 9     |
 --------------------------------------------------+--------------------------------+-------+
 (*) This 1 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
@@ -534,7 +571,7 @@ Timing Summary:
 Speed Grade: -3
 
    Minimum period: 3.867ns (Maximum Frequency: 258.575MHz)
-   Minimum input arrival time before clock: 1.903ns
+   Minimum input arrival time before clock: 4.608ns
    Maximum output required time after clock: 5.999ns
    Maximum combinational path delay: No path found
 
@@ -543,31 +580,9 @@ Timing Details:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'StrikeResult/isStrike'
-  Clock period: 1.984ns (frequency: 504.007MHz)
-  Total number of paths / destination ports: 3 / 2
--------------------------------------------------------------------------
-Delay:               1.984ns (Levels of Logic = 1)
-  Source:            StrikeResult/count_0 (FF)
-  Destination:       StrikeResult/count_0 (FF)
-  Source Clock:      StrikeResult/isStrike rising
-  Destination Clock: StrikeResult/isStrike rising
-
-  Data Path: StrikeResult/count_0 to StrikeResult/count_0
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDC:C->Q              3   0.447   0.650  StrikeResult/count_0 (StrikeResult/count_0)
-     INV:I->O              1   0.206   0.579  StrikeResult/Mmux_count[1]_GND_14_o_mux_2_OUT11_INV_0 (StrikeResult/count[1]_GND_14_o_mux_2_OUT<0>)
-     FDC:D                     0.102          StrikeResult/count_0
-    ----------------------------------------
-    Total                      1.984ns (0.755ns logic, 1.229ns route)
-                                       (38.1% logic, 61.9% route)
-
-=========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 3.867ns (frequency: 258.575MHz)
-  Total number of paths / destination ports: 1438 / 88
+  Total number of paths / destination ports: 1469 / 98
 -------------------------------------------------------------------------
 Delay:               3.867ns (Levels of Logic = 3)
   Source:            Segment/Multiplex/ClockDivider/count_1 (FF)
@@ -587,6 +602,28 @@ Delay:               3.867ns (Levels of Logic = 3)
     ----------------------------------------
     Total                      3.867ns (1.160ns logic, 2.707ns route)
                                        (30.0% logic, 70.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'StrikeResult/isStrike'
+  Clock period: 2.016ns (frequency: 495.933MHz)
+  Total number of paths / destination ports: 3 / 2
+-------------------------------------------------------------------------
+Delay:               2.016ns (Levels of Logic = 1)
+  Source:            StrikeResult/count_0 (FF)
+  Destination:       StrikeResult/count_0 (FF)
+  Source Clock:      StrikeResult/isStrike rising
+  Destination Clock: StrikeResult/isStrike rising
+
+  Data Path: StrikeResult/count_0 to StrikeResult/count_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              4   0.447   0.683  StrikeResult/count_0 (StrikeResult/count_0)
+     INV:I->O              1   0.206   0.579  StrikeResult/Mmux_count[1]_GND_14_o_mux_2_OUT11_INV_0 (StrikeResult/count[1]_GND_14_o_mux_2_OUT<0>)
+     FDC:D                     0.102          StrikeResult/count_0
+    ----------------------------------------
+    Total                      2.016ns (0.755ns logic, 1.261ns route)
+                                       (37.4% logic, 62.6% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'Segment/Multiplex/ClockDivider/tmp'
@@ -612,45 +649,48 @@ Delay:               2.315ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'Segment/Timer/ClockDivider/tmp'
-  Clock period: 2.954ns (frequency: 338.558MHz)
-  Total number of paths / destination ports: 53 / 11
+  Clock period: 3.449ns (frequency: 289.939MHz)
+  Total number of paths / destination ports: 69 / 13
 -------------------------------------------------------------------------
-Delay:               2.954ns (Levels of Logic = 2)
-  Source:            Segment/Timer/sec2_1 (FF)
-  Destination:       Segment/Timer/min_FSM_FFd1 (FF)
+Delay:               3.449ns (Levels of Logic = 2)
+  Source:            Segment/Timer/min_FSM_FFd1 (FF)
+  Destination:       Segment/Timer/tc (FF)
   Source Clock:      Segment/Timer/ClockDivider/tmp falling
   Destination Clock: Segment/Timer/ClockDivider/tmp falling
 
-  Data Path: Segment/Timer/sec2_1 to Segment/Timer/min_FSM_FFd1
+  Data Path: Segment/Timer/min_FSM_FFd1 to Segment/Timer/tc
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             13   0.447   1.277  Segment/Timer/sec2_1 (Segment/Timer/sec2_1)
-     LUT6:I1->O            2   0.203   0.721  Segment/Timer/Mcount_sec2_xor<0>1111 (Segment/Timer/Mcount_sec2_xor<0>111)
-     LUT3:I1->O            1   0.203   0.000  Segment/Timer/min_FSM_FFd1-In1 (Segment/Timer/min_FSM_FFd1-In)
-     FDC_1:D                   0.102          Segment/Timer/min_FSM_FFd1
+     FDC_1:C->Q           11   0.447   1.111  Segment/Timer/min_FSM_FFd1 (Segment/Timer/min_FSM_FFd1)
+     LUT3:I0->O            1   0.205   0.580  Segment/Timer/_n0065_inv_SW0 (N2)
+     LUT6:I5->O            1   0.205   0.579  Segment/Timer/_n0065_inv (Segment/Timer/_n0065_inv)
+     FDCE_1:CE                 0.322          Segment/Timer/tc
     ----------------------------------------
-    Total                      2.954ns (0.955ns logic, 1.999ns route)
-                                       (32.3% logic, 67.7% route)
+    Total                      3.449ns (1.179ns logic, 2.270ns route)
+                                       (34.2% logic, 65.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 1 / 1
+  Total number of paths / destination ports: 7 / 3
 -------------------------------------------------------------------------
-Offset:              1.903ns (Levels of Logic = 1)
-  Source:            reset (PAD)
-  Destination:       ResetDebounce/d1 (FF)
+Offset:              4.608ns (Levels of Logic = 4)
+  Source:            win<3> (PAD)
+  Destination:       currentState_FSM_FFd3 (FF)
   Destination Clock: clk rising
 
-  Data Path: reset to ResetDebounce/d1
+  Data Path: win<3> to currentState_FSM_FFd3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   1.222   0.579  reset_IBUF (reset_IBUF)
-     FD:D                      0.102          ResetDebounce/d1
+     IBUF:I->O             1   1.222   0.924  win_3_IBUF (win_3_IBUF)
+     LUT5:I0->O            1   0.203   0.827  currentState_FSM_FFd3-In1 (currentState_FSM_FFd3-In1)
+     LUT5:I1->O            1   0.203   0.924  currentState_FSM_FFd3-In2_SW0 (N4)
+     LUT6:I1->O            1   0.203   0.000  currentState_FSM_FFd3-In3 (currentState_FSM_FFd3-In)
+     FDC:D                     0.102          currentState_FSM_FFd3
     ----------------------------------------
-    Total                      1.903ns (1.324ns logic, 0.579ns route)
-                                       (69.6% logic, 30.4% route)
+    Total                      4.608ns (1.933ns logic, 2.675ns route)
+                                       (42.0% logic, 58.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'Segment/Multiplex/ClockDivider/tmp'
@@ -677,28 +717,28 @@ Offset:              5.999ns (Levels of Logic = 3)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'Segment/Timer/ClockDivider/tmp'
   Total number of paths / destination ports: 56 / 8
 -------------------------------------------------------------------------
-Offset:              5.862ns (Levels of Logic = 3)
-  Source:            Segment/Timer/sec2_3 (FF)
-  Destination:       segment_out<7> (PAD)
+Offset:              5.911ns (Levels of Logic = 3)
+  Source:            Segment/Timer/sec2_0 (FF)
+  Destination:       segment_out<3> (PAD)
   Source Clock:      Segment/Timer/ClockDivider/tmp falling
 
-  Data Path: Segment/Timer/sec2_3 to segment_out<7>
+  Data Path: Segment/Timer/sec2_0 to segment_out<3>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             13   0.447   1.277  Segment/Timer/sec2_3 (Segment/Timer/sec2_3)
-     LUT6:I1->O            1   0.203   0.580  Segment/Multiplex/Mmux_seg_out81 (Segment/Multiplex/Mmux_seg_out8)
-     LUT6:I5->O            1   0.205   0.579  Segment/Multiplex/Mmux_seg_out82 (segment_out_7_OBUF)
-     OBUF:I->O                 2.571          segment_out_7_OBUF (segment_out<7>)
+     FDC:C->Q             15   0.447   1.326  Segment/Timer/sec2_0 (Segment/Timer/sec2_0)
+     LUT6:I1->O            1   0.203   0.580  Segment/Multiplex/Mmux_seg_out41 (Segment/Multiplex/Mmux_seg_out4)
+     LUT6:I5->O            1   0.205   0.579  Segment/Multiplex/Mmux_seg_out42 (segment_out_3_OBUF)
+     OBUF:I->O                 2.571          segment_out_3_OBUF (segment_out<3>)
     ----------------------------------------
-    Total                      5.862ns (3.426ns logic, 2.436ns route)
-                                       (58.4% logic, 41.6% route)
+    Total                      5.911ns (3.426ns logic, 2.485ns route)
+                                       (58.0% logic, 42.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'StrikeResult/isStrike'
   Total number of paths / destination ports: 3 / 2
 -------------------------------------------------------------------------
-Offset:              4.555ns (Levels of Logic = 2)
+Offset:              4.587ns (Levels of Logic = 2)
   Source:            StrikeResult/count_1 (FF)
   Destination:       strikeLED<0> (PAD)
   Source Clock:      StrikeResult/isStrike rising
@@ -707,32 +747,31 @@ Offset:              4.555ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              3   0.447   0.755  StrikeResult/count_1 (StrikeResult/count_1)
+     FDC:C->Q              4   0.447   0.788  StrikeResult/count_1 (StrikeResult/count_1)
      LUT2:I0->O            1   0.203   0.579  Mram_strikeLED11 (strikeLED_0_OBUF)
      OBUF:I->O                 2.571          strikeLED_0_OBUF (strikeLED<0>)
     ----------------------------------------
-    Total                      4.555ns (3.221ns logic, 1.334ns route)
-                                       (70.7% logic, 29.3% route)
+    Total                      4.587ns (3.221ns logic, 1.366ns route)
+                                       (70.2% logic, 29.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 15 / 5
+  Total number of paths / destination ports: 10 / 10
 -------------------------------------------------------------------------
-Offset:              5.637ns (Levels of Logic = 2)
-  Source:            ResetDebounce/d3 (FF)
-  Destination:       resetModule<4> (PAD)
+Offset:              3.732ns (Levels of Logic = 1)
+  Source:            enableGame_0 (FF)
+  Destination:       enableGame<4> (PAD)
   Source Clock:      clk rising
 
-  Data Path: ResetDebounce/d3 to resetModule<4>
+  Data Path: enableGame_0 to enableGame<4>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               1   0.447   0.808  ResetDebounce/d3 (ResetDebounce/d3)
-     LUT3:I0->O           59   0.205   1.606  ResetDebounce/deb_inp1 (resetModule_0_OBUF)
-     OBUF:I->O                 2.571          resetModule_4_OBUF (resetModule<4>)
+     FDC:C->Q              5   0.447   0.714  enableGame_0 (enableGame_0)
+     OBUF:I->O                 2.571          enableGame_4_OBUF (enableGame<4>)
     ----------------------------------------
-    Total                      5.637ns (3.223ns logic, 2.414ns route)
-                                       (57.2% logic, 42.8% route)
+    Total                      3.732ns (3.018ns logic, 0.714ns route)
+                                       (80.9% logic, 19.1% route)
 
 =========================================================================
 
@@ -745,7 +784,7 @@ Clock to Setup on destination clock Segment/Multiplex/ClockDivider/tmp
 Source Clock                      |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ----------------------------------+---------+---------+---------+---------+
 Segment/Multiplex/ClockDivider/tmp|    2.315|         |         |         |
-clk                               |    3.496|         |         |         |
+clk                               |    3.534|         |         |         |
 ----------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock Segment/Timer/ClockDivider/tmp
@@ -753,8 +792,8 @@ Clock to Setup on destination clock Segment/Timer/ClockDivider/tmp
                               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                  |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------------+---------+---------+---------+---------+
-Segment/Timer/ClockDivider/tmp|         |         |    2.954|         |
-clk                           |         |         |    3.496|         |
+Segment/Timer/ClockDivider/tmp|         |         |    3.449|         |
+clk                           |         |         |    3.534|         |
 ------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock StrikeResult/isStrike
@@ -762,29 +801,31 @@ Clock to Setup on destination clock StrikeResult/isStrike
                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------------+---------+---------+---------+---------+
-StrikeResult/isStrike|    1.984|         |         |         |
-clk                  |    3.496|         |         |         |
+StrikeResult/isStrike|    2.016|         |         |         |
+clk                  |    3.534|         |         |         |
 ---------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clk
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-clk            |    3.867|         |         |         |
----------------+---------+---------+---------+---------+
+------------------------------+---------+---------+---------+---------+
+                              | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                  |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------------+---------+---------+---------+---------+
+Segment/Timer/ClockDivider/tmp|         |    2.689|         |         |
+StrikeResult/isStrike         |    2.666|         |         |         |
+clk                           |    3.867|         |         |         |
+------------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 4.13 secs
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 4.51 secs
  
 --> 
 
-Total memory usage is 4511452 kilobytes
+Total memory usage is 4511644 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    7 (   0 filtered)
-Number of infos    :    8 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :    7 (   0 filtered)
 

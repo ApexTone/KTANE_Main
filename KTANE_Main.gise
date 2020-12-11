@@ -192,12 +192,10 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1607672374" xil_pn:in_ck="6863984028949762893" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="7088272783898651969" xil_pn:start_ts="1607672367">
+    <transform xil_pn:end_ts="1607706870" xil_pn:in_ck="6863984028949762893" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="7088272783898651969" xil_pn:start_ts="1607706863">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="BCDto7Seg.ngr"/>
       <outfile xil_pn:name="KTANE_Main.lso"/>
       <outfile xil_pn:name="KTANE_Main.ngc"/>
