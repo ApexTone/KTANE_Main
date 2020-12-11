@@ -1,0 +1,2 @@
+vhdl work "WinChecker.vhd"
+vhdl work "winchecker_tb.vhd"

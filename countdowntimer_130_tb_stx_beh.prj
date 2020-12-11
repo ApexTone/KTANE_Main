@@ -1,0 +1,3 @@
+vhdl isim_temp "ClockDivider20M.vhd"
+vhdl isim_temp "CountdownTimer_130.vhd"
+vhdl isim_temp "countdowntimer_130_tb.vhd"
