@@ -1,0 +1,2 @@
+vhdl work "LFSRRandomNumberGenerator.vhd"
+vhdl work "lfsr_randomnumbergenerator_tb.vhd"

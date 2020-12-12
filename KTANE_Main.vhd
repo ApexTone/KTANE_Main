@@ -41,7 +41,7 @@ entity KTANE_Main is
 		segment_common: out std_logic_vector(3 downto 0);
 		strikeLED: out std_logic_vector(1 downto 0);
 		enableGame: out std_logic_vector(4 downto 0);
-		randomMode: out std_logic_vector(1 downto 0);-- 2 x n pins
+		randomMode: out std_logic_vector(7 downto 0);-- 2 x 4 pins
 		resetModule: out std_logic_vector(4 downto 0);--1 x 5 pins
 		sec2_bigButton: out std_logic_vector(3 downto 0)
 		
@@ -55,10 +55,13 @@ architecture Behavioral of KTANE_Main is
 	constant lossState: std_logic_vector(3 downto 0) := "1000";
 
 	signal currentState: std_logic_vector(3 downto 0);
+	signal startRandom: std_logic := '0';
 	signal debouncedReset,debouncedStart,debouncedToggle: std_logic;
-	signal segmentMode, timeout, isWin, isLoss: std_logic := '0';
+	signal timeout, isWin, isLoss: std_logic := '0';
 	signal dividedClk: std_logic := '0';
 	signal strikeCount: std_logic_vector(1 downto 0);--if >= "11" end game
+	signal serialSegment,timerSegment,selBuffer: std_logic_vector(7 downto 0) := (others=>'0');
+	signal timerCommon, serialCommon: std_logic_vector(3 downto 0) := (others=>'1');
 
 	component DebounceButton is
 		port(
@@ -75,6 +78,14 @@ architecture Behavioral of KTANE_Main is
 			timeout: out std_logic
 		);
 	end component;
+	component SegmentSerialDisplay is
+		port(
+			clk,reset: in std_logic;
+			sel: in std_logic_vector(7 downto 0);
+			seg_out: out std_logic_vector(7 downto 0);
+			common_out: out std_logic_vector(3 downto 0)
+		);
+	end component;
 	component StrikeCounter is
 		port(
 			strike: in std_logic_vector(4 downto 0);
@@ -86,6 +97,13 @@ architecture Behavioral of KTANE_Main is
 		port(
 			win: in std_logic_vector(4 downto 0);
 			win_out: out std_logic
+		);
+	end component;
+	component LFSRRandom is
+		port(
+			clk: in std_logic;
+			enable, reset: in std_logic;
+			Q: out std_logic_vector(7 downto 0)
 		);
 	end component;
 begin
@@ -108,13 +126,21 @@ begin
 			deb_inp => debouncedToggle
 		);
 		
-	Segment: SegmentDisplay -- PRODUCE WARNING Xst:2677 - Node <Segment/Timer/tc> of sequential type is unconnected in block <KTANE_Main>.
+	Segment: SegmentDisplay
 		port map(
 			clk => clk,
 			reset => debouncedReset,
-			seg_out => segment_out,
-			common_out => segment_common,
+			seg_out => timerSegment,
+			common_out => timerCommon,
 			timeout => timeout
+		);
+	SegmentSerial: SegmentSerialDisplay
+		port map(
+			clk => clk,
+			reset => debouncedReset,
+			sel => selBuffer,
+			seg_out => serialSegment,
+			common_out => serialCommon
 		);
 		
 	StrikeResult: StrikeCounter
@@ -129,6 +155,14 @@ begin
 			win => win,
 			win_out => isWin
 		);
+	LFSRRandomMode: LFSRRandom
+		port map(
+			clk => clk,
+			enable => startRandom,
+			reset => debouncedReset,
+			Q => selBuffer
+		);
+	randomMode <= selBuffer;
 	
 	--FSM
 	process(clk, debouncedReset, debouncedStart)
@@ -150,6 +184,7 @@ begin
 					--OFL
 						resetModule <= (others => '1');
 						enableGame <= (others => '0');
+						startRandom <= '1';
 					when gameState =>
 					--NSL
 						if (debouncedReset = '1') then
@@ -164,6 +199,14 @@ begin
 					--OFL
 						resetModule <= (others => '0');
 						enableGame <= (others => '1');
+						startRandom <= '0';
+						if debouncedToggle = '1' then
+							segment_out <= timerSegment;
+							segment_common <= timerCommon;
+						else
+							segment_out <= serialSegment;
+							segment_common <= serialCommon;
+						end if;
 					when winState =>
 					--NSL
 						if (debouncedReset = '1') then
@@ -174,6 +217,7 @@ begin
 					--OFL
 						resetModule <= (others => '0');
 						enableGame <= (others => '0');
+						startRandom <= '0';
 					when lossState =>
 					--NSL
 						if (debouncedReset = '1') then
@@ -184,10 +228,12 @@ begin
 					--OFL
 						resetModule <= (others => '0');
 						enableGame <= (others => '0');
+						startRandom <= '0';
 					when others =>
 						currentState <= startState;
 						resetModule <= (others => '0');
 						enableGame <= (others => '0');
+						startRandom <= '0';
 				end case;
 			end if;
 		end if;
