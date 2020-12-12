@@ -1,27 +1,51 @@
-Running: D:\ISE\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/segmentserialdisplay_tb_isim_beh.exe -prj C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/segmentserialdisplay_tb_beh.prj work.segmentserialdisplay_tb 
+Running: D:\ISE\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/ktane_main_tb_isim_beh.exe -prj C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/ktane_main_tb_beh.prj work.ktane_main_tb 
 ISim P.20131013 (signature 0x7708f090)
 Number of CPUs detected in this system: 12
 Turning on mult-threading, number of parallel sub-compilation jobs: 24 
 Determining compilation order of HDL files
+Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/ClockDivider20M.vhd" into library work
 Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/ClockDivider100K.vhd" into library work
+Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/SegmentTimerMultiplexer.vhd" into library work
 Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/SegmentSerialMultiplexer.vhd" into library work
+Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/CountdownTimer_130.vhd" into library work
 Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/CharacterIn7Seg.vhd" into library work
+Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/BCDto7Seg.vhd" into library work
+Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/WinSegmentDisplay.vhd" into library work
+Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/WinChecker.vhd" into library work
+Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/StrikeCounter.vhd" into library work
 Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/SegmentSerialDisplay.vhd" into library work
-Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/segmentserialdisplay_tb.vhd" into library work
+Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/SegmentDisplay.vhd" into library work
+Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/LoseSegmentDisplay.vhd" into library work
+Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/LFSRRandomNumberGenerator.vhd" into library work
+Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/DebounceButton.vhd" into library work
+Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/KTANE_Main.vhd" into library work
+Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/ktane_main_tb.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package std_logic_arith
 Compiling package std_logic_unsigned
-Compiling architecture behavioral of entity CharacterIn7Seg [characterin7seg_default]
+Compiling architecture behavioral of entity DebounceButton [debouncebutton_default]
+Compiling architecture behavioral of entity ClockDivider20M [clockdivider20m_default]
+Compiling architecture behavioral of entity CountdownTimer_130 [countdowntimer_130_default]
+Compiling architecture behavioral of entity BCDto7Seg [bcdto7seg_default]
 Compiling architecture behavioral of entity ClockDivider100K [clockdivider100k_default]
+Compiling architecture behavioral of entity SegmentTimerMultiplexer [segmenttimermultiplexer_default]
+Compiling architecture behavioral of entity SegmentDisplay [segmentdisplay_default]
+Compiling architecture behavioral of entity CharacterIn7Seg [characterin7seg_default]
 Compiling architecture behavioral of entity SegmentSerialMultiplexer [segmentserialmultiplexer_default]
 Compiling architecture behavioral of entity SegmentSerialDisplay [segmentserialdisplay_default]
-Compiling architecture behavior of entity segmentserialdisplay_tb
+Compiling architecture behavioral of entity StrikeCounter [strikecounter_default]
+Compiling architecture behavioral of entity WinChecker [winchecker_default]
+Compiling architecture behavioral of entity LFSRRandom [lfsrrandom_default]
+Compiling architecture behavioral of entity WinSegmentDisplay [winsegmentdisplay_default]
+Compiling architecture behavioral of entity LoseSegmentDisplay [losesegmentdisplay_default]
+Compiling architecture behavioral of entity KTANE_Main [ktane_main_default]
+Compiling architecture behavior of entity ktane_main_tb
 Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
-Compiled 13 VHDL Units
-Built simulation executable C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/segmentserialdisplay_tb_isim_beh.exe
-Fuse Memory Usage: 35108 KB
-Fuse CPU Usage: 436 ms
+Compiled 37 VHDL Units
+Built simulation executable C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/ktane_main_tb_isim_beh.exe
+Fuse Memory Usage: 35324 KB
+Fuse CPU Usage: 593 ms

@@ -34,6 +34,7 @@ entity SegmentDisplay is
 		clk,reset: in std_logic;
 		seg_out: out std_logic_vector(7 downto 0);
 		common_out: out std_logic_vector(3 downto 0);
+		sec2_bcd: out std_logic_vector(3 downto 0);
 		timeout: out std_logic
 	);
 end SegmentDisplay;
@@ -89,6 +90,8 @@ begin
 			bcd => sec2_out,
 			segments => sec2_seg
 		);
+		
+	sec2_bcd <= sec2_out;
 	
 		
 	Multiplex: SegmentTimerMultiplexer

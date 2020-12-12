@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> Reading design: KTANE_Main.prj
 
@@ -216,7 +216,7 @@ Synthesizing Unit <KTANE_Main>.
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
     Found 4x2-bit Read Only RAM for signal <strikeLED>
-    Found 2-bit comparator lessequal for signal <n0025> created at line 291
+    Found 2-bit comparator lessequal for signal <n0025> created at line 293
     Summary:
 	inferred   1 RAM(s).
 	inferred  23 D-type flip-flop(s).
@@ -638,9 +638,9 @@ Primitive and Black Box Usage:
 #      FDPE_1                      : 2
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 45
+# IO Buffers                       : 49
 #      IBUF                        : 13
-#      OBUF                        : 32
+#      OBUF                        : 36
 
 Device utilization summary:
 ---------------------------
@@ -662,7 +662,7 @@ Slice Logic Distribution:
 
 IO Utilization: 
  Number of IOs:                          50
- Number of bonded IOBs:                  46  out of    102    45%  
+ Number of bonded IOBs:                  50  out of    102    49%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
@@ -785,26 +785,26 @@ Delay:               2.291ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'Segment/Timer/ClockDivider/tmp'
-  Clock period: 3.067ns (frequency: 326.057MHz)
+  Clock period: 2.983ns (frequency: 335.227MHz)
   Total number of paths / destination ports: 68 / 12
 -------------------------------------------------------------------------
-Delay:               3.067ns (Levels of Logic = 2)
-  Source:            Segment/Timer/sec2_2 (FF)
-  Destination:       Segment/Timer/sec2_3 (FF)
+Delay:               2.983ns (Levels of Logic = 2)
+  Source:            Segment/Timer/sec1_1 (FF)
+  Destination:       Segment/Timer/min_FSM_FFd1 (FF)
   Source Clock:      Segment/Timer/ClockDivider/tmp falling
   Destination Clock: Segment/Timer/ClockDivider/tmp falling
 
-  Data Path: Segment/Timer/sec2_2 to Segment/Timer/sec2_3
+  Data Path: Segment/Timer/sec1_1 to Segment/Timer/min_FSM_FFd1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             14   0.447   1.186  Segment/Timer/sec2_2 (Segment/Timer/sec2_2)
-     LUT3:I0->O            1   0.205   0.924  Segment/Timer/Mcount_sec2_xor<3>1_SW0 (N8)
-     LUT6:I1->O            1   0.203   0.000  Segment/Timer/Mcount_sec2_xor<3>1 (Segment/Timer/Mcount_sec23)
-     FDC:D                     0.102          Segment/Timer/sec2_3
+     FDPE_1:C->Q          12   0.447   1.273  Segment/Timer/sec1_1 (Segment/Timer/sec1_1)
+     LUT6:I0->O            3   0.203   0.755  Segment/Timer/Mcount_sec2_xor<0>1111 (Segment/Timer/Mcount_sec2_xor<0>111)
+     LUT3:I1->O            1   0.203   0.000  Segment/Timer/min_FSM_FFd1-In1 (Segment/Timer/min_FSM_FFd1-In)
+     FDC_1:D                   0.102          Segment/Timer/min_FSM_FFd1
     ----------------------------------------
-    Total                      3.067ns (0.957ns logic, 2.110ns route)
-                                       (31.2% logic, 68.8% route)
+    Total                      2.983ns (0.955ns logic, 2.028ns route)
+                                       (32.0% logic, 68.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
@@ -868,6 +868,25 @@ Offset:              4.649ns (Levels of Logic = 2)
                                        (69.3% logic, 30.7% route)
 
 =========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'Segment/Timer/ClockDivider/tmp'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              3.999ns (Levels of Logic = 1)
+  Source:            Segment/Timer/sec2_3 (FF)
+  Destination:       sec2_bigButton<3> (PAD)
+  Source Clock:      Segment/Timer/ClockDivider/tmp falling
+
+  Data Path: Segment/Timer/sec2_3 to sec2_bigButton<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             15   0.447   0.981  Segment/Timer/sec2_3 (Segment/Timer/sec2_3)
+     OBUF:I->O                 2.571          sec2_bigButton_3_OBUF (sec2_bigButton<3>)
+    ----------------------------------------
+    Total                      3.999ns (3.018ns logic, 0.981ns route)
+                                       (75.5% logic, 24.5% route)
+
+=========================================================================
 
 Cross Clock Domains Report:
 --------------------------
@@ -886,7 +905,7 @@ Clock to Setup on destination clock Segment/Timer/ClockDivider/tmp
                               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                  |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------------+---------+---------+---------+---------+
-Segment/Timer/ClockDivider/tmp|         |         |    3.067|         |
+Segment/Timer/ClockDivider/tmp|         |         |    2.983|         |
 clk                           |         |         |    3.214|         |
 ------------------------------+---------+---------+---------+---------+
 
@@ -905,7 +924,7 @@ Clock to Setup on destination clock clk
 Source Clock                      |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ----------------------------------+---------+---------+---------+---------+
 Segment/Multiplex/ClockDivider/tmp|    3.700|         |         |         |
-Segment/Timer/ClockDivider/tmp    |         |    3.889|         |         |
+Segment/Timer/ClockDivider/tmp    |         |    3.913|         |         |
 StrikeResult/isStrike             |    2.748|         |         |         |
 clk                               |    3.853|         |         |         |
 ----------------------------------+---------+---------+---------+---------+
@@ -913,12 +932,12 @@ clk                               |    3.853|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 4.78 secs
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 4.58 secs
  
 --> 
 
-Total memory usage is 4510940 kilobytes
+Total memory usage is 4511452 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    2 (   0 filtered)

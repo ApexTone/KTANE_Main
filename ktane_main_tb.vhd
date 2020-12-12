@@ -76,7 +76,7 @@ ARCHITECTURE behavior OF ktane_main_tb IS
    signal sec2_bigButton : std_logic_vector(3 downto 0);
 
    -- Clock period definitions
-   constant clk_period : time := 10 ns;
+   constant clk_period : time := 50 ns;
  
 BEGIN
  
@@ -115,8 +115,31 @@ BEGIN
 
       wait for clk_period*10;
 
-      -- insert stimulus here 
-
+		start <= '0';
+		reset <= '0';
+		toggleTimerSerial <= '0';
+		win <= "00110";
+		strike <= "00000";
+		wait for 10 ns;
+		start <= '1';
+		wait for 200 ns;
+		start <= '0';
+--		strike <= "10101";
+--		wait for 50 ns;
+--		strike <= "00000";
+--		wait for 50 ns;
+--		strike <= "00010";
+--		wait for 50 ns;
+--		strike <= "00000";
+--		wait for 50 ns;
+--		strike <= "10000";
+--		wait for 50 ns;
+--		strike <= "00000";
+--		wait for 10 ns;
+--		reset <= '1';
+--		wait for 50 ns;
+--		reset <= '0';
+		
       wait;
    end process;
 
