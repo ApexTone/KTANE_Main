@@ -2,7 +2,7 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   16:08:27 12/09/2020
+-- Create Date:   13:54:55 12/12/2020
 -- Design Name:   
 -- Module Name:   C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/ktane_main_tb.vhd
 -- Project Name:  KTANE_Main
@@ -42,32 +42,59 @@ ARCHITECTURE behavior OF ktane_main_tb IS
     COMPONENT KTANE_Main
     PORT(
          clk : IN  std_logic;
+         start : IN  std_logic;
          reset : IN  std_logic;
-         seg_out : OUT  std_logic_vector(7 downto 0);
-         seg_ground : OUT  std_logic
+         toggleTimerSerial : IN  std_logic;
+         win : IN  std_logic_vector(4 downto 0);
+         strike : IN  std_logic_vector(4 downto 0);
+         segment_out : OUT  std_logic_vector(7 downto 0);
+         segment_common : OUT  std_logic_vector(3 downto 0);
+         strikeLED : OUT  std_logic_vector(1 downto 0);
+         enableGame : OUT  std_logic_vector(4 downto 0);
+         randomMode : OUT  std_logic_vector(7 downto 0);
+         resetModule : OUT  std_logic_vector(4 downto 0);
+         sec2_bigButton : OUT  std_logic_vector(3 downto 0)
         );
     END COMPONENT;
     
 
    --Inputs
    signal clk : std_logic := '0';
+   signal start : std_logic := '0';
    signal reset : std_logic := '0';
+   signal toggleTimerSerial : std_logic := '0';
+   signal win : std_logic_vector(4 downto 0) := (others => '0');
+   signal strike : std_logic_vector(4 downto 0) := (others => '0');
 
  	--Outputs
-   signal seg_out : std_logic_vector(7 downto 0);
-   signal seg_ground : std_logic;
+   signal segment_out : std_logic_vector(7 downto 0);
+   signal segment_common : std_logic_vector(3 downto 0);
+   signal strikeLED : std_logic_vector(1 downto 0);
+   signal enableGame : std_logic_vector(4 downto 0);
+   signal randomMode : std_logic_vector(7 downto 0);
+   signal resetModule : std_logic_vector(4 downto 0);
+   signal sec2_bigButton : std_logic_vector(3 downto 0);
 
    -- Clock period definitions
-   constant clk_period : time := 50 ns;
+   constant clk_period : time := 10 ns;
  
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
    uut: KTANE_Main PORT MAP (
           clk => clk,
+          start => start,
           reset => reset,
-          seg_out => seg_out,
-          seg_ground => seg_ground
+          toggleTimerSerial => toggleTimerSerial,
+          win => win,
+          strike => strike,
+          segment_out => segment_out,
+          segment_common => segment_common,
+          strikeLED => strikeLED,
+          enableGame => enableGame,
+          randomMode => randomMode,
+          resetModule => resetModule,
+          sec2_bigButton => sec2_bigButton
         );
 
    -- Clock process definitions
@@ -88,9 +115,7 @@ BEGIN
 
       wait for clk_period*10;
 
-      reset <= '1';
-		wait for 10 ns;
-		reset <= '0';
+      -- insert stimulus here 
 
       wait;
    end process;

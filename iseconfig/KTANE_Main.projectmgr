@@ -11,7 +11,7 @@
       <SelectedItems>
          <SelectedItem>KTANE_Main - Behavioral (C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/KTANE_Main.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >2</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000021f000000020000000000000000000000000200000064ffffffff0000008100000003000000020000021f0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
@@ -23,13 +23,13 @@
          <ClosedNode>Design Utilities</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000010a000000010000000100000000000000000000000064ffffffff0000008100000000000000010000010a0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
    <ItemView guiview="File" >
       <ClosedNodes>
@@ -38,7 +38,7 @@
       <SelectedItems/>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000000000000000100000000000000000000000000000000000003a3000000040101000100000000000000000000000064ffffffff000000810000000000000004000000420000000100000000000000240000000100000000000000660000000100000000000002d70000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000392000000040101000100000000000000000000000064ffffffff000000810000000000000004000000420000000100000000000000240000000100000000000000660000000100000000000002c60000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>BCDto7Seg.vhd</CurrentItem>
    </ItemView>
@@ -76,16 +76,26 @@
    <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/clockdivider20m_tb - behavior C:|Users|Predator|Desktop|Learning Resources|DigitalSystem|KTANE_Main|clockdivider20m_tb.vhd</ClosedNode>
+         <ClosedNode>/countdowntimer_130_tb - behavior C:|Users|Predator|Desktop|Learning Resources|DigitalSystem|KTANE_Main|countdowntimer_130_tb.vhd</ClosedNode>
+         <ClosedNode>/debouncebutton_tb - behavior C:|Users|Predator|Desktop|Learning Resources|DigitalSystem|KTANE_Main|debouncebutton_tb.vhd</ClosedNode>
          <ClosedNode>/ktane_main_tb - behavior C:|Users|Predator|Desktop|Learning Resources|DigitalSystem|KTANE_Main|ktane_main_tb.vhd/uut - KTANE_Main - Behavioral/Segment - SegmentDisplay - Behavioral</ClosedNode>
+         <ClosedNode>/ktane_main_tb - behavior C:|Users|Predator|Desktop|Learning Resources|DigitalSystem|KTANE_Main|ktane_main_tb.vhd/uut - KTANE_Main - Behavioral/SegmentSerial - SegmentSerialDisplay - Behavioral/Multiplex - SegmentSerialMultiplexer - Behavioral</ClosedNode>
+         <ClosedNode>/lfsrrandom_tb - behavior C:|Users|Predator|Desktop|Learning Resources|DigitalSystem|KTANE_Main|lfsrrandom_tb.vhd</ClosedNode>
+         <ClosedNode>/segmentdisplay_tb - behavior C:|Users|Predator|Desktop|Learning Resources|DigitalSystem|KTANE_Main|segmentdisplay_tb.vhd</ClosedNode>
+         <ClosedNode>/segmentserialmux_tb - behavior C:|Users|Predator|Desktop|Learning Resources|DigitalSystem|KTANE_Main|segmentserialmux_tb.vhd</ClosedNode>
+         <ClosedNode>/segmenttimermultiplexer_tb - behavior C:|Users|Predator|Desktop|Learning Resources|DigitalSystem|KTANE_Main|segmenttimermultiplexer_tb.vhd</ClosedNode>
+         <ClosedNode>/strikecounter_tb - behavior C:|Users|Predator|Desktop|Learning Resources|DigitalSystem|KTANE_Main|strikecounter_tb.vhd</ClosedNode>
+         <ClosedNode>/winchecker_tb - behavior C:|Users|Predator|Desktop|Learning Resources|DigitalSystem|KTANE_Main|winchecker_tb.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>lfsrrandom_tb - behavior (C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/lfsrrandom_tb.vhd)</SelectedItem>
+         <SelectedItem>ktane_main_tb - behavior (C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/ktane_main_tb.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >7</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000021f000000020000000000000000000000000200000064ffffffff0000008100000003000000020000021f0000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000022f000000020000000000000000000000000200000064ffffffff0000008100000003000000020000022f0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>lfsrrandom_tb - behavior (C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/lfsrrandom_tb.vhd)</CurrentItem>
+      <CurrentItem>ktane_main_tb - behavior (C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/ktane_main_tb.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -106,13 +116,13 @@
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem>ISim Simulator</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000010a000000010000000100000000000000000000000064ffffffff0000008100000000000000010000010a0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem>ISim Simulator</CurrentItem>
    </ItemView>
    <SourceProcessView>000000ff00000000000000020000011b0000011b01000000050100000002</SourceProcessView>
    <CurrentView>Implementation</CurrentView>

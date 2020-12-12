@@ -53,6 +53,7 @@
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="SegmentTimerMultiplexer.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="SegmentTimerMultiplexer.xst"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="character7seg_tb_isim_beh.exe"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="clockdivider20m_tb_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="clockdivider20m_tb_stx_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="countdowntimer_130_tb_isim_beh.exe"/>
@@ -67,11 +68,15 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="lfsr_randomnumbergenerator_tb_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="lfsr_randomnumbergenerator_tb_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="lfsr_randomnumbergenerator_tb_isim_beh.wdb"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="lfsrrandom_tb_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="lfsrrandom_tb_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="lfsrrandom_tb_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="planAhead_run_1"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="segmentdisplay_tb_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="segmentserialdisplay_tb_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="segmentserialdisplay_tb_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="segmentserialdisplay_tb_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="segmentserialmux_tb_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="segmentserialmux_tb_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="segmentserialmux_tb_isim_beh.wdb"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="segmenttimermultiplexer_tb_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="segmenttimermultiplexer_tb_stx_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="strikecounter_tb_isim_beh.exe"/>
@@ -84,11 +89,11 @@
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1607747316" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1607747316">
+    <transform xil_pn:end_ts="1607754378" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1607754378">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1607747316" xil_pn:in_ck="-929618333677364730" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1607747316">
+    <transform xil_pn:end_ts="1607756094" xil_pn:in_ck="-8894209028749735098" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1607756094">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
@@ -97,91 +102,79 @@
       <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="BCDto7Seg.vhd"/>
+      <outfile xil_pn:name="CharacterIn7Seg.vhd"/>
       <outfile xil_pn:name="ClockDivider100K.vhd"/>
       <outfile xil_pn:name="ClockDivider20M.vhd"/>
       <outfile xil_pn:name="CountdownTimer_130.vhd"/>
       <outfile xil_pn:name="DebounceButton.vhd"/>
       <outfile xil_pn:name="KTANE_Main.vhd"/>
       <outfile xil_pn:name="LFSRRandomNumberGenerator.vhd"/>
+      <outfile xil_pn:name="LoseSegmentDisplay.vhd"/>
       <outfile xil_pn:name="SegmentDisplay.vhd"/>
+      <outfile xil_pn:name="SegmentSerialDisplay.vhd"/>
+      <outfile xil_pn:name="SegmentSerialMultiplexer.vhd"/>
       <outfile xil_pn:name="SegmentTimerMultiplexer.vhd"/>
       <outfile xil_pn:name="StrikeCounter.vhd"/>
       <outfile xil_pn:name="WinChecker.vhd"/>
+      <outfile xil_pn:name="WinSegmentDisplay.vhd"/>
+      <outfile xil_pn:name="character7seg_tb.vhd"/>
       <outfile xil_pn:name="clockdivider20m_tb.vhd"/>
       <outfile xil_pn:name="countdowntimer_130_tb.vhd"/>
       <outfile xil_pn:name="debouncebutton_tb.vhd"/>
-      <outfile xil_pn:name="ktane_main_tb.vhd"/>
       <outfile xil_pn:name="lfsrrandom_tb.vhd"/>
       <outfile xil_pn:name="segmentdisplay_tb.vhd"/>
+      <outfile xil_pn:name="segmentserialdisplay_tb.vhd"/>
+      <outfile xil_pn:name="segmentserialmux_tb.vhd"/>
       <outfile xil_pn:name="segmenttimermultiplexer_tb.vhd"/>
       <outfile xil_pn:name="strikecounter_tb.vhd"/>
       <outfile xil_pn:name="winchecker_tb.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1607747316" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="8052375225850805731" xil_pn:start_ts="1607747316">
+    <transform xil_pn:end_ts="1607754378" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="983939007124016212" xil_pn:start_ts="1607754378">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1607747316" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="285545912527812705" xil_pn:start_ts="1607747316">
+    <transform xil_pn:end_ts="1607754378" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="8461659096789715154" xil_pn:start_ts="1607754378">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1607747316" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="8054731494826597608" xil_pn:start_ts="1607747316">
+    <transform xil_pn:end_ts="1607754378" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="8054731494826597608" xil_pn:start_ts="1607754378">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1607747316" xil_pn:in_ck="-929618333677364730" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1607747316">
+    <transform xil_pn:end_ts="1607754378" xil_pn:in_ck="-6899429321390775793" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1607754378">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="InputRemoved"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="BCDto7Seg.vhd"/>
-      <outfile xil_pn:name="ClockDivider100K.vhd"/>
-      <outfile xil_pn:name="ClockDivider20M.vhd"/>
-      <outfile xil_pn:name="CountdownTimer_130.vhd"/>
-      <outfile xil_pn:name="DebounceButton.vhd"/>
-      <outfile xil_pn:name="KTANE_Main.vhd"/>
-      <outfile xil_pn:name="LFSRRandomNumberGenerator.vhd"/>
-      <outfile xil_pn:name="SegmentDisplay.vhd"/>
-      <outfile xil_pn:name="SegmentTimerMultiplexer.vhd"/>
-      <outfile xil_pn:name="StrikeCounter.vhd"/>
-      <outfile xil_pn:name="WinChecker.vhd"/>
-      <outfile xil_pn:name="clockdivider20m_tb.vhd"/>
-      <outfile xil_pn:name="countdowntimer_130_tb.vhd"/>
-      <outfile xil_pn:name="debouncebutton_tb.vhd"/>
-      <outfile xil_pn:name="ktane_main_tb.vhd"/>
-      <outfile xil_pn:name="lfsrrandom_tb.vhd"/>
-      <outfile xil_pn:name="segmentdisplay_tb.vhd"/>
-      <outfile xil_pn:name="segmenttimermultiplexer_tb.vhd"/>
-      <outfile xil_pn:name="strikecounter_tb.vhd"/>
-      <outfile xil_pn:name="winchecker_tb.vhd"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
-    <transform xil_pn:end_ts="1607747318" xil_pn:in_ck="-929618333677364730" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="4346541590129172422" xil_pn:start_ts="1607747316">
+    <transform xil_pn:end_ts="1607754381" xil_pn:in_ck="-6899429321390775793" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-3916176073579970872" xil_pn:start_ts="1607754378">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="InputRemoved"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="fuse.log"/>
-      <outfile xil_pn:name="isim"/>
-      <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="lfsrrandom_tb_beh.prj"/>
-      <outfile xil_pn:name="lfsrrandom_tb_isim_beh.exe"/>
-      <outfile xil_pn:name="xilinxsim.ini"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
-    <transform xil_pn:end_ts="1607747319" xil_pn:in_ck="3465307309689293585" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-5985172054790886253" xil_pn:start_ts="1607747318">
+    <transform xil_pn:end_ts="1607754381" xil_pn:in_ck="6748825013154736296" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="8500777952518275509" xil_pn:start_ts="1607754381">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputRemoved"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="isim.cmd"/>
-      <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="lfsrrandom_tb_isim_beh.wdb"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1607504019" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1607504019">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -211,7 +204,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1607750540" xil_pn:in_ck="7938760109848710662" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="7088272783898651969" xil_pn:start_ts="1607750533">
+    <transform xil_pn:end_ts="1607756420" xil_pn:in_ck="7802888276765552953" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="7088272783898651969" xil_pn:start_ts="1607756413">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>

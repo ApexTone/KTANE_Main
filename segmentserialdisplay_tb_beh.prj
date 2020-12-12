@@ -1,0 +1,5 @@
+vhdl work "ClockDivider100K.vhd"
+vhdl work "SegmentSerialMultiplexer.vhd"
+vhdl work "CharacterIn7Seg.vhd"
+vhdl work "SegmentSerialDisplay.vhd"
+vhdl work "segmentserialdisplay_tb.vhd"

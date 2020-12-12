@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/lfsrrandom_tb_isim_beh.exe" -prj "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/lfsrrandom_tb_beh.prj" "work.lfsrrandom_tb" 
+-intstyle "ise" -incremental -lib "secureip" -o "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/segmentserialdisplay_tb_isim_beh.exe" -prj "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/segmentserialdisplay_tb_beh.prj" "work.segmentserialdisplay_tb" 

@@ -37,10 +37,10 @@ entity SegmentSerialDisplay is
 		common_out: out std_logic_vector(3 downto 0)
 	);
 end SegmentSerialDisplay;
-
+ 
 architecture Behavioral of SegmentSerialDisplay is
 	signal char1_seg,char2_seg,char3_seg,char4_seg: std_logic_vector(7 downto 0);
-	
+
 	component CharacterIn7Seg is
 	port(
 		sel: in std_logic_vector(1 downto 0);

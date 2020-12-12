@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Reading design: KTANE_Main.prj
 
@@ -126,6 +126,9 @@ Parsing architecture <Behavioral> of entity <characterin7seg>.
 Parsing VHDL file "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\BCDto7Seg.vhd" into library work
 Parsing entity <BCDto7Seg>.
 Parsing architecture <Behavioral> of entity <bcdto7seg>.
+Parsing VHDL file "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\WinSegmentDisplay.vhd" into library work
+Parsing entity <WinSegmentDisplay>.
+Parsing architecture <Behavioral> of entity <winsegmentdisplay>.
 Parsing VHDL file "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\WinChecker.vhd" into library work
 Parsing entity <WinChecker>.
 Parsing architecture <Behavioral> of entity <winchecker>.
@@ -138,6 +141,9 @@ Parsing architecture <Behavioral> of entity <segmentserialdisplay>.
 Parsing VHDL file "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\SegmentDisplay.vhd" into library work
 Parsing entity <SegmentDisplay>.
 Parsing architecture <Behavioral> of entity <segmentdisplay>.
+Parsing VHDL file "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\LoseSegmentDisplay.vhd" into library work
+Parsing entity <LoseSegmentDisplay>.
+Parsing architecture <Behavioral> of entity <losesegmentdisplay>.
 Parsing VHDL file "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\LFSRRandomNumberGenerator.vhd" into library work
 Parsing entity <LFSRRandom>.
 Parsing architecture <Behavioral> of entity <lfsrrandom>.
@@ -180,6 +186,10 @@ Elaborating entity <WinChecker> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <LFSRRandom> (architecture <Behavioral>) from library <work>.
 
+Elaborating entity <WinSegmentDisplay> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <LoseSegmentDisplay> (architecture <Behavioral>) from library <work>.
+
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
@@ -206,12 +216,12 @@ Synthesizing Unit <KTANE_Main>.
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
     Found 4x2-bit Read Only RAM for signal <strikeLED>
-    Found 2-bit comparator lessequal for signal <n0024> created at line 254
+    Found 2-bit comparator lessequal for signal <n0025> created at line 291
     Summary:
 	inferred   1 RAM(s).
 	inferred  23 D-type flip-flop(s).
 	inferred   1 Comparator(s).
-	inferred   2 Multiplexer(s).
+	inferred  20 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <KTANE_Main> synthesized.
 
@@ -350,38 +360,50 @@ Synthesizing Unit <LFSRRandom>.
 	inferred   8 D-type flip-flop(s).
 Unit <LFSRRandom> synthesized.
 
+Synthesizing Unit <WinSegmentDisplay>.
+    Related source file is "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\WinSegmentDisplay.vhd".
+    Summary:
+	no macro.
+Unit <WinSegmentDisplay> synthesized.
+
+Synthesizing Unit <LoseSegmentDisplay>.
+    Related source file is "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\LoseSegmentDisplay.vhd".
+    Summary:
+	no macro.
+Unit <LoseSegmentDisplay> synthesized.
+
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 10
+# RAMs                                                 : 12
  16x8-bit single-port Read Only RAM                    : 3
  4x2-bit single-port Read Only RAM                     : 1
- 4x4-bit single-port Read Only RAM                     : 2
+ 4x4-bit single-port Read Only RAM                     : 4
  4x8-bit single-port Read Only RAM                     : 4
-# Adders/Subtractors                                   : 8
- 16-bit adder                                          : 2
- 2-bit adder                                           : 3
+# Adders/Subtractors                                   : 12
+ 16-bit adder                                          : 4
+ 2-bit adder                                           : 5
  24-bit adder                                          : 1
  4-bit subtractor                                      : 2
-# Registers                                            : 27
- 1-bit register                                        : 14
- 16-bit register                                       : 2
- 2-bit register                                        : 3
+# Registers                                            : 33
+ 1-bit register                                        : 16
+ 16-bit register                                       : 4
+ 2-bit register                                        : 5
  24-bit register                                       : 1
  4-bit register                                        : 3
  5-bit register                                        : 2
  8-bit register                                        : 2
 # Comparators                                          : 1
  2-bit comparator lessequal                            : 1
-# Multiplexers                                         : 15
+# Multiplexers                                         : 39
  1-bit 2-to-1 multiplexer                              : 2
- 16-bit 2-to-1 multiplexer                             : 2
- 2-bit 2-to-1 multiplexer                              : 3
+ 16-bit 2-to-1 multiplexer                             : 4
+ 2-bit 2-to-1 multiplexer                              : 5
  24-bit 2-to-1 multiplexer                             : 1
- 4-bit 2-to-1 multiplexer                              : 4
- 8-bit 2-to-1 multiplexer                              : 1
- 8-bit 4-to-1 multiplexer                              : 2
+ 4-bit 2-to-1 multiplexer                              : 13
+ 8-bit 2-to-1 multiplexer                              : 10
+ 8-bit 4-to-1 multiplexer                              : 4
 # FSMs                                                 : 2
 # Xors                                                 : 1
  1-bit xor4                                            : 1
@@ -448,7 +470,7 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_strikeLED> will be implemented on LU
 Unit <KTANE_Main> synthesized (advanced).
 
 Synthesizing (advanced) Unit <SegmentSerialMultiplexer>.
-INFO:Xst:3231 - The small RAM <Mram_common_out> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_common_out> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -463,7 +485,7 @@ Unit <SegmentSerialMultiplexer> synthesized (advanced).
 
 Synthesizing (advanced) Unit <SegmentTimerMultiplexer>.
 The following registers are absorbed into counter <count>: 1 register on signal <count>.
-INFO:Xst:3231 - The small RAM <Mram_common_out> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_common_out> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -480,28 +502,28 @@ Unit <SegmentTimerMultiplexer> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 10
+# RAMs                                                 : 12
  16x8-bit single-port distributed Read Only RAM        : 3
  4x2-bit single-port distributed Read Only RAM         : 1
- 4x4-bit single-port distributed Read Only RAM         : 2
+ 4x4-bit single-port distributed Read Only RAM         : 4
  4x8-bit single-port distributed Read Only RAM         : 4
-# Adders/Subtractors                                   : 3
- 2-bit adder                                           : 2
+# Adders/Subtractors                                   : 5
+ 2-bit adder                                           : 4
  4-bit subtractor                                      : 1
-# Counters                                             : 5
- 16-bit up counter                                     : 2
+# Counters                                             : 7
+ 16-bit up counter                                     : 4
  2-bit up counter                                      : 1
  24-bit up counter                                     : 1
  4-bit down counter                                    : 1
-# Registers                                            : 52
- Flip-Flops                                            : 52
+# Registers                                            : 58
+ Flip-Flops                                            : 58
 # Comparators                                          : 1
  2-bit comparator lessequal                            : 1
-# Multiplexers                                         : 8
+# Multiplexers                                         : 28
  1-bit 2-to-1 multiplexer                              : 2
- 4-bit 2-to-1 multiplexer                              : 3
- 8-bit 2-to-1 multiplexer                              : 1
- 8-bit 4-to-1 multiplexer                              : 2
+ 4-bit 2-to-1 multiplexer                              : 12
+ 8-bit 2-to-1 multiplexer                              : 10
+ 8-bit 4-to-1 multiplexer                              : 4
 # FSMs                                                 : 2
 # Xors                                                 : 1
  1-bit xor4                                            : 1
@@ -529,8 +551,8 @@ Optimizing FSM <Segment/Timer/FSM_1> on signal <min[1:1]> with sequential encodi
  0001  | 0
  0000  | 1
 -------------------
-INFO:Xst:2261 - The FF/Latch <enableGame_0> in Unit <KTANE_Main> is equivalent to the following 4 FFs/Latches, which will be removed : <enableGame_1> <enableGame_2> <enableGame_3> <enableGame_4> 
 INFO:Xst:2261 - The FF/Latch <resetModule_0> in Unit <KTANE_Main> is equivalent to the following 4 FFs/Latches, which will be removed : <resetModule_1> <resetModule_2> <resetModule_3> <resetModule_4> 
+INFO:Xst:2261 - The FF/Latch <enableGame_0> in Unit <KTANE_Main> is equivalent to the following 4 FFs/Latches, which will be removed : <enableGame_1> <enableGame_2> <enableGame_3> <enableGame_4> 
 
 Optimizing unit <KTANE_Main> ...
 
@@ -538,30 +560,28 @@ Optimizing unit <CountdownTimer_130> ...
 WARNING:Xst:1293 - FF/Latch <sec1_3> has a constant value of 0 in block <CountdownTimer_130>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <sec1_3> has a constant value of 0 in block <CountdownTimer_130>. This FF/Latch will be trimmed during the optimization process.
 
-Optimizing unit <SegmentSerialMultiplexer> ...
-
 Optimizing unit <LFSRRandom> ...
-INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/count_0> in Unit <KTANE_Main> is equivalent to the following FF/Latch, which will be removed : <SegmentSerial/Multiplex/ClockDivider/count_0> 
-INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/count_1> in Unit <KTANE_Main> is equivalent to the following FF/Latch, which will be removed : <SegmentSerial/Multiplex/ClockDivider/count_1> 
-INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/count_2> in Unit <KTANE_Main> is equivalent to the following FF/Latch, which will be removed : <SegmentSerial/Multiplex/ClockDivider/count_2> 
-INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/count_3> in Unit <KTANE_Main> is equivalent to the following FF/Latch, which will be removed : <SegmentSerial/Multiplex/ClockDivider/count_3> 
-INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/count_4> in Unit <KTANE_Main> is equivalent to the following FF/Latch, which will be removed : <SegmentSerial/Multiplex/ClockDivider/count_4> 
-INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/count_5> in Unit <KTANE_Main> is equivalent to the following FF/Latch, which will be removed : <SegmentSerial/Multiplex/ClockDivider/count_5> 
-INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/count_6> in Unit <KTANE_Main> is equivalent to the following FF/Latch, which will be removed : <SegmentSerial/Multiplex/ClockDivider/count_6> 
-INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/count_7> in Unit <KTANE_Main> is equivalent to the following FF/Latch, which will be removed : <SegmentSerial/Multiplex/ClockDivider/count_7> 
-INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/count_8> in Unit <KTANE_Main> is equivalent to the following FF/Latch, which will be removed : <SegmentSerial/Multiplex/ClockDivider/count_8> 
-INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/count_9> in Unit <KTANE_Main> is equivalent to the following FF/Latch, which will be removed : <SegmentSerial/Multiplex/ClockDivider/count_9> 
-INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/count_10> in Unit <KTANE_Main> is equivalent to the following FF/Latch, which will be removed : <SegmentSerial/Multiplex/ClockDivider/count_10> 
-INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/count_11> in Unit <KTANE_Main> is equivalent to the following FF/Latch, which will be removed : <SegmentSerial/Multiplex/ClockDivider/count_11> 
-INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/count_12> in Unit <KTANE_Main> is equivalent to the following FF/Latch, which will be removed : <SegmentSerial/Multiplex/ClockDivider/count_12> 
-INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/count_13> in Unit <KTANE_Main> is equivalent to the following FF/Latch, which will be removed : <SegmentSerial/Multiplex/ClockDivider/count_13> 
-INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/count_14> in Unit <KTANE_Main> is equivalent to the following FF/Latch, which will be removed : <SegmentSerial/Multiplex/ClockDivider/count_14> 
-INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/count_15> in Unit <KTANE_Main> is equivalent to the following FF/Latch, which will be removed : <SegmentSerial/Multiplex/ClockDivider/count_15> 
-INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/tmp> in Unit <KTANE_Main> is equivalent to the following FF/Latch, which will be removed : <SegmentSerial/Multiplex/ClockDivider/tmp> 
+INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/count_0> in Unit <KTANE_Main> is equivalent to the following 3 FFs/Latches, which will be removed : <LoseDisplay/Segment/ClockDivider/count_0> <SegmentSerial/Multiplex/ClockDivider/count_0> <WinDisplay/Segment/ClockDivider/count_0> 
+INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/count_1> in Unit <KTANE_Main> is equivalent to the following 3 FFs/Latches, which will be removed : <LoseDisplay/Segment/ClockDivider/count_1> <SegmentSerial/Multiplex/ClockDivider/count_1> <WinDisplay/Segment/ClockDivider/count_1> 
+INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/count_2> in Unit <KTANE_Main> is equivalent to the following 3 FFs/Latches, which will be removed : <LoseDisplay/Segment/ClockDivider/count_2> <SegmentSerial/Multiplex/ClockDivider/count_2> <WinDisplay/Segment/ClockDivider/count_2> 
+INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/count_3> in Unit <KTANE_Main> is equivalent to the following 3 FFs/Latches, which will be removed : <LoseDisplay/Segment/ClockDivider/count_3> <SegmentSerial/Multiplex/ClockDivider/count_3> <WinDisplay/Segment/ClockDivider/count_3> 
+INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/count_4> in Unit <KTANE_Main> is equivalent to the following 3 FFs/Latches, which will be removed : <LoseDisplay/Segment/ClockDivider/count_4> <SegmentSerial/Multiplex/ClockDivider/count_4> <WinDisplay/Segment/ClockDivider/count_4> 
+INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/count_5> in Unit <KTANE_Main> is equivalent to the following 3 FFs/Latches, which will be removed : <LoseDisplay/Segment/ClockDivider/count_5> <SegmentSerial/Multiplex/ClockDivider/count_5> <WinDisplay/Segment/ClockDivider/count_5> 
+INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/count_6> in Unit <KTANE_Main> is equivalent to the following 3 FFs/Latches, which will be removed : <LoseDisplay/Segment/ClockDivider/count_6> <SegmentSerial/Multiplex/ClockDivider/count_6> <WinDisplay/Segment/ClockDivider/count_6> 
+INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/count_7> in Unit <KTANE_Main> is equivalent to the following 3 FFs/Latches, which will be removed : <LoseDisplay/Segment/ClockDivider/count_7> <SegmentSerial/Multiplex/ClockDivider/count_7> <WinDisplay/Segment/ClockDivider/count_7> 
+INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/count_8> in Unit <KTANE_Main> is equivalent to the following 3 FFs/Latches, which will be removed : <LoseDisplay/Segment/ClockDivider/count_8> <SegmentSerial/Multiplex/ClockDivider/count_8> <WinDisplay/Segment/ClockDivider/count_8> 
+INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/count_9> in Unit <KTANE_Main> is equivalent to the following 3 FFs/Latches, which will be removed : <LoseDisplay/Segment/ClockDivider/count_9> <SegmentSerial/Multiplex/ClockDivider/count_9> <WinDisplay/Segment/ClockDivider/count_9> 
+INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/count_10> in Unit <KTANE_Main> is equivalent to the following 3 FFs/Latches, which will be removed : <LoseDisplay/Segment/ClockDivider/count_10> <SegmentSerial/Multiplex/ClockDivider/count_10> <WinDisplay/Segment/ClockDivider/count_10> 
+INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/count_11> in Unit <KTANE_Main> is equivalent to the following 3 FFs/Latches, which will be removed : <LoseDisplay/Segment/ClockDivider/count_11> <SegmentSerial/Multiplex/ClockDivider/count_11> <WinDisplay/Segment/ClockDivider/count_11> 
+INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/count_12> in Unit <KTANE_Main> is equivalent to the following 3 FFs/Latches, which will be removed : <LoseDisplay/Segment/ClockDivider/count_12> <SegmentSerial/Multiplex/ClockDivider/count_12> <WinDisplay/Segment/ClockDivider/count_12> 
+INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/count_13> in Unit <KTANE_Main> is equivalent to the following 3 FFs/Latches, which will be removed : <LoseDisplay/Segment/ClockDivider/count_13> <SegmentSerial/Multiplex/ClockDivider/count_13> <WinDisplay/Segment/ClockDivider/count_13> 
+INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/count_14> in Unit <KTANE_Main> is equivalent to the following 3 FFs/Latches, which will be removed : <LoseDisplay/Segment/ClockDivider/count_14> <SegmentSerial/Multiplex/ClockDivider/count_14> <WinDisplay/Segment/ClockDivider/count_14> 
+INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/count_15> in Unit <KTANE_Main> is equivalent to the following 3 FFs/Latches, which will be removed : <LoseDisplay/Segment/ClockDivider/count_15> <SegmentSerial/Multiplex/ClockDivider/count_15> <WinDisplay/Segment/ClockDivider/count_15> 
+INFO:Xst:2261 - The FF/Latch <Segment/Multiplex/ClockDivider/tmp> in Unit <KTANE_Main> is equivalent to the following 3 FFs/Latches, which will be removed : <LoseDisplay/Segment/ClockDivider/tmp> <WinDisplay/Segment/ClockDivider/tmp> <SegmentSerial/Multiplex/ClockDivider/tmp> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block KTANE_Main, actual ratio is 3.
+Found area constraint ratio of 100 (+ 5) on block KTANE_Main, actual ratio is 4.
 
 Final Macro Processing ...
 
@@ -569,8 +589,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 91
- Flip-Flops                                            : 91
+# Registers                                            : 97
+ Flip-Flops                                            : 97
 
 =========================================================================
 
@@ -593,25 +613,26 @@ Top Level Output File Name         : KTANE_Main.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 238
+# BELS                             : 264
 #      GND                         : 1
-#      INV                         : 7
+#      INV                         : 9
 #      LUT1                        : 38
-#      LUT2                        : 21
-#      LUT3                        : 7
-#      LUT4                        : 14
-#      LUT5                        : 47
-#      LUT6                        : 24
+#      LUT2                        : 24
+#      LUT3                        : 17
+#      LUT4                        : 11
+#      LUT5                        : 51
+#      LUT6                        : 29
 #      MUXCY                       : 38
+#      MUXF7                       : 5
 #      VCC                         : 1
 #      XORCY                       : 40
-# FlipFlops/Latches                : 91
-#      FD                          : 10
-#      FDC                         : 54
+# FlipFlops/Latches                : 97
+#      FD                          : 9
+#      FDC                         : 60
 #      FDC_1                       : 2
 #      FDCE                        : 7
 #      FDCE_1                      : 1
-#      FDE                         : 12
+#      FDE                         : 13
 #      FDP                         : 2
 #      FDPE                        : 1
 #      FDPE_1                      : 2
@@ -628,15 +649,15 @@ Selected Device : 6slx9tqg144-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              91  out of  11440     0%  
- Number of Slice LUTs:                  158  out of   5720     2%  
-    Number used as Logic:               158  out of   5720     2%  
+ Number of Slice Registers:              97  out of  11440     0%  
+ Number of Slice LUTs:                  179  out of   5720     3%  
+    Number used as Logic:               179  out of   5720     3%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    171
-   Number with an unused Flip Flop:      80  out of    171    46%  
-   Number with an unused LUT:            13  out of    171     7%  
-   Number of fully used LUT-FF pairs:    78  out of    171    45%  
+ Number of LUT Flip Flop pairs used:    193
+   Number with an unused Flip Flop:      96  out of    193    49%  
+   Number with an unused LUT:            14  out of    193     7%  
+   Number of fully used LUT-FF pairs:    83  out of    193    43%  
    Number of unique control sets:        11
 
 IO Utilization: 
@@ -664,14 +685,14 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
---------------------------------------------------+--------------------------------+-------+
-Clock Signal                                      | Clock buffer(FF name)          | Load  |
---------------------------------------------------+--------------------------------+-------+
-clk                                               | BUFGP                          | 76    |
-StrikeResult/isStrike(StrikeResult/isStrike<0>1:O)| NONE(*)(StrikeResult/count_1)  | 2     |
-Segment/Multiplex/ClockDivider/tmp                | NONE(Segment/Multiplex/count_0)| 4     |
-Segment/Timer/ClockDivider/tmp                    | NONE(Segment/Timer/sec2_3)     | 9     |
---------------------------------------------------+--------------------------------+-------+
+--------------------------------------------------+----------------------------------+-------+
+Clock Signal                                      | Clock buffer(FF name)            | Load  |
+--------------------------------------------------+----------------------------------+-------+
+clk                                               | BUFGP                            | 78    |
+StrikeResult/isStrike(StrikeResult/isStrike<0>1:O)| NONE(*)(StrikeResult/count_1)    | 2     |
+Segment/Multiplex/ClockDivider/tmp                | NONE(LoseDisplay/Segment/count_1)| 8     |
+Segment/Timer/ClockDivider/tmp                    | NONE(Segment/Timer/sec2_3)       | 9     |
+--------------------------------------------------+----------------------------------+-------+
 (*) This 1 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
@@ -686,8 +707,8 @@ Timing Summary:
 Speed Grade: -3
 
    Minimum period: 3.853ns (Maximum Frequency: 259.545MHz)
-   Minimum input arrival time before clock: 3.598ns
-   Maximum output required time after clock: 4.587ns
+   Minimum input arrival time before clock: 4.502ns
+   Maximum output required time after clock: 4.649ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -697,7 +718,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 3.853ns (frequency: 259.545MHz)
-  Total number of paths / destination ports: 1639 / 147
+  Total number of paths / destination ports: 1704 / 152
 -------------------------------------------------------------------------
 Delay:               3.853ns (Levels of Logic = 3)
   Source:            Segment/Multiplex/ClockDivider/count_1 (FF)
@@ -712,18 +733,18 @@ Delay:               3.853ns (Levels of Logic = 3)
      FDC:C->Q              2   0.447   0.981  Segment/Multiplex/ClockDivider/count_1 (Segment/Multiplex/ClockDivider/count_1)
      LUT6:I0->O            1   0.203   0.684  Segment/Multiplex/ClockDivider/PWR_13_o_count[15]_equal_1_o<15>2 (Segment/Multiplex/ClockDivider/PWR_13_o_count[15]_equal_1_o<15>1)
      LUT6:I4->O           17   0.203   1.028  Segment/Multiplex/ClockDivider/PWR_13_o_count[15]_equal_1_o<15>3 (Segment/Multiplex/ClockDivider/PWR_13_o_count[15]_equal_1_o)
-     LUT2:I1->O            1   0.205   0.000  Segment/Multiplex/ClockDivider/Mcount_count_eqn_01 (Segment/Multiplex/ClockDivider/Mcount_count_eqn_0)
-     FDC:D                     0.102          Segment/Multiplex/ClockDivider/count_0
+     LUT2:I1->O            1   0.205   0.000  Segment/Multiplex/ClockDivider/Mcount_count_eqn_151 (Segment/Multiplex/ClockDivider/Mcount_count_eqn_15)
+     FDC:D                     0.102          Segment/Multiplex/ClockDivider/count_15
     ----------------------------------------
     Total                      3.853ns (1.160ns logic, 2.693ns route)
                                        (30.1% logic, 69.9% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'StrikeResult/isStrike'
-  Clock period: 2.016ns (frequency: 495.933MHz)
+  Clock period: 2.078ns (frequency: 481.325MHz)
   Total number of paths / destination ports: 3 / 2
 -------------------------------------------------------------------------
-Delay:               2.016ns (Levels of Logic = 1)
+Delay:               2.078ns (Levels of Logic = 1)
   Source:            StrikeResult/count_0 (FF)
   Destination:       StrikeResult/count_0 (FF)
   Source Clock:      StrikeResult/isStrike rising
@@ -733,17 +754,17 @@ Delay:               2.016ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              4   0.447   0.683  StrikeResult/count_0 (StrikeResult/count_0)
+     FDC:C->Q              6   0.447   0.744  StrikeResult/count_0 (StrikeResult/count_0)
      INV:I->O              1   0.206   0.579  StrikeResult/Mmux_count[1]_GND_17_o_mux_2_OUT11_INV_0 (StrikeResult/count[1]_GND_17_o_mux_2_OUT<0>)
      FDC:D                     0.102          StrikeResult/count_0
     ----------------------------------------
-    Total                      2.016ns (0.755ns logic, 1.261ns route)
-                                       (37.4% logic, 62.6% route)
+    Total                      2.078ns (0.755ns logic, 1.323ns route)
+                                       (36.3% logic, 63.7% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'Segment/Multiplex/ClockDivider/tmp'
   Clock period: 2.291ns (frequency: 436.500MHz)
-  Total number of paths / destination ports: 6 / 4
+  Total number of paths / destination ports: 12 / 8
 -------------------------------------------------------------------------
 Delay:               2.291ns (Levels of Logic = 1)
   Source:            Segment/Multiplex/count_0 (FF)
@@ -778,7 +799,7 @@ Delay:               3.067ns (Levels of Logic = 2)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDC:C->Q             14   0.447   1.186  Segment/Timer/sec2_2 (Segment/Timer/sec2_2)
-     LUT3:I0->O            1   0.205   0.924  Segment/Timer/Mcount_sec2_xor<3>1_SW0 (N4)
+     LUT3:I0->O            1   0.205   0.924  Segment/Timer/Mcount_sec2_xor<3>1_SW0 (N8)
      LUT6:I1->O            1   0.203   0.000  Segment/Timer/Mcount_sec2_xor<3>1 (Segment/Timer/Mcount_sec23)
      FDC:D                     0.102          Segment/Timer/sec2_3
     ----------------------------------------
@@ -787,49 +808,50 @@ Delay:               3.067ns (Levels of Logic = 2)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 8 / 4
+  Total number of paths / destination ports: 13 / 5
 -------------------------------------------------------------------------
-Offset:              3.598ns (Levels of Logic = 3)
-  Source:            win<3> (PAD)
+Offset:              4.502ns (Levels of Logic = 4)
+  Source:            win<0> (PAD)
   Destination:       currentState_FSM_FFd3 (FF)
   Destination Clock: clk rising
 
-  Data Path: win<3> to currentState_FSM_FFd3
+  Data Path: win<0> to currentState_FSM_FFd3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   1.222   0.924  win_3_IBUF (win_3_IBUF)
-     LUT5:I0->O            1   0.203   0.944  currentState_FSM_FFd3-In2 (currentState_FSM_FFd3-In2)
-     LUT6:I0->O            1   0.203   0.000  currentState_FSM_FFd3-In4 (currentState_FSM_FFd3-In)
+     IBUF:I->O             1   1.222   0.924  win_0_IBUF (win_0_IBUF)
+     LUT5:I0->O            2   0.203   0.961  CheckWin/win_out<0>1 (isWin)
+     LUT5:I0->O            1   0.203   0.684  currentState_FSM_FFd3-In_SW0 (N4)
+     LUT6:I4->O            1   0.203   0.000  currentState_FSM_FFd3-In (currentState_FSM_FFd3-In)
      FDC:D                     0.102          currentState_FSM_FFd3
     ----------------------------------------
-    Total                      3.598ns (1.730ns logic, 1.868ns route)
-                                       (48.1% logic, 51.9% route)
+    Total                      4.502ns (1.933ns logic, 2.569ns route)
+                                       (42.9% logic, 57.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 30 / 30
 -------------------------------------------------------------------------
-Offset:              3.820ns (Levels of Logic = 1)
-  Source:            LFSRRandomMode/Qt_3 (FF)
-  Destination:       randomMode<3> (PAD)
+Offset:              3.791ns (Levels of Logic = 1)
+  Source:            LFSRRandomMode/Qt_7 (FF)
+  Destination:       randomMode<7> (PAD)
   Source Clock:      clk rising
 
-  Data Path: LFSRRandomMode/Qt_3 to randomMode<3>
+  Data Path: LFSRRandomMode/Qt_7 to randomMode<7>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             8   0.447   0.802  LFSRRandomMode/Qt_3 (LFSRRandomMode/Qt_3)
-     OBUF:I->O                 2.571          randomMode_3_OBUF (randomMode<3>)
+     FDCE:C->Q             7   0.447   0.773  LFSRRandomMode/Qt_7 (LFSRRandomMode/Qt_7)
+     OBUF:I->O                 2.571          randomMode_7_OBUF (randomMode<7>)
     ----------------------------------------
-    Total                      3.820ns (3.018ns logic, 0.802ns route)
-                                       (79.0% logic, 21.0% route)
+    Total                      3.791ns (3.018ns logic, 0.773ns route)
+                                       (79.6% logic, 20.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'StrikeResult/isStrike'
   Total number of paths / destination ports: 3 / 2
 -------------------------------------------------------------------------
-Offset:              4.587ns (Levels of Logic = 2)
+Offset:              4.649ns (Levels of Logic = 2)
   Source:            StrikeResult/count_1 (FF)
   Destination:       strikeLED<0> (PAD)
   Source Clock:      StrikeResult/isStrike rising
@@ -838,12 +860,12 @@ Offset:              4.587ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              4   0.447   0.788  StrikeResult/count_1 (StrikeResult/count_1)
+     FDC:C->Q              6   0.447   0.849  StrikeResult/count_1 (StrikeResult/count_1)
      LUT2:I0->O            1   0.203   0.579  Mram_strikeLED11 (strikeLED_0_OBUF)
      OBUF:I->O                 2.571          strikeLED_0_OBUF (strikeLED<0>)
     ----------------------------------------
-    Total                      4.587ns (3.221ns logic, 1.366ns route)
-                                       (70.2% logic, 29.8% route)
+    Total                      4.649ns (3.221ns logic, 1.428ns route)
+                                       (69.3% logic, 30.7% route)
 
 =========================================================================
 
@@ -856,7 +878,7 @@ Clock to Setup on destination clock Segment/Multiplex/ClockDivider/tmp
 Source Clock                      |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ----------------------------------+---------+---------+---------+---------+
 Segment/Multiplex/ClockDivider/tmp|    2.291|         |         |         |
-clk                               |    3.227|         |         |         |
+clk                               |    3.214|         |         |         |
 ----------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock Segment/Timer/ClockDivider/tmp
@@ -865,7 +887,7 @@ Clock to Setup on destination clock Segment/Timer/ClockDivider/tmp
 Source Clock                  |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------------+---------+---------+---------+---------+
 Segment/Timer/ClockDivider/tmp|         |         |    3.067|         |
-clk                           |         |         |    3.227|         |
+clk                           |         |         |    3.214|         |
 ------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock StrikeResult/isStrike
@@ -873,8 +895,8 @@ Clock to Setup on destination clock StrikeResult/isStrike
                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------------+---------+---------+---------+---------+
-StrikeResult/isStrike|    2.016|         |         |         |
-clk                  |    3.227|         |         |         |
+StrikeResult/isStrike|    2.078|         |         |         |
+clk                  |    3.214|         |         |         |
 ---------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clk
@@ -882,17 +904,17 @@ Clock to Setup on destination clock clk
                                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                      |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ----------------------------------+---------+---------+---------+---------+
-Segment/Multiplex/ClockDivider/tmp|    3.713|         |         |         |
-Segment/Timer/ClockDivider/tmp    |         |    3.629|         |         |
-StrikeResult/isStrike             |    2.666|         |         |         |
+Segment/Multiplex/ClockDivider/tmp|    3.700|         |         |         |
+Segment/Timer/ClockDivider/tmp    |         |    3.889|         |         |
+StrikeResult/isStrike             |    2.748|         |         |         |
 clk                               |    3.853|         |         |         |
 ----------------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 4.35 secs
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 4.78 secs
  
 --> 
 

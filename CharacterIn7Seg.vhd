@@ -43,7 +43,8 @@ begin
 		"11101110" when "00",
 		"00111110" when "01",
 		"00011010" when "10",
-		"01111010" when "11";
+		"01111010" when "11",
+		"00000001" when others;
 
 end Behavioral;
 

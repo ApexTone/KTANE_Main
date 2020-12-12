@@ -60,8 +60,8 @@ architecture Behavioral of KTANE_Main is
 	signal timeout, isWin, isLoss: std_logic := '0';
 	signal dividedClk: std_logic := '0';
 	signal strikeCount: std_logic_vector(1 downto 0);--if >= "11" end game
-	signal serialSegment,timerSegment,selBuffer: std_logic_vector(7 downto 0) := (others=>'0');
-	signal timerCommon, serialCommon: std_logic_vector(3 downto 0) := (others=>'1');
+	signal serialSegment,timerSegment,selBuffer,winSegment,loseSegment: std_logic_vector(7 downto 0) := (others=>'0');
+	signal timerCommon, serialCommon,winCommon,loseCommon: std_logic_vector(3 downto 0) := (others=>'1');
 
 	component DebounceButton is
 		port(
@@ -82,6 +82,20 @@ architecture Behavioral of KTANE_Main is
 		port(
 			clk,reset: in std_logic;
 			sel: in std_logic_vector(7 downto 0);
+			seg_out: out std_logic_vector(7 downto 0);
+			common_out: out std_logic_vector(3 downto 0)
+		);
+	end component;
+	component LoseSegmentDisplay is
+		port(
+			clk,reset: in std_logic;
+			seg_out: out std_logic_vector(7 downto 0);
+			common_out: out std_logic_vector(3 downto 0)
+		);
+	end component;
+	component WinSegmentDisplay is
+		port(
+			clk,reset: in std_logic;
 			seg_out: out std_logic_vector(7 downto 0);
 			common_out: out std_logic_vector(3 downto 0)
 		);
@@ -164,6 +178,21 @@ begin
 		);
 	randomMode <= selBuffer;
 	
+	WinDisplay:WinSegmentDisplay 
+		port map(
+			clk => clk,
+			reset => debouncedReset,
+			seg_out => winSegment,
+			common_out => winCommon
+		);
+	LoseDisplay:LoseSegmentDisplay 
+		port map(
+			clk => clk,
+			reset => debouncedReset,
+			seg_out => loseSegment,
+			common_out => loseCommon
+		);
+	
 	--FSM
 	process(clk, debouncedReset, debouncedStart)
 	begin
@@ -185,6 +214,8 @@ begin
 						resetModule <= (others => '1');
 						enableGame <= (others => '0');
 						startRandom <= '1';
+						segment_out <= "00000000";
+						segment_common <= "1111";
 					when gameState =>
 					--NSL
 						if (debouncedReset = '1') then
@@ -200,7 +231,7 @@ begin
 						resetModule <= (others => '0');
 						enableGame <= (others => '1');
 						startRandom <= '0';
-						if debouncedToggle = '1' then
+						if debouncedToggle = '0' then
 							segment_out <= timerSegment;
 							segment_common <= timerCommon;
 						else
@@ -218,6 +249,8 @@ begin
 						resetModule <= (others => '0');
 						enableGame <= (others => '0');
 						startRandom <= '0';
+						segment_out <= winSegment;
+						segment_common <= winCommon;
 					when lossState =>
 					--NSL
 						if (debouncedReset = '1') then
@@ -229,11 +262,15 @@ begin
 						resetModule <= (others => '0');
 						enableGame <= (others => '0');
 						startRandom <= '0';
+						segment_out <= loseSegment;
+						segment_common <= loseCommon;
 					when others =>
 						currentState <= startState;
 						resetModule <= (others => '0');
 						enableGame <= (others => '0');
 						startRandom <= '0';
+						segment_out <= "00000000";
+						segment_common <= "1111";
 				end case;
 			end if;
 		end if;

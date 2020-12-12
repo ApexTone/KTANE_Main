@@ -1,18 +1,27 @@
-Running: D:\ISE\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/lfsrrandom_tb_isim_beh.exe -prj C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/lfsrrandom_tb_beh.prj work.lfsrrandom_tb 
+Running: D:\ISE\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/segmentserialdisplay_tb_isim_beh.exe -prj C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/segmentserialdisplay_tb_beh.prj work.segmentserialdisplay_tb 
 ISim P.20131013 (signature 0x7708f090)
 Number of CPUs detected in this system: 12
 Turning on mult-threading, number of parallel sub-compilation jobs: 24 
 Determining compilation order of HDL files
-Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/LFSRRandomNumberGenerator.vhd" into library work
-Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/lfsrrandom_tb.vhd" into library work
+Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/ClockDivider100K.vhd" into library work
+Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/SegmentSerialMultiplexer.vhd" into library work
+Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/CharacterIn7Seg.vhd" into library work
+Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/SegmentSerialDisplay.vhd" into library work
+Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/segmentserialdisplay_tb.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Compiling package standard
 Compiling package std_logic_1164
-Compiling architecture behavioral of entity LFSRRandom [lfsrrandom_default]
-Compiling architecture behavior of entity lfsrrandom_tb
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling architecture behavioral of entity CharacterIn7Seg [characterin7seg_default]
+Compiling architecture behavioral of entity ClockDivider100K [clockdivider100k_default]
+Compiling architecture behavioral of entity SegmentSerialMultiplexer [segmentserialmultiplexer_default]
+Compiling architecture behavioral of entity SegmentSerialDisplay [segmentserialdisplay_default]
+Compiling architecture behavior of entity segmentserialdisplay_tb
 Time Resolution for simulation is 1ps.
-Compiled 5 VHDL Units
-Built simulation executable C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/lfsrrandom_tb_isim_beh.exe
-Fuse Memory Usage: 29716 KB
-Fuse CPU Usage: 343 ms
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 13 VHDL Units
+Built simulation executable C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/segmentserialdisplay_tb_isim_beh.exe
+Fuse Memory Usage: 35108 KB
+Fuse CPU Usage: 436 ms
