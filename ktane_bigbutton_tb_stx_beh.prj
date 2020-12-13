@@ -1,4 +1,0 @@
-vhdl isim_temp "Oneshot.vhd"
-vhdl isim_temp "DebounceButton.vhd"
-vhdl isim_temp "KTANE_BigButton.vhd"
-vhdl isim_temp "ktane_bigbutton_tb.vhd"

@@ -1,3 +1,0 @@
-vhdl work "ClockDivider100K.vhd"
-vhdl work "SegmentSerialMultiplexer.vhd"
-vhdl work "segmentserialmux_tb.vhd"

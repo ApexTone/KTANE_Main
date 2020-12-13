@@ -1,4 +1,0 @@
-vhdl work "Oneshot.vhd"
-vhdl work "DebounceButton.vhd"
-vhdl work "KTANE_BigButton.vhd"
-vhdl work "ktane_bigbutton_tb.vhd"

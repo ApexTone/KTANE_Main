@@ -13,8 +13,8 @@ source {C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/pa
 # create_project -name KTANE_Main -dir "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/planAhead_run_3" -part xc6slx9tqg144-3
 # set_param project.pinAheadLayout yes
 # set srcset [get_property srcset [current_run -impl]]
-# set_property target_constrs_file "KTANE_Main.ucf" [current_fileset -constrset]
-Adding file 'C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/KTANE_Main.ucf' to fileset 'constrs_1'
+# set_property target_constrs_file "MainAndBigButtonWrapper.ucf" [current_fileset -constrset]
+Adding file 'C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/MainAndBigButtonWrapper.ucf' to fileset 'constrs_1'
 # set hdlfile [add_files [list {ClockDivider20M.vhd}]]
 # set_property file_type VHDL $hdlfile
 # set_property library work $hdlfile
@@ -51,6 +51,9 @@ Adding file 'C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Ma
 # set hdlfile [add_files [list {SegmentDisplay.vhd}]]
 # set_property file_type VHDL $hdlfile
 # set_property library work $hdlfile
+# set hdlfile [add_files [list {Oneshot.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
 # set hdlfile [add_files [list {LoseSegmentDisplay.vhd}]]
 # set_property file_type VHDL $hdlfile
 # set_property library work $hdlfile
@@ -63,8 +66,14 @@ Adding file 'C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Ma
 # set hdlfile [add_files [list {KTANE_Main.vhd}]]
 # set_property file_type VHDL $hdlfile
 # set_property library work $hdlfile
-# set_property top KTANE_Main $srcset
-# add_files [list {KTANE_Main.ucf}] -fileset [get_property constrset [current_run]]
+# set hdlfile [add_files [list {KTANE_BigButton.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {MainAndBigButtonWrapper.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set_property top MainAndBigButtonWrapper $srcset
+# add_files [list {MainAndBigButtonWrapper.ucf}] -fileset [get_property constrset [current_run]]
 # open_rtl_design -part xc6slx9tqg144-3
 Using Verific elaboration
 Parsing VHDL file "D:/ISE/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
@@ -81,10 +90,13 @@ Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KT
 Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/StrikeCounter.vhd" into library work
 Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/SegmentSerialDisplay.vhd" into library work
 Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/SegmentDisplay.vhd" into library work
+Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/Oneshot.vhd" into library work
 Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/LoseSegmentDisplay.vhd" into library work
 Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/LFSRRandomNumberGenerator.vhd" into library work
 Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/DebounceButton.vhd" into library work
 Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/KTANE_Main.vhd" into library work
+Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/KTANE_BigButton.vhd" into library work
+Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/MainAndBigButtonWrapper.vhd" into library work
 Loading clock regions from D:/ISE/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/ClockRegion.xml
 Loading clock buffers from D:/ISE/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/ClockBuffers.xml
 Loading package pin functions from D:/ISE/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/PinFunctions.xml...
@@ -92,189 +104,94 @@ Loading package from D:/ISE/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spa
 Loading io standards from D:/ISE/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/IOStandards.xml
 Loading device configuration modes from D:/ISE/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/ConfigModes.xml
 Loading list of drcs for the architecture : D:/ISE/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/drc.xml
-Parsing UCF File [C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/KTANE_Main.ucf]
-Finished Parsing UCF File [C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/KTANE_Main.ucf]
+Parsing UCF File [C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/MainAndBigButtonWrapper.ucf]
+Finished Parsing UCF File [C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/MainAndBigButtonWrapper.ucf]
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Phase 0 | Netlist Checksum: 65c2d102
-open_rtl_design: Time (s): elapsed = 00:00:07 . Memory (MB): peak = 658.180 ; gain = 149.492
+Phase 0 | Netlist Checksum: de439ce6
+open_rtl_design: Time (s): elapsed = 00:00:07 . Memory (MB): peak = 653.855 ; gain = 150.512
 update_compile_order -fileset sim_1
 startgroup
-set_property package_pin P30 [get_ports {segment_common[3]}]
+set_property package_pin P126 [get_ports {segment_common[3]}]
 endgroup
 startgroup
-set_property package_pin P33 [get_ports {segment_common[2]}]
+set_property package_pin P131 [get_ports {segment_common[2]}]
 endgroup
 startgroup
-set_property package_pin P43 [get_ports {segment_common[1]}]
-endgroup
-startgroup
-set_property package_pin P44 [get_ports {segment_common[0]}]
-endgroup
-startgroup
-set_property package_pin P41 [get_ports {segment_out[7]}]
-endgroup
-startgroup
-set_property package_pin P40 [get_ports {segment_out[6]}]
-endgroup
-startgroup
-set_property package_pin P35 [get_ports {segment_out[5]}]
-endgroup
-startgroup
-set_property package_pin P34 [get_ports {segment_out[4]}]
-endgroup
-startgroup
-set_property package_pin P32 [get_ports {segment_out[3]}]
-endgroup
-startgroup
-set_property package_pin P29 [get_ports {segment_out[2]}]
-endgroup
-startgroup
-set_property package_pin P27 [get_ports {segment_out[1]}]
-endgroup
-startgroup
-set_property package_pin P26 [get_ports {segment_out[0]}]
-endgroup
-set_property is_loc_fixed false [get_ports [list  {segment_out[0]}]]
-set_property is_loc_fixed false [get_ports [list  {segment_out[3]}]]
-set_property is_loc_fixed true [get_ports [list  {segment_out[0]}]]
-set_property is_loc_fixed true [get_ports [list  {segment_out[3]}]]
-save_constraints
-startgroup
-set_property package_pin P66 [get_ports {win[4]}]
-endgroup
-startgroup
-set_property package_pin P56 [get_ports {win[3]}]
-endgroup
-startgroup
-set_property package_pin P57 [get_ports {win[2]}]
-endgroup
-startgroup
-set_property package_pin P58 [get_ports {win[1]}]
-endgroup
-startgroup
-set_property package_pin P55 [get_ports {win[4]}]
-endgroup
-startgroup
-set_property package_pin P59 [get_ports {win[0]}]
+set_property package_pin P133 [get_ports {segment_common[1]}]
 endgroup
 save_constraints
 startgroup
-set_property package_pin P67 [get_ports {strikeLED[1]}]
+set_property package_pin P137 [get_ports {segment_common[0]}]
 endgroup
 save_constraints
 startgroup
-set_property package_pin P74 [get_ports {strikeLED[0]}]
-endgroup
-set_property is_loc_fixed false [get_ports [list  {strikeLED[0]}]]
-set_property is_loc_fixed true [get_ports [list  {strikeLED[0]}]]
-save_constraints
-startgroup
-set_property package_pin P112 [get_ports {strike[4]}]
+set_property package_pin P139 [get_ports {strike[3]}]
 endgroup
 startgroup
-set_property package_pin P111 [get_ports {strike[3]}]
+set_property package_pin P141 [get_ports {strike[2]}]
 endgroup
 startgroup
-set_property package_pin P105 [get_ports {strike[2]}]
+set_property package_pin P143 [get_ports {strike[1]}]
 endgroup
 startgroup
-set_property package_pin P104 [get_ports {strike[1]}]
-endgroup
-startgroup
-set_property package_pin P102 [get_ports {strike[0]}]
+set_property package_pin P2 [get_ports {strike[0]}]
 endgroup
 save_constraints
 startgroup
-set_property package_pin P123 [get_ports clk]
+set_property package_pin P15 [get_ports {strikeLED[1]}]
 endgroup
 startgroup
-set_property package_pin P45 [get_ports reset]
-endgroup
-startgroup
-set_property package_pin P46 [get_ports start]
-endgroup
-startgroup
-set_property package_pin P47 [get_ports toggleTimerSerial]
+set_property package_pin P17 [get_ports {strikeLED[0]}]
 endgroup
 save_constraints
 startgroup
-set_property package_pin P5 [get_ports {enableGame[4]}]
+set_property package_pin P99 [get_ports {resetModule[3]}]
 endgroup
 startgroup
-set_property package_pin P7 [get_ports {enableGame[3]}]
+set_property package_pin P100 [get_ports {resetModule[2]}]
 endgroup
 startgroup
-set_property package_pin P9 [get_ports {enableGame[2]}]
+set_property package_pin P101 [get_ports {resetModule[1]}]
 endgroup
 startgroup
-set_property package_pin P11 [get_ports {enableGame[1]}]
-endgroup
-startgroup
-set_property package_pin P14 [get_ports {enableGame[0]}]
-endgroup
-startgroup
-set_property package_pin P6 [get_ports {resetModule[4]}]
-endgroup
-startgroup
-set_property package_pin P8 [get_ports {resetModule[3]}]
-endgroup
-startgroup
-set_property package_pin P10 [get_ports {resetModule[2]}]
-endgroup
-startgroup
-set_property package_pin P12 [get_ports {resetModule[1]}]
-endgroup
-startgroup
-set_property package_pin P15 [get_ports {resetModule[0]}]
-endgroup
-set_property is_loc_fixed false [get_ports [list  {resetModule[0]}]]
-set_property is_loc_fixed true [get_ports [list  {resetModule[0]}]]
-save_constraints
-startgroup
-set_property package_pin P124 [get_ports {sec2_bigButton[3]}]
-endgroup
-startgroup
-set_property package_pin P127 [get_ports {sec2_bigButton[2]}]
-endgroup
-startgroup
-set_property package_pin P132 [get_ports {sec2_bigButton[1]}]
-endgroup
-startgroup
-set_property package_pin P134 [get_ports {sec2_bigButton[0]}]
+set_property package_pin P102 [get_ports {resetModule[0]}]
 endgroup
 save_constraints
 startgroup
-set_property package_pin P126 [get_ports {randomMode[7]}]
+set_property package_pin P116 [get_ports {randomMode[5]}]
 endgroup
 startgroup
-set_property package_pin P131 [get_ports {randomMode[6]}]
+set_property package_pin P117 [get_ports {randomMode[4]}]
 endgroup
 startgroup
-set_property package_pin P133 [get_ports {randomMode[5]}]
+set_property package_pin P118 [get_ports {randomMode[3]}]
 endgroup
 startgroup
-set_property package_pin P137 [get_ports {randomMode[4]}]
+set_property package_pin P119 [get_ports {randomMode[2]}]
 endgroup
 startgroup
-set_property package_pin P139 [get_ports {randomMode[3]}]
+set_property package_pin P120 [get_ports {randomMode[1]}]
 endgroup
 startgroup
-set_property package_pin P141 [get_ports {randomMode[2]}]
-endgroup
-startgroup
-set_property package_pin P143 [get_ports {randomMode[1]}]
-endgroup
-startgroup
-set_property package_pin P2 [get_ports {randomMode[0]}]
+set_property package_pin P121 [get_ports {randomMode[0]}]
 endgroup
 save_constraints
 startgroup
-set_property package_pin P143 [get_ports {randomMode[1]}]
+set_property package_pin P6 [get_ports {enableGame[3]}]
+endgroup
+startgroup
+set_property package_pin P8 [get_ports {enableGame[2]}]
+endgroup
+startgroup
+set_property package_pin P10 [get_ports {enableGame[1]}]
+endgroup
+startgroup
+set_property package_pin P12 [get_ports {enableGame[0]}]
 endgroup
 save_constraints
 exit
 ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
-INFO: [Common 17-206] Exiting PlanAhead at Sat Dec 12 16:36:52 2020...
+INFO: [Common 17-206] Exiting PlanAhead at Sun Dec 13 19:28:40 2020...
 INFO: [Common 17-83] Releasing license: PlanAhead

@@ -1,5 +1,0 @@
-vhdl isim_temp "DebounceButton.vhd"
-vhdl isim_temp "ClockDivider20M.vhd"
-vhdl isim_temp "BCDto7Seg.vhd"
-vhdl isim_temp "KTANE_Main.vhd"
-vhdl isim_temp "ktane_main_tb.vhd"

@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-APEXTONE::  Sun Dec 13 16:05:01 2020
+APEXTONE::  Sun Dec 13 19:29:08 2020
 
 par -w -intstyle ise -ol high -mt off MainAndBigButtonWrapper_map.ncd
 MainAndBigButtonWrapper.ncd MainAndBigButtonWrapper.pcf 
@@ -47,10 +47,10 @@ Slice Logic Utilization:
 Slice Logic Distribution:
   Number of occupied Slices:                    60 out of   1,430    4%
   Number of MUXCYs used:                        40 out of   2,860    1%
-  Number of LUT Flip Flop pairs used:          186
-    Number with an unused Flip Flop:            83 out of     186   44%
-    Number with an unused LUT:                  17 out of     186    9%
-    Number of fully used LUT-FF pairs:          86 out of     186   46%
+  Number of LUT Flip Flop pairs used:          183
+    Number with an unused Flip Flop:            80 out of     183   43%
+    Number with an unused LUT:                  14 out of     183    7%
+    Number of fully used LUT-FF pairs:          89 out of     183   48%
     Number of slice register sites lost
       to control set restrictions:               0 out of  11,440    0%
 
@@ -99,13 +99,13 @@ Finished initial Timing Analysis.  REAL time: 2 secs
 Starting Router
 
 
-Phase  1  : 817 unrouted;      REAL time: 2 secs 
+Phase  1  : 819 unrouted;      REAL time: 2 secs 
 
-Phase  2  : 727 unrouted;      REAL time: 2 secs 
+Phase  2  : 728 unrouted;      REAL time: 2 secs 
 
-Phase  3  : 205 unrouted;      REAL time: 2 secs 
+Phase  3  : 178 unrouted;      REAL time: 2 secs 
 
-Phase  4  : 206 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
+Phase  4  : 178 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
 
 Updating file: MainAndBigButtonWrapper.ncd with current fully routed design.
 
@@ -141,23 +141,23 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net clk | SETUP       |         N/A|     4.693ns|     N/A|           0
-  _BUFGP                                    | HOLD        |     0.424ns|            |       0|           0
+  Autotimespec constraint for clock net clk | SETUP       |         N/A|     3.358ns|     N/A|           0
+  _BUFGP                                    | HOLD        |     0.416ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net Mai | SETUP       |         N/A|     1.243ns|     N/A|           0
-  n/LoseDisplay/Segment/ClockDivider/tmp    | HOLD        |     0.467ns|            |       0|           0
+  Autotimespec constraint for clock net Mai | SETUP       |         N/A|     1.254ns|     N/A|           0
+  n/LoseDisplay/Segment/ClockDivider/tmp    | HOLD        |     0.441ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net Mai | SETUP       |         N/A|     2.571ns|     N/A|           0
-  n/Segment/Timer/ClockDivider/tmp          | HOLD        |     0.346ns|            |       0|           0
+  Autotimespec constraint for clock net Mai | SETUP       |         N/A|     2.576ns|     N/A|           0
+  n/Segment/Timer/ClockDivider/tmp          | HOLD        |     0.430ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net Mai | SETUP       |         N/A|     1.252ns|     N/A|           0
-  n/Segment/Multiplex/ClockDivider/tmp      | HOLD        |     0.424ns|            |       0|           0
+  Autotimespec constraint for clock net Mai | SETUP       |         N/A|     1.357ns|     N/A|           0
+  n/Segment/Multiplex/ClockDivider/tmp      | HOLD        |     0.467ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net Mai | SETUP       |         N/A|     1.243ns|     N/A|           0
-  n/WinDisplay/Segment/ClockDivider/tmp     | HOLD        |     0.467ns|            |       0|           0
+  Autotimespec constraint for clock net Mai | SETUP       |         N/A|     1.133ns|     N/A|           0
+  n/WinDisplay/Segment/ClockDivider/tmp     | HOLD        |     0.512ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net Mai | SETUP       |         N/A|     1.249ns|     N/A|           0
-  n/StrikeResult/isStrike                   | HOLD        |     0.423ns|            |       0|           0
+  Autotimespec constraint for clock net Mai | SETUP       |         N/A|     1.078ns|     N/A|           0
+  n/StrikeResult/isStrike                   | HOLD        |     0.458ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -176,7 +176,7 @@ All signals are completely routed.
 Total REAL time to PAR completion: 3 secs 
 Total CPU time to PAR completion: 3 secs 
 
-Peak Memory Usage:  4490 MB
+Peak Memory Usage:  4489 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.

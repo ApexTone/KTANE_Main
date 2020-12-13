@@ -1,3 +1,0 @@
-vhdl isim_temp "ClockDivider100K.vhd"
-vhdl isim_temp "SegmentTimerMultiplexer.vhd"
-vhdl isim_temp "segmenttimermultiplexer_tb.vhd"

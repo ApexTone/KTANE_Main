@@ -1,8 +1,8 @@
 #-----------------------------------------------------------
 # PlanAhead v14.7 (64-bit)
 # Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
-# Start of session at: Sat Dec 12 16:28:35 2020
-# Process ID: 7064
+# Start of session at: Sun Dec 13 19:26:10 2020
+# Process ID: 11808
 # Log file: C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/planAhead_run_3/planAhead.log
 # Journal file: C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/planAhead_run_3/planAhead.jou
 #-----------------------------------------------------------
@@ -10,176 +10,81 @@ start_gui
 source {C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/pa.fromHdl.tcl}
 update_compile_order -fileset sim_1
 startgroup
-set_property package_pin P30 [get_ports {segment_common[3]}]
+set_property package_pin P126 [get_ports {segment_common[3]}]
 endgroup
 startgroup
-set_property package_pin P33 [get_ports {segment_common[2]}]
+set_property package_pin P131 [get_ports {segment_common[2]}]
 endgroup
 startgroup
-set_property package_pin P43 [get_ports {segment_common[1]}]
-endgroup
-startgroup
-set_property package_pin P44 [get_ports {segment_common[0]}]
-endgroup
-startgroup
-set_property package_pin P41 [get_ports {segment_out[7]}]
-endgroup
-startgroup
-set_property package_pin P40 [get_ports {segment_out[6]}]
-endgroup
-startgroup
-set_property package_pin P35 [get_ports {segment_out[5]}]
-endgroup
-startgroup
-set_property package_pin P34 [get_ports {segment_out[4]}]
-endgroup
-startgroup
-set_property package_pin P32 [get_ports {segment_out[3]}]
-endgroup
-startgroup
-set_property package_pin P29 [get_ports {segment_out[2]}]
-endgroup
-startgroup
-set_property package_pin P27 [get_ports {segment_out[1]}]
-endgroup
-startgroup
-set_property package_pin P26 [get_ports {segment_out[0]}]
-endgroup
-set_property is_loc_fixed false [get_ports [list  {segment_out[0]}]]
-set_property is_loc_fixed false [get_ports [list  {segment_out[3]}]]
-set_property is_loc_fixed true [get_ports [list  {segment_out[0]}]]
-set_property is_loc_fixed true [get_ports [list  {segment_out[3]}]]
-save_constraints
-startgroup
-set_property package_pin P66 [get_ports {win[4]}]
-endgroup
-startgroup
-set_property package_pin P56 [get_ports {win[3]}]
-endgroup
-startgroup
-set_property package_pin P57 [get_ports {win[2]}]
-endgroup
-startgroup
-set_property package_pin P58 [get_ports {win[1]}]
-endgroup
-startgroup
-set_property package_pin P55 [get_ports {win[4]}]
-endgroup
-startgroup
-set_property package_pin P59 [get_ports {win[0]}]
+set_property package_pin P133 [get_ports {segment_common[1]}]
 endgroup
 save_constraints
 startgroup
-set_property package_pin P67 [get_ports {strikeLED[1]}]
+set_property package_pin P137 [get_ports {segment_common[0]}]
 endgroup
 save_constraints
 startgroup
-set_property package_pin P74 [get_ports {strikeLED[0]}]
-endgroup
-set_property is_loc_fixed false [get_ports [list  {strikeLED[0]}]]
-set_property is_loc_fixed true [get_ports [list  {strikeLED[0]}]]
-save_constraints
-startgroup
-set_property package_pin P112 [get_ports {strike[4]}]
+set_property package_pin P139 [get_ports {strike[3]}]
 endgroup
 startgroup
-set_property package_pin P111 [get_ports {strike[3]}]
+set_property package_pin P141 [get_ports {strike[2]}]
 endgroup
 startgroup
-set_property package_pin P105 [get_ports {strike[2]}]
+set_property package_pin P143 [get_ports {strike[1]}]
 endgroup
 startgroup
-set_property package_pin P104 [get_ports {strike[1]}]
-endgroup
-startgroup
-set_property package_pin P102 [get_ports {strike[0]}]
+set_property package_pin P2 [get_ports {strike[0]}]
 endgroup
 save_constraints
 startgroup
-set_property package_pin P123 [get_ports clk]
+set_property package_pin P15 [get_ports {strikeLED[1]}]
 endgroup
 startgroup
-set_property package_pin P45 [get_ports reset]
-endgroup
-startgroup
-set_property package_pin P46 [get_ports start]
-endgroup
-startgroup
-set_property package_pin P47 [get_ports toggleTimerSerial]
+set_property package_pin P17 [get_ports {strikeLED[0]}]
 endgroup
 save_constraints
 startgroup
-set_property package_pin P5 [get_ports {enableGame[4]}]
+set_property package_pin P99 [get_ports {resetModule[3]}]
 endgroup
 startgroup
-set_property package_pin P7 [get_ports {enableGame[3]}]
+set_property package_pin P100 [get_ports {resetModule[2]}]
 endgroup
 startgroup
-set_property package_pin P9 [get_ports {enableGame[2]}]
+set_property package_pin P101 [get_ports {resetModule[1]}]
 endgroup
 startgroup
-set_property package_pin P11 [get_ports {enableGame[1]}]
-endgroup
-startgroup
-set_property package_pin P14 [get_ports {enableGame[0]}]
-endgroup
-startgroup
-set_property package_pin P6 [get_ports {resetModule[4]}]
-endgroup
-startgroup
-set_property package_pin P8 [get_ports {resetModule[3]}]
-endgroup
-startgroup
-set_property package_pin P10 [get_ports {resetModule[2]}]
-endgroup
-startgroup
-set_property package_pin P12 [get_ports {resetModule[1]}]
-endgroup
-startgroup
-set_property package_pin P15 [get_ports {resetModule[0]}]
-endgroup
-set_property is_loc_fixed false [get_ports [list  {resetModule[0]}]]
-set_property is_loc_fixed true [get_ports [list  {resetModule[0]}]]
-save_constraints
-startgroup
-set_property package_pin P124 [get_ports {sec2_bigButton[3]}]
-endgroup
-startgroup
-set_property package_pin P127 [get_ports {sec2_bigButton[2]}]
-endgroup
-startgroup
-set_property package_pin P132 [get_ports {sec2_bigButton[1]}]
-endgroup
-startgroup
-set_property package_pin P134 [get_ports {sec2_bigButton[0]}]
+set_property package_pin P102 [get_ports {resetModule[0]}]
 endgroup
 save_constraints
 startgroup
-set_property package_pin P126 [get_ports {randomMode[7]}]
+set_property package_pin P116 [get_ports {randomMode[5]}]
 endgroup
 startgroup
-set_property package_pin P131 [get_ports {randomMode[6]}]
+set_property package_pin P117 [get_ports {randomMode[4]}]
 endgroup
 startgroup
-set_property package_pin P133 [get_ports {randomMode[5]}]
+set_property package_pin P118 [get_ports {randomMode[3]}]
 endgroup
 startgroup
-set_property package_pin P137 [get_ports {randomMode[4]}]
+set_property package_pin P119 [get_ports {randomMode[2]}]
 endgroup
 startgroup
-set_property package_pin P139 [get_ports {randomMode[3]}]
+set_property package_pin P120 [get_ports {randomMode[1]}]
 endgroup
 startgroup
-set_property package_pin P141 [get_ports {randomMode[2]}]
-endgroup
-startgroup
-set_property package_pin P143 [get_ports {randomMode[1]}]
-endgroup
-startgroup
-set_property package_pin P2 [get_ports {randomMode[0]}]
+set_property package_pin P121 [get_ports {randomMode[0]}]
 endgroup
 save_constraints
 startgroup
-set_property package_pin P143 [get_ports {randomMode[1]}]
+set_property package_pin P6 [get_ports {enableGame[3]}]
+endgroup
+startgroup
+set_property package_pin P8 [get_ports {enableGame[2]}]
+endgroup
+startgroup
+set_property package_pin P10 [get_ports {enableGame[1]}]
+endgroup
+startgroup
+set_property package_pin P12 [get_ports {enableGame[0]}]
 endgroup
 save_constraints

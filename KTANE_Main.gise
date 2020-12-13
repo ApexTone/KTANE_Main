@@ -22,59 +22,7 @@
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="KTANE_Main.xise"/>
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
-    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="BCDto7Seg.cmd_log"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="BCDto7Seg.lso"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="BCDto7Seg.ngc"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="BCDto7Seg.ngr"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="BCDto7Seg.prj"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="BCDto7Seg.stx"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="BCDto7Seg.syr"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="BCDto7Seg.xst"/>
-    <file xil_pn:fileType="FILE_HTML" xil_pn:name="BCDto7Seg_summary.html"/>
-    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="BCDto7Seg_xst.xrpt"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="DebounceButton.prj"/>
-    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="DebounceButton.stx"/>
-    <file xil_pn:fileType="FILE_XST" xil_pn:name="DebounceButton.xst"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="DebounceButton_isim_beh.exe"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="KTANE_BigButton_isim_beh.exe"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="KTANE_Main.bld"/>
-    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="KTANE_Main.cmd_log"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="KTANE_Main.lso"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="KTANE_Main.ncd" xil_pn:subbranch="Par"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="KTANE_Main.ngc"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="KTANE_Main.ngd"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="KTANE_Main.ngr"/>
-    <file xil_pn:fileType="FILE_PAD_MISC" xil_pn:name="KTANE_Main.pad"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAR_REPORT" xil_pn:name="KTANE_Main.par" xil_pn:subbranch="Par"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PCF" xil_pn:name="KTANE_Main.pcf" xil_pn:subbranch="Map"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="KTANE_Main.prj"/>
-    <file xil_pn:fileType="FILE_TRCE_MISC" xil_pn:name="KTANE_Main.ptwx"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="KTANE_Main.stx"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="KTANE_Main.syr"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_TXT_REPORT" xil_pn:name="KTANE_Main.twr" xil_pn:subbranch="Par"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_XML_REPORT" xil_pn:name="KTANE_Main.twx" xil_pn:subbranch="Par"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_UNROUTES" xil_pn:name="KTANE_Main.unroutes" xil_pn:subbranch="Par"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="KTANE_Main.ut" xil_pn:subbranch="FPGAConfiguration"/>
-    <file xil_pn:fileType="FILE_XPI" xil_pn:name="KTANE_Main.xpi"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="KTANE_Main.xst"/>
-    <file xil_pn:fileType="FILE_HTML" xil_pn:name="KTANE_Main_envsettings.html"/>
     <file xil_pn:fileType="FILE_NCD" xil_pn:name="KTANE_Main_guide.ncd" xil_pn:origination="imported"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="KTANE_Main_map.map" xil_pn:subbranch="Map"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="KTANE_Main_map.mrp" xil_pn:subbranch="Map"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="KTANE_Main_map.ncd" xil_pn:subbranch="Map"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGM" xil_pn:name="KTANE_Main_map.ngm" xil_pn:subbranch="Map"/>
-    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="KTANE_Main_map.xrpt"/>
-    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="KTANE_Main_ngdbuild.xrpt"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_EXCEL_REPORT" xil_pn:name="KTANE_Main_pad.csv" xil_pn:subbranch="Par"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_TXT_REPORT" xil_pn:name="KTANE_Main_pad.txt" xil_pn:subbranch="Par"/>
-    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="KTANE_Main_par.xrpt"/>
-    <file xil_pn:fileType="FILE_HTML" xil_pn:name="KTANE_Main_summary.html"/>
-    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="KTANE_Main_summary.xml"/>
-    <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="KTANE_Main_usage.xml"/>
-    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="KTANE_Main_xst.xrpt"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="LFSRRandom.prj"/>
-    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="LFSRRandom.stx"/>
-    <file xil_pn:fileType="FILE_XST" xil_pn:name="LFSRRandom.xst"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="MainAndBigButtonWrapper.bld"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="MainAndBigButtonWrapper.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="MainAndBigButtonWrapper.lso"/>
@@ -95,7 +43,6 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="MainAndBigButtonWrapper.ut" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:fileType="FILE_XPI" xil_pn:name="MainAndBigButtonWrapper.xpi"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="MainAndBigButtonWrapper.xst"/>
-    <file xil_pn:fileType="FILE_HTML" xil_pn:name="MainAndBigButtonWrapper_envsettings.html"/>
     <file xil_pn:fileType="FILE_NCD" xil_pn:name="MainAndBigButtonWrapper_guide.ncd" xil_pn:origination="imported"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="MainAndBigButtonWrapper_map.map" xil_pn:subbranch="Map"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="MainAndBigButtonWrapper_map.mrp" xil_pn:subbranch="Map"/>
@@ -110,9 +57,6 @@
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="MainAndBigButtonWrapper_summary.xml"/>
     <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="MainAndBigButtonWrapper_usage.xml"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="MainAndBigButtonWrapper_xst.xrpt"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="SegmentTimerMultiplexer.prj"/>
-    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="SegmentTimerMultiplexer.stx"/>
-    <file xil_pn:fileType="FILE_XST" xil_pn:name="SegmentTimerMultiplexer.xst"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/bitgen.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/map.xmsgs"/>
@@ -120,208 +64,54 @@
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/par.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/trce.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="character7seg_tb_isim_beh.exe"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="clockdivider20m_tb_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="clockdivider20m_tb_stx_beh.prj"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="countdowntimer_130_tb_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="countdowntimer_130_tb_stx_beh.prj"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="debouncebutton_tb_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
-    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ktane_bigbutton_tb_beh.prj"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="ktane_bigbutton_tb_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="ktane_bigbutton_tb_isim_beh.wdb"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ktane_bigbutton_tb_stx_beh.prj"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="ktane_main.bgn" xil_pn:subbranch="FPGAConfiguration"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BIT" xil_pn:name="ktane_main.bit" xil_pn:subbranch="FPGAConfiguration"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_DRC" xil_pn:name="ktane_main.drc" xil_pn:subbranch="FPGAConfiguration"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ktane_main_tb_beh.prj"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="ktane_main_tb_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="ktane_main_tb_isim_beh.wdb"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ktane_main_tb_stx_beh.prj"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="lfsr_randomnumbergenerator_tb_beh.prj"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="lfsr_randomnumbergenerator_tb_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="lfsr_randomnumbergenerator_tb_isim_beh.wdb"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="lfsrrandom_tb_isim_beh.exe"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="mainandbigbuttonwrapper.bgn" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BIT" xil_pn:name="mainandbigbuttonwrapper.bit" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_DRC" xil_pn:name="mainandbigbuttonwrapper.drc" xil_pn:subbranch="FPGAConfiguration"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="oneshot_tb_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="planAhead_run_1"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="planAhead_run_2"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="planAhead_run_3"/>
-    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="planAhead_run_4"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="segmentdisplay_tb_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="segmentserialdisplay_tb_beh.prj"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="segmentserialdisplay_tb_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="segmentserialdisplay_tb_isim_beh.wdb"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="segmentserialmux_tb_beh.prj"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="segmentserialmux_tb_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="segmentserialmux_tb_isim_beh.wdb"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="segmenttimermultiplexer_tb_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="segmenttimermultiplexer_tb_stx_beh.prj"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="strikecounter_tb_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="usage_statistics_webtalk.html"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="webtalk.log"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="winchecker_tb_beh.prj"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="winchecker_tb_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="winchecker_tb_isim_beh.wdb"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1607850239" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1607850239">
+    <transform xil_pn:end_ts="1607862522" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1607862522">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1607850239" xil_pn:in_ck="-4191447947890346109" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1607850239">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="BCDto7Seg.vhd"/>
-      <outfile xil_pn:name="CharacterIn7Seg.vhd"/>
-      <outfile xil_pn:name="ClockDivider100K.vhd"/>
-      <outfile xil_pn:name="ClockDivider20M.vhd"/>
-      <outfile xil_pn:name="CountdownTimer_130.vhd"/>
-      <outfile xil_pn:name="DebounceButton.vhd"/>
-      <outfile xil_pn:name="KTANE_BigButton.vhd"/>
-      <outfile xil_pn:name="KTANE_Main.vhd"/>
-      <outfile xil_pn:name="LFSRRandomNumberGenerator.vhd"/>
-      <outfile xil_pn:name="LoseSegmentDisplay.vhd"/>
-      <outfile xil_pn:name="MainAndBigButtonWrapper.vhd"/>
-      <outfile xil_pn:name="Oneshot.vhd"/>
-      <outfile xil_pn:name="SegmentDisplay.vhd"/>
-      <outfile xil_pn:name="SegmentSerialDisplay.vhd"/>
-      <outfile xil_pn:name="SegmentSerialMultiplexer.vhd"/>
-      <outfile xil_pn:name="SegmentTimerMultiplexer.vhd"/>
-      <outfile xil_pn:name="StrikeCounter.vhd"/>
-      <outfile xil_pn:name="WinChecker.vhd"/>
-      <outfile xil_pn:name="WinSegmentDisplay.vhd"/>
-      <outfile xil_pn:name="character7seg_tb.vhd"/>
-      <outfile xil_pn:name="clockdivider20m_tb.vhd"/>
-      <outfile xil_pn:name="countdowntimer_130_tb.vhd"/>
-      <outfile xil_pn:name="debouncebutton_tb.vhd"/>
-      <outfile xil_pn:name="ktane_bigbutton_tb.vhd"/>
-      <outfile xil_pn:name="ktane_main_tb.vhd"/>
-      <outfile xil_pn:name="lfsrrandom_tb.vhd"/>
-      <outfile xil_pn:name="oneshot_tb.vhd"/>
-      <outfile xil_pn:name="segmentdisplay_tb.vhd"/>
-      <outfile xil_pn:name="segmentserialdisplay_tb.vhd"/>
-      <outfile xil_pn:name="segmentserialmux_tb.vhd"/>
-      <outfile xil_pn:name="segmenttimermultiplexer_tb.vhd"/>
-      <outfile xil_pn:name="strikecounter_tb.vhd"/>
-      <outfile xil_pn:name="winchecker_tb.vhd"/>
-    </transform>
-    <transform xil_pn:end_ts="1607850239" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="5077269435534422443" xil_pn:start_ts="1607850239">
+    <transform xil_pn:end_ts="1607862522" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="2119615564937666024" xil_pn:start_ts="1607862522">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1607850239" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="7650226734280965161" xil_pn:start_ts="1607850239">
+    <transform xil_pn:end_ts="1607862522" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="-6516215716425784456" xil_pn:start_ts="1607862522">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1607850239" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-6516215716425784456" xil_pn:start_ts="1607850239">
+    <transform xil_pn:end_ts="1607862522" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1607862522">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1607850239" xil_pn:in_ck="-4191447947890346109" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1607850239">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="BCDto7Seg.vhd"/>
-      <outfile xil_pn:name="CharacterIn7Seg.vhd"/>
-      <outfile xil_pn:name="ClockDivider100K.vhd"/>
-      <outfile xil_pn:name="ClockDivider20M.vhd"/>
-      <outfile xil_pn:name="CountdownTimer_130.vhd"/>
-      <outfile xil_pn:name="DebounceButton.vhd"/>
-      <outfile xil_pn:name="KTANE_BigButton.vhd"/>
-      <outfile xil_pn:name="KTANE_Main.vhd"/>
-      <outfile xil_pn:name="LFSRRandomNumberGenerator.vhd"/>
-      <outfile xil_pn:name="LoseSegmentDisplay.vhd"/>
-      <outfile xil_pn:name="MainAndBigButtonWrapper.vhd"/>
-      <outfile xil_pn:name="Oneshot.vhd"/>
-      <outfile xil_pn:name="SegmentDisplay.vhd"/>
-      <outfile xil_pn:name="SegmentSerialDisplay.vhd"/>
-      <outfile xil_pn:name="SegmentSerialMultiplexer.vhd"/>
-      <outfile xil_pn:name="SegmentTimerMultiplexer.vhd"/>
-      <outfile xil_pn:name="StrikeCounter.vhd"/>
-      <outfile xil_pn:name="WinChecker.vhd"/>
-      <outfile xil_pn:name="WinSegmentDisplay.vhd"/>
-      <outfile xil_pn:name="character7seg_tb.vhd"/>
-      <outfile xil_pn:name="clockdivider20m_tb.vhd"/>
-      <outfile xil_pn:name="countdowntimer_130_tb.vhd"/>
-      <outfile xil_pn:name="debouncebutton_tb.vhd"/>
-      <outfile xil_pn:name="ktane_bigbutton_tb.vhd"/>
-      <outfile xil_pn:name="ktane_main_tb.vhd"/>
-      <outfile xil_pn:name="lfsrrandom_tb.vhd"/>
-      <outfile xil_pn:name="oneshot_tb.vhd"/>
-      <outfile xil_pn:name="segmentdisplay_tb.vhd"/>
-      <outfile xil_pn:name="segmentserialdisplay_tb.vhd"/>
-      <outfile xil_pn:name="segmentserialmux_tb.vhd"/>
-      <outfile xil_pn:name="segmenttimermultiplexer_tb.vhd"/>
-      <outfile xil_pn:name="strikecounter_tb.vhd"/>
-      <outfile xil_pn:name="winchecker_tb.vhd"/>
-    </transform>
-    <transform xil_pn:end_ts="1607850241" xil_pn:in_ck="-4191447947890346109" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="7130982434215296246" xil_pn:start_ts="1607850239">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="fuse.log"/>
-      <outfile xil_pn:name="isim"/>
-      <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="ktane_bigbutton_tb_beh.prj"/>
-      <outfile xil_pn:name="ktane_bigbutton_tb_isim_beh.exe"/>
-      <outfile xil_pn:name="xilinxsim.ini"/>
-    </transform>
-    <transform xil_pn:end_ts="1607850241" xil_pn:in_ck="1794377966482774863" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-152510712462765533" xil_pn:start_ts="1607850241">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="isim.cmd"/>
-      <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="ktane_bigbutton_tb_isim_beh.wdb"/>
-    </transform>
-    <transform xil_pn:end_ts="1607850271" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1607850271">
+    <transform xil_pn:end_ts="1607862522" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="-8037495038487398614" xil_pn:start_ts="1607862522">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1607850271" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="2119615564937666024" xil_pn:start_ts="1607850271">
+    <transform xil_pn:end_ts="1607862522" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="250970745955965653" xil_pn:start_ts="1607862522">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1607850271" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="-6516215716425784456" xil_pn:start_ts="1607850271">
+    <transform xil_pn:end_ts="1607862522" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="-4957074436577135742" xil_pn:start_ts="1607862522">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1607850271" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1607850271">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1607850271" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="-8037495038487398614" xil_pn:start_ts="1607850271">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1607850271" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="250970745955965653" xil_pn:start_ts="1607850271">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1607850271" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="-4957074436577135742" xil_pn:start_ts="1607850271">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1607850281" xil_pn:in_ck="-7603063773867342640" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-828904592363941935" xil_pn:start_ts="1607850271">
+    <transform xil_pn:end_ts="1607862529" xil_pn:in_ck="-7603063773867342640" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-828904592363941935" xil_pn:start_ts="1607862522">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="BCDto7Seg.ngr"/>
-      <outfile xil_pn:name="KTANE_Main.ngr"/>
       <outfile xil_pn:name="MainAndBigButtonWrapper.lso"/>
       <outfile xil_pn:name="MainAndBigButtonWrapper.ngc"/>
       <outfile xil_pn:name="MainAndBigButtonWrapper.ngr"/>
@@ -334,11 +124,11 @@
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
     </transform>
-    <transform xil_pn:end_ts="1607850281" xil_pn:in_ck="5115718456226312211" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="8085381708616010783" xil_pn:start_ts="1607850281">
+    <transform xil_pn:end_ts="1607862529" xil_pn:in_ck="5115718456226312211" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="8085381708616010783" xil_pn:start_ts="1607862529">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1607850288" xil_pn:in_ck="3104006711950351781" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="4241970340050167267" xil_pn:start_ts="1607850281">
+    <transform xil_pn:end_ts="1607862535" xil_pn:in_ck="3811473769250620096" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="4241970340050167267" xil_pn:start_ts="1607862529">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="MainAndBigButtonWrapper.bld"/>
@@ -347,7 +137,7 @@
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1607850300" xil_pn:in_ck="-2338477988096609505" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="6093601622908603872" xil_pn:start_ts="1607850288">
+    <transform xil_pn:end_ts="1607862547" xil_pn:in_ck="1451259349593948705" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="6093601622908603872" xil_pn:start_ts="1607862535">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="MainAndBigButtonWrapper.pcf"/>
@@ -360,7 +150,7 @@
       <outfile xil_pn:name="MainAndBigButtonWrapper_usage.xml"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1607850310" xil_pn:in_ck="8629122836811916785" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="93661965788626211" xil_pn:start_ts="1607850300">
+    <transform xil_pn:end_ts="1607862557" xil_pn:in_ck="-3797052856118862182" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="93661965788626211" xil_pn:start_ts="1607862547">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="MainAndBigButtonWrapper.ncd"/>
@@ -374,7 +164,7 @@
       <outfile xil_pn:name="MainAndBigButtonWrapper_par.xrpt"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1607850317" xil_pn:in_ck="572692273157368836" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="5341574683187206424" xil_pn:start_ts="1607850310">
+    <transform xil_pn:end_ts="1607862564" xil_pn:in_ck="5115718456226304586" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="5341574683187206424" xil_pn:start_ts="1607862557">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -387,7 +177,7 @@
       <outfile xil_pn:name="webtalk.log"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
     </transform>
-    <transform xil_pn:end_ts="1607850310" xil_pn:in_ck="-1107620039107028585" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1607850306">
+    <transform xil_pn:end_ts="1607862557" xil_pn:in_ck="-595086508787805155" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1607862553">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="MainAndBigButtonWrapper.twr"/>

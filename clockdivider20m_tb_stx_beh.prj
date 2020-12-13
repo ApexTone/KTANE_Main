@@ -1,2 +1,0 @@
-vhdl isim_temp "ClockDivider20M.vhd"
-vhdl isim_temp "clockdivider20m_tb.vhd"
