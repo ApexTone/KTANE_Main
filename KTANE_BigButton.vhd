@@ -46,14 +46,23 @@ end KTANE_BigButton;
 architecture Behavioral of KTANE_BigButton is
 	constant startState: std_logic_vector(4 downto 0) := "00001";
 	constant gameState: std_logic_vector(4 downto 0) := "00010";
-	constant strike1State: std_logic_vector(4 downto 0) := "00100";
-	constant strike2State: std_logic_vector(4 downto 0) := "01000";
+	constant assertState: std_logic_vector(4 downto 0) := "00100";
+	constant strikeState: std_logic_vector(4 downto 0) := "01000";
 	constant winState: std_logic_vector(4 downto 0) := "10000";
 	
 	signal currentState: std_logic_vector(4 downto 0) := startState;
 	signal winCondition: std_logic_vector(3 downto 0) := "0000";
 	signal debouncedButton: std_logic := '0';
 	
+	signal trigger, shot: std_logic := '0';
+	
+	component Oneshot is
+		port(
+			clk: in std_logic;
+			enable: in std_logic;
+			shot: out std_logic
+		);
+	end component;
 	component DebounceButton is
 		port(
 			clk: in std_logic;
@@ -69,6 +78,12 @@ begin
 			inp => button,
 			deb_inp => debouncedButton
 		);
+	StrikeShot: Oneshot
+		port map(
+			clk => clk,
+			enable => trigger,
+			shot => shot
+		);
 
 	with modeSel select winCondition <=
 		"1001" when "00",
@@ -82,8 +97,8 @@ begin
 		if (reset = '1') then
 			currentState <= startState;
 			win <= '0';
-			strike <= '0';
 			winLED <= '0';
+			trigger <= '0';
 		else
 			if (rising_edge(clk) and enable='1') then
 				case currentState is
@@ -96,40 +111,42 @@ begin
 						end if;
 						--OFL
 						win <= '0';
-						strike <= '0';
 						winLED <= '0';
+						trigger <= '0';
 					when gameState =>
 						if reset = '1' then
 							currentState <= startState;
 						elsif debouncedButton = '1' then
-							if sec_in = winCondition then --win/strike logic
-								currentState <= winState;
-							else
-								currentState <= strike1State;
-							end if;
+--							if sec_in = winCondition then --win/strike logic
+--								currentState <= winState;
+--							else
+--								currentState <= strike1State;--trigger one shot here
+--							end if;
+							currentState <= assertState;
 						else
 							currentState <= gameState;
 						end if;
 						--OFL
-						win <= '0';
-						strike <= '0';
-						winLED <= '0';
-					when strike1State =>
-						if reset = '1' then
-							currentState <= startState;
-						else
-							currentState <= strike2State;
-						end if;
-						strike <= '1';
+						trigger <= '0';
 						win <= '0';
 						winLED <= '0';
-					when strike2State =>
-						if reset = '1' then
-							currentState <= startState;
+					
+					when assertState =>
+						if debouncedButton = '0' then
+							if sec_in = winCondition then --win/strike logic
+								currentState <= winState;
+							else
+								currentState <= strikeState;--trigger one shot here
+							end if;
 						else
-							currentState <= gameState;
+							currentState <= assertState;
 						end if;
-						strike <= '1';
+						trigger <= '0';
+						win <= '0';
+						winLED <= '0';
+					when strikeState =>
+						currentState <= gameState;
+						trigger <= '1';
 						win <= '0';
 						winLED <= '0';
 					when winState =>
@@ -139,17 +156,19 @@ begin
 							currentState <= winState;
 						end if;
 						win <= '1';
-						strike <= '0';
+						trigger <= '0';
 						winLED <= '1';
 					when others =>
 						currentState <= startState;
-						strike <= '0';
 						win <= '0';
 						winLED <= '0';
+						trigger <= '0';
 				end case;
 			end if;
 		end if;
 	end process;
+	
+	strike <= shot;
 	
 
 

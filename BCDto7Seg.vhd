@@ -52,4 +52,3 @@ begin
 					"11110110" when bcd = "1001" else
 					"00000001";
 end Behavioral;
-

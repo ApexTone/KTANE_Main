@@ -3,13 +3,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
+Total REAL time to Xst completion: 0.00 secs
 Total CPU time to Xst completion: 0.07 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
+Total REAL time to Xst completion: 0.00 secs
 Total CPU time to Xst completion: 0.07 secs
  
 --> Reading design: MainAndBigButtonWrapper.prj
@@ -141,6 +141,9 @@ Parsing architecture <Behavioral> of entity <segmentserialdisplay>.
 Parsing VHDL file "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\SegmentDisplay.vhd" into library work
 Parsing entity <SegmentDisplay>.
 Parsing architecture <Behavioral> of entity <segmentdisplay>.
+Parsing VHDL file "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\Oneshot.vhd" into library work
+Parsing entity <Oneshot>.
+Parsing architecture <Behavioral> of entity <oneshot>.
 Parsing VHDL file "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\LoseSegmentDisplay.vhd" into library work
 Parsing entity <LoseSegmentDisplay>.
 Parsing architecture <Behavioral> of entity <losesegmentdisplay>.
@@ -169,6 +172,8 @@ Elaborating entity <MainAndBigButtonWrapper> (architecture <Behavioral>) from li
 Elaborating entity <KTANE_BigButton> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <DebounceButton> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <Oneshot> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <KTANE_Main> (architecture <Behavioral>) from library <work>.
 
@@ -214,12 +219,12 @@ Synthesizing Unit <KTANE_BigButton>.
     Related source file is "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\KTANE_BigButton.vhd".
     Found 5-bit register for signal <currentState>.
     Found 1-bit register for signal <win>.
-    Found 1-bit register for signal <strike>.
     Found 1-bit register for signal <winLED>.
+    Found 1-bit register for signal <trigger>.
     Found finite state machine <FSM_0> for signal <currentState>.
     -----------------------------------------------------------------------
     | States             | 5                                              |
-    | Transitions        | 16                                             |
+    | Transitions        | 15                                             |
     | Inputs             | 4                                              |
     | Outputs            | 2                                              |
     | Clock              | clk (rising_edge)                              |
@@ -230,7 +235,7 @@ Synthesizing Unit <KTANE_BigButton>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 4-bit comparator equal for signal <winCondition[3]_sec_in[3]_equal_2_o> created at line 105
+    Found 4-bit comparator equal for signal <winCondition[3]_sec_in[3]_equal_4_o> created at line 136
     Summary:
 	inferred   3 D-type flip-flop(s).
 	inferred   1 Comparator(s).
@@ -244,6 +249,14 @@ Synthesizing Unit <DebounceButton>.
     Summary:
 	inferred   2 D-type flip-flop(s).
 Unit <DebounceButton> synthesized.
+
+Synthesizing Unit <Oneshot>.
+    Related source file is "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\Oneshot.vhd".
+    Found 1-bit register for signal <d2>.
+    Found 1-bit register for signal <d1>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <Oneshot> synthesized.
 
 Synthesizing Unit <KTANE_Main>.
     Related source file is "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\KTANE_Main.vhd".
@@ -302,8 +315,8 @@ Synthesizing Unit <CountdownTimer_130>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 4-bit subtractor for signal <GND_11_o_GND_11_o_sub_7_OUT<3:0>> created at line 87.
-    Found 4-bit subtractor for signal <GND_11_o_GND_11_o_sub_14_OUT<3:0>> created at line 96.
+    Found 4-bit subtractor for signal <GND_12_o_GND_12_o_sub_7_OUT<3:0>> created at line 87.
+    Found 4-bit subtractor for signal <GND_12_o_GND_12_o_sub_14_OUT<3:0>> created at line 96.
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred   9 D-type flip-flop(s).
@@ -315,7 +328,7 @@ Synthesizing Unit <ClockDivider20M>.
     Related source file is "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\ClockDivider20M.vhd".
     Found 24-bit register for signal <count>.
     Found 1-bit register for signal <tmp>.
-    Found 24-bit adder for signal <count[23]_GND_12_o_add_1_OUT> created at line 54.
+    Found 24-bit adder for signal <count[23]_GND_13_o_add_1_OUT> created at line 54.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  25 D-type flip-flop(s).
@@ -332,7 +345,7 @@ Unit <BCDto7Seg> synthesized.
 Synthesizing Unit <SegmentTimerMultiplexer>.
     Related source file is "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\SegmentTimerMultiplexer.vhd".
     Found 2-bit register for signal <count>.
-    Found 2-bit adder for signal <count[1]_GND_15_o_add_1_OUT> created at line 70.
+    Found 2-bit adder for signal <count[1]_GND_16_o_add_1_OUT> created at line 70.
     Found 4x4-bit Read Only RAM for signal <common_out>
     Found 8-bit 4-to-1 multiplexer for signal <seg_out> created at line 76.
     Summary:
@@ -346,7 +359,7 @@ Synthesizing Unit <ClockDivider100K>.
     Related source file is "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\ClockDivider100K.vhd".
     Found 16-bit register for signal <count>.
     Found 1-bit register for signal <tmp>.
-    Found 16-bit adder for signal <count[15]_GND_16_o_add_1_OUT> created at line 54.
+    Found 16-bit adder for signal <count[15]_GND_17_o_add_1_OUT> created at line 54.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  17 D-type flip-flop(s).
@@ -369,7 +382,7 @@ Unit <CharacterIn7Seg> synthesized.
 Synthesizing Unit <SegmentSerialMultiplexer>.
     Related source file is "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\SegmentSerialMultiplexer.vhd".
     Found 2-bit register for signal <count>.
-    Found 2-bit adder for signal <count[1]_GND_19_o_add_1_OUT> created at line 70.
+    Found 2-bit adder for signal <count[1]_GND_20_o_add_1_OUT> created at line 70.
     Found 4x4-bit Read Only RAM for signal <common_out>
     Found 8-bit 4-to-1 multiplexer for signal <seg_out> created at line 76.
     Summary:
@@ -382,7 +395,7 @@ Unit <SegmentSerialMultiplexer> synthesized.
 Synthesizing Unit <StrikeCounter>.
     Related source file is "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\StrikeCounter.vhd".
     Found 2-bit register for signal <count>.
-    Found 2-bit adder for signal <count[1]_GND_20_o_add_1_OUT> created at line 55.
+    Found 2-bit adder for signal <count[1]_GND_21_o_add_1_OUT> created at line 56.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred   2 D-type flip-flop(s).
@@ -428,8 +441,8 @@ Macro Statistics
  2-bit adder                                           : 5
  24-bit adder                                          : 1
  4-bit subtractor                                      : 2
-# Registers                                            : 35
- 1-bit register                                        : 18
+# Registers                                            : 37
+ 1-bit register                                        : 20
  16-bit register                                       : 4
  2-bit register                                        : 5
  24-bit register                                       : 1
@@ -559,8 +572,8 @@ Macro Statistics
  2-bit up counter                                      : 1
  24-bit up counter                                     : 1
  4-bit down counter                                    : 1
-# Registers                                            : 60
- Flip-Flops                                            : 60
+# Registers                                            : 62
+ Flip-Flops                                            : 62
 # Comparators                                          : 2
  2-bit comparator lessequal                            : 1
  4-bit comparator equal                                : 1
@@ -578,17 +591,17 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-INFO:Xst:2261 - The FF/Latch <winLED> in Unit <KTANE_BigButton> is equivalent to the following FF/Latch, which will be removed : <win> 
+INFO:Xst:2261 - The FF/Latch <win> in Unit <KTANE_BigButton> is equivalent to the following FF/Latch, which will be removed : <winLED> 
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <BigButton/FSM_0> on signal <currentState[1:3]> with sequential encoding.
+Optimizing FSM <BigButton/FSM_0> on signal <currentState[1:3]> with gray encoding.
 -------------------
  State | Encoding
 -------------------
  00001 | 000
  00010 | 001
- 00100 | 010
- 10000 | 011
- 01000 | 100
+ 00100 | 011
+ 01000 | 010
+ 10000 | 110
 -------------------
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <Main/FSM_1> on signal <currentState[1:4]> with user encoding.
@@ -650,8 +663,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 103
- Flip-Flops                                            : 103
+# Registers                                            : 105
+ Flip-Flops                                            : 105
 
 =========================================================================
 
@@ -674,21 +687,21 @@ Top Level Output File Name         : MainAndBigButtonWrapper.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 272
+# BELS                             : 271
 #      GND                         : 1
 #      INV                         : 9
 #      LUT1                        : 38
 #      LUT2                        : 26
 #      LUT3                        : 14
 #      LUT4                        : 13
-#      LUT5                        : 51
+#      LUT5                        : 50
 #      LUT6                        : 36
 #      MUXCY                       : 38
 #      MUXF7                       : 5
 #      VCC                         : 1
 #      XORCY                       : 40
-# FlipFlops/Latches                : 103
-#      FD                          : 8
+# FlipFlops/Latches                : 105
+#      FD                          : 10
 #      FDC                         : 62
 #      FDC_1                       : 2
 #      FDCE                        : 12
@@ -710,15 +723,15 @@ Selected Device : 6slx9tqg144-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             103  out of  11440     0%  
- Number of Slice LUTs:                  187  out of   5720     3%  
-    Number used as Logic:               187  out of   5720     3%  
+ Number of Slice Registers:             105  out of  11440     0%  
+ Number of Slice LUTs:                  186  out of   5720     3%  
+    Number used as Logic:               186  out of   5720     3%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    199
-   Number with an unused Flip Flop:      96  out of    199    48%  
-   Number with an unused LUT:            12  out of    199     6%  
-   Number of fully used LUT-FF pairs:    91  out of    199    45%  
+ Number of LUT Flip Flop pairs used:    200
+   Number with an unused Flip Flop:      95  out of    200    47%  
+   Number with an unused LUT:            14  out of    200     7%  
+   Number of fully used LUT-FF pairs:    91  out of    200    45%  
    Number of unique control sets:        14
 
 IO Utilization: 
@@ -749,7 +762,7 @@ Clock Information:
 ------------------------------------------------------------+---------------------------------------+-------+
 Clock Signal                                                | Clock buffer(FF name)                 | Load  |
 ------------------------------------------------------------+---------------------------------------+-------+
-clk                                                         | BUFGP                                 | 84    |
+clk                                                         | BUFGP                                 | 86    |
 Main/Segment/Multiplex/ClockDivider/tmp                     | NONE(Main/Segment/Multiplex/count_1)  | 4     |
 Main/WinDisplay/Segment/ClockDivider/tmp                    | NONE(Main/WinDisplay/Segment/count_0) | 2     |
 Main/LoseDisplay/Segment/ClockDivider/tmp                   | NONE(Main/LoseDisplay/Segment/count_0)| 2     |
@@ -781,7 +794,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 3.934ns (frequency: 254.217MHz)
-  Total number of paths / destination ports: 1686 / 169
+  Total number of paths / destination ports: 1688 / 171
 -------------------------------------------------------------------------
 Delay:               3.934ns (Levels of Logic = 3)
   Source:            Main/WinDisplay/Segment/ClockDivider/count_1 (FF)
@@ -794,8 +807,8 @@ Delay:               3.934ns (Levels of Logic = 3)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDC:C->Q              2   0.447   0.981  Main/WinDisplay/Segment/ClockDivider/count_1 (Main/WinDisplay/Segment/ClockDivider/count_1)
-     LUT6:I0->O            4   0.203   0.788  Main/WinDisplay/Segment/ClockDivider/PWR_15_o_count[15]_equal_1_o<15>2 (Main/LoseDisplay/Segment/ClockDivider/PWR_15_o_count[15]_equal_1_o<15>1)
-     LUT6:I4->O           16   0.203   1.005  Main/WinDisplay/Segment/ClockDivider/PWR_15_o_count[15]_equal_1_o<15>3 (Main/WinDisplay/Segment/ClockDivider/PWR_15_o_count[15]_equal_1_o)
+     LUT6:I0->O            4   0.203   0.788  Main/WinDisplay/Segment/ClockDivider/PWR_16_o_count[15]_equal_1_o<15>2 (Main/LoseDisplay/Segment/ClockDivider/PWR_16_o_count[15]_equal_1_o<15>1)
+     LUT6:I4->O           16   0.203   1.005  Main/WinDisplay/Segment/ClockDivider/PWR_16_o_count[15]_equal_1_o<15>3 (Main/WinDisplay/Segment/ClockDivider/PWR_16_o_count[15]_equal_1_o)
      LUT2:I1->O            1   0.205   0.000  Main/WinDisplay/Segment/ClockDivider/Mcount_count_eqn_151 (Main/WinDisplay/Segment/ClockDivider/Mcount_count_eqn_15)
      FDC:D                     0.102          Main/WinDisplay/Segment/ClockDivider/count_15
     ----------------------------------------
@@ -840,7 +853,7 @@ Delay:               2.190ns (Levels of Logic = 1)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDC:C->Q             10   0.447   0.856  Main/WinDisplay/Segment/count_0 (Main/WinDisplay/Segment/count_0)
-     INV:I->O              1   0.206   0.579  Main/WinDisplay/Segment/Mmux_count[1]_GND_19_o_mux_2_OUT11_INV_0 (Main/WinDisplay/Segment/count[1]_GND_19_o_mux_2_OUT<0>)
+     INV:I->O              1   0.206   0.579  Main/WinDisplay/Segment/Mmux_count[1]_GND_20_o_mux_2_OUT11_INV_0 (Main/WinDisplay/Segment/count[1]_GND_20_o_mux_2_OUT<0>)
      FDC:D                     0.102          Main/WinDisplay/Segment/count_0
     ----------------------------------------
     Total                      2.190ns (0.755ns logic, 1.435ns route)
@@ -862,7 +875,7 @@ Delay:               2.135ns (Levels of Logic = 1)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDC:C->Q              8   0.447   0.802  Main/LoseDisplay/Segment/count_0 (Main/LoseDisplay/Segment/count_0)
-     INV:I->O              1   0.206   0.579  Main/LoseDisplay/Segment/Mmux_count[1]_GND_19_o_mux_2_OUT11_INV_0 (Main/LoseDisplay/Segment/count[1]_GND_19_o_mux_2_OUT<0>)
+     INV:I->O              1   0.206   0.579  Main/LoseDisplay/Segment/Mmux_count[1]_GND_20_o_mux_2_OUT11_INV_0 (Main/LoseDisplay/Segment/count[1]_GND_20_o_mux_2_OUT<0>)
      FDC:D                     0.102          Main/LoseDisplay/Segment/count_0
     ----------------------------------------
     Total                      2.135ns (0.755ns logic, 1.380ns route)
@@ -884,7 +897,7 @@ Delay:               2.016ns (Levels of Logic = 1)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDC:C->Q              4   0.447   0.683  Main/StrikeResult/count_0 (Main/StrikeResult/count_0)
-     INV:I->O              1   0.206   0.579  Main/StrikeResult/Mmux_count[1]_GND_20_o_mux_2_OUT11_INV_0 (Main/StrikeResult/count[1]_GND_20_o_mux_2_OUT<0>)
+     INV:I->O              1   0.206   0.579  Main/StrikeResult/Mmux_count[1]_GND_21_o_mux_2_OUT11_INV_0 (Main/StrikeResult/count[1]_GND_21_o_mux_2_OUT<0>)
      FDC:D                     0.102          Main/StrikeResult/count_0
     ----------------------------------------
     Total                      2.016ns (0.755ns logic, 1.261ns route)
@@ -892,26 +905,26 @@ Delay:               2.016ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'Main/Segment/Timer/ClockDivider/tmp'
-  Clock period: 2.988ns (frequency: 334.706MHz)
+  Clock period: 3.091ns (frequency: 323.546MHz)
   Total number of paths / destination ports: 68 / 12
 -------------------------------------------------------------------------
-Delay:               2.988ns (Levels of Logic = 2)
-  Source:            Main/Segment/Timer/sec2_3 (FF)
-  Destination:       Main/Segment/Timer/tc (FF)
+Delay:               3.091ns (Levels of Logic = 2)
+  Source:            Main/Segment/Timer/sec2_2 (FF)
+  Destination:       Main/Segment/Timer/sec2_3 (FF)
   Source Clock:      Main/Segment/Timer/ClockDivider/tmp falling
   Destination Clock: Main/Segment/Timer/ClockDivider/tmp falling
 
-  Data Path: Main/Segment/Timer/sec2_3 to Main/Segment/Timer/tc
+  Data Path: Main/Segment/Timer/sec2_2 to Main/Segment/Timer/sec2_3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             16   0.447   1.349  Main/Segment/Timer/sec2_3 (Main/Segment/Timer/sec2_3)
-     LUT5:I0->O            1   0.203   0.684  Main/Segment/Timer/tc_rstpot_SW1 (N42)
-     LUT6:I4->O            1   0.203   0.000  Main/Segment/Timer/tc_rstpot (Main/Segment/Timer/tc_rstpot)
-     FDC_1:D                   0.102          Main/Segment/Timer/tc
+     FDC:C->Q             15   0.447   1.210  Main/Segment/Timer/sec2_2 (Main/Segment/Timer/sec2_2)
+     LUT3:I0->O            1   0.205   0.924  Main/Segment/Timer/Mcount_sec2_xor<3>1_SW0 (N14)
+     LUT6:I1->O            1   0.203   0.000  Main/Segment/Timer/Mcount_sec2_xor<3>1 (Main/Segment/Timer/Mcount_sec23)
+     FDC:D                     0.102          Main/Segment/Timer/sec2_3
     ----------------------------------------
-    Total                      2.988ns (0.955ns logic, 2.033ns route)
-                                       (32.0% logic, 68.0% route)
+    Total                      3.091ns (0.957ns logic, 2.134ns route)
+                                       (31.0% logic, 69.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
@@ -927,7 +940,7 @@ Offset:              3.518ns (Levels of Logic = 3)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O             2   1.222   0.961  win_0_IBUF (win_0_IBUF)
-     LUT5:I0->O            1   0.203   0.827  Main/currentState_FSM_FFd2-In_SW1 (N44)
+     LUT5:I0->O            1   0.203   0.827  Main/currentState_FSM_FFd2-In_SW1 (N48)
      LUT6:I2->O            1   0.203   0.000  Main/currentState_FSM_FFd2-In (Main/currentState_FSM_FFd2-In)
      FDC:D                     0.102          Main/currentState_FSM_FFd2
     ----------------------------------------
@@ -1001,7 +1014,7 @@ Clock to Setup on destination clock Main/Segment/Timer/ClockDivider/tmp
                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------------------------+---------+---------+---------+---------+
-Main/Segment/Timer/ClockDivider/tmp|         |         |    2.988|         |
+Main/Segment/Timer/ClockDivider/tmp|         |         |    3.091|         |
 clk                                |         |         |    3.631|         |
 -----------------------------------+---------+---------+---------+---------+
 
@@ -1030,21 +1043,21 @@ Source Clock                             |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fal
 -----------------------------------------+---------+---------+---------+---------+
 Main/LoseDisplay/Segment/ClockDivider/tmp|    2.726|         |         |         |
 Main/Segment/Multiplex/ClockDivider/tmp  |    3.700|         |         |         |
-Main/Segment/Timer/ClockDivider/tmp      |         |    3.936|         |         |
+Main/Segment/Timer/ClockDivider/tmp      |         |    3.913|         |         |
 Main/StrikeResult/isStrike               |    3.645|         |         |         |
-Main/WinDisplay/Segment/ClockDivider/tmp |    2.726|         |         |         |
+Main/WinDisplay/Segment/ClockDivider/tmp |    2.825|         |         |         |
 clk                                      |    3.934|         |         |         |
 -----------------------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 4.78 secs
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 6.44 secs
  
 --> 
 
-Total memory usage is 4512412 kilobytes
+Total memory usage is 4512156 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    2 (   0 filtered)

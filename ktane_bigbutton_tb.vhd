@@ -138,9 +138,8 @@ BEGIN
 		button <= '0';
 		wait for 50 ns;
 		button <= '1';
-		wait for 200 ns;
+		wait for 600 ns;
 		button <= '0';
-		wait for 50 ns;
 		
 		
 

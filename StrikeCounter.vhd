@@ -41,6 +41,7 @@ end StrikeCounter;
 architecture Behavioral of StrikeCounter is
 	signal isStrike: std_logic;
 	signal count: std_logic_vector(1 downto 0) := "00";
+	
 begin
 	isStrike <= strike(0) or strike(1) or strike(2) or strike(3) or strike(4);
 	

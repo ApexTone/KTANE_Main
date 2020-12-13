@@ -92,8 +92,13 @@ BEGIN
 			strike <= "00000";
 			wait for 50 ns;
 			strike <= "00100";
+			wait for 200 ns;
+			strike <= "00000";
+			wait for 50 ns;
+			strike <= "00100";
 			wait for 50 ns;
 			strike <= "00000";
+			
 
       wait;
    end process;

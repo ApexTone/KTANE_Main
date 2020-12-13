@@ -16,3 +16,10 @@ map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -reg
 par -w -intstyle ise -ol high -mt off MainAndBigButtonWrapper_map.ncd MainAndBigButtonWrapper.ncd MainAndBigButtonWrapper.pcf 
 trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml MainAndBigButtonWrapper.twx MainAndBigButtonWrapper.ncd -o MainAndBigButtonWrapper.twr MainAndBigButtonWrapper.pcf -ucf MainAndBigButtonWrapper.ucf 
 bitgen -intstyle ise -f MainAndBigButtonWrapper.ut MainAndBigButtonWrapper.ncd 
+xst -intstyle ise -ifn "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/MainAndBigButtonWrapper.xst" -ofn "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/MainAndBigButtonWrapper.syr" 
+xst -intstyle ise -ifn "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/MainAndBigButtonWrapper.xst" -ofn "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/MainAndBigButtonWrapper.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc MainAndBigButtonWrapper.ucf -p xc6slx9-tqg144-3 "MainAndBigButtonWrapper.ngc" MainAndBigButtonWrapper.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o MainAndBigButtonWrapper_map.ncd MainAndBigButtonWrapper.ngd MainAndBigButtonWrapper.pcf 
+par -w -intstyle ise -ol high -mt off MainAndBigButtonWrapper_map.ncd MainAndBigButtonWrapper.ncd MainAndBigButtonWrapper.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml MainAndBigButtonWrapper.twx MainAndBigButtonWrapper.ncd -o MainAndBigButtonWrapper.twr MainAndBigButtonWrapper.pcf -ucf MainAndBigButtonWrapper.ucf 
+bitgen -intstyle ise -f MainAndBigButtonWrapper.ut MainAndBigButtonWrapper.ncd 

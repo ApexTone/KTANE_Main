@@ -137,7 +137,7 @@ LAB5:    goto LAB4;
 LAB7:    goto LAB5;
 
 LAB8:    xsi_set_current_line(106, ng0);
-    t2 = (t0 + 7632);
+    t2 = (t0 + 7628);
     t6 = (t0 + 4288);
     t7 = (t6 + 56U);
     t8 = *((char **)t7);
@@ -154,7 +154,7 @@ LAB8:    xsi_set_current_line(106, ng0);
     *((unsigned char *)t8) = (unsigned char)2;
     xsi_driver_first_trans_fast(t2);
     xsi_set_current_line(108, ng0);
-    t2 = (t0 + 7634);
+    t2 = (t0 + 7630);
     t6 = (t0 + 4416);
     t7 = (t6 + 56U);
     t8 = *((char **)t7);
@@ -239,7 +239,7 @@ LAB20:    xsi_set_current_line(116, ng0);
     *((unsigned char *)t8) = (unsigned char)2;
     xsi_driver_first_trans_fast(t2);
     xsi_set_current_line(117, ng0);
-    t2 = (t0 + 7638);
+    t2 = (t0 + 7634);
     t6 = (t0 + 4416);
     t7 = (t6 + 56U);
     t8 = *((char **)t7);
@@ -300,7 +300,7 @@ LAB29:    goto LAB28;
 LAB31:    goto LAB29;
 
 LAB32:    xsi_set_current_line(124, ng0);
-    t2 = (t0 + 7642);
+    t2 = (t0 + 7638);
     t6 = (t0 + 4288);
     t7 = (t6 + 56U);
     t8 = *((char **)t7);
@@ -461,7 +461,7 @@ LAB56:    xsi_set_current_line(140, ng0);
     *((unsigned char *)t8) = (unsigned char)3;
     xsi_driver_first_trans_fast(t2);
     xsi_set_current_line(141, ng0);
-    t3 = (200 * 1000LL);
+    t3 = (600 * 1000LL);
     t2 = (t0 + 3648);
     xsi_process_wait(t2, t3);
 
@@ -480,10 +480,7 @@ LAB60:    xsi_set_current_line(142, ng0);
     t8 = *((char **)t7);
     *((unsigned char *)t8) = (unsigned char)2;
     xsi_driver_first_trans_fast(t2);
-    xsi_set_current_line(143, ng0);
-    t3 = (50 * 1000LL);
-    t2 = (t0 + 3648);
-    xsi_process_wait(t2, t3);
+    xsi_set_current_line(146, ng0);
 
 LAB66:    *((char **)t1) = &&LAB67;
     goto LAB1;
@@ -492,20 +489,11 @@ LAB61:    goto LAB60;
 
 LAB63:    goto LAB61;
 
-LAB64:    xsi_set_current_line(147, ng0);
-
-LAB70:    *((char **)t1) = &&LAB71;
-    goto LAB1;
+LAB64:    goto LAB2;
 
 LAB65:    goto LAB64;
 
 LAB67:    goto LAB65;
-
-LAB68:    goto LAB2;
-
-LAB69:    goto LAB68;
-
-LAB71:    goto LAB69;
 
 }
 
