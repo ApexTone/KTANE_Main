@@ -1,0 +1,49 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Sun Dec 13 14:43:35 2020
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "win<1>" LOCATE = SITE "P111" LEVEL 1;
+COMP "win<2>" LOCATE = SITE "P105" LEVEL 1;
+COMP "segment_out<0>" LOCATE = SITE "P26" LEVEL 1;
+COMP "win<3>" LOCATE = SITE "P104" LEVEL 1;
+COMP "segment_out<1>" LOCATE = SITE "P27" LEVEL 1;
+COMP "segment_out<2>" LOCATE = SITE "P29" LEVEL 1;
+COMP "winLED" LOCATE = SITE "P95" LEVEL 1;
+COMP "segment_out<3>" LOCATE = SITE "P32" LEVEL 1;
+COMP "segment_common<0>" LOCATE = SITE "P30" LEVEL 1;
+COMP "segment_out<4>" LOCATE = SITE "P34" LEVEL 1;
+COMP "clk" LOCATE = SITE "P123" LEVEL 1;
+COMP "segment_common<1>" LOCATE = SITE "P33" LEVEL 1;
+COMP "segment_out<5>" LOCATE = SITE "P35" LEVEL 1;
+COMP "segment_common<2>" LOCATE = SITE "P43" LEVEL 1;
+COMP "segment_out<6>" LOCATE = SITE "P40" LEVEL 1;
+COMP "segment_common<3>" LOCATE = SITE "P44" LEVEL 1;
+COMP "segment_out<7>" LOCATE = SITE "P41" LEVEL 1;
+COMP "enableGame<0>" LOCATE = SITE "P11" LEVEL 1;
+COMP "enableGame<1>" LOCATE = SITE "P9" LEVEL 1;
+COMP "enableGame<2>" LOCATE = SITE "P7" LEVEL 1;
+COMP "enableGame<3>" LOCATE = SITE "P5" LEVEL 1;
+COMP "randomMode<0>" LOCATE = SITE "P17" LEVEL 1;
+COMP "randomMode<1>" LOCATE = SITE "P15" LEVEL 1;
+COMP "randomMode<2>" LOCATE = SITE "P12" LEVEL 1;
+COMP "randomMode<3>" LOCATE = SITE "P10" LEVEL 1;
+COMP "randomMode<4>" LOCATE = SITE "P8" LEVEL 1;
+COMP "randomMode<5>" LOCATE = SITE "P6" LEVEL 1;
+COMP "button" LOCATE = SITE "P48" LEVEL 1;
+COMP "start" LOCATE = SITE "P46" LEVEL 1;
+COMP "resetModule<0>" LOCATE = SITE "P134" LEVEL 1;
+COMP "resetModule<1>" LOCATE = SITE "P132" LEVEL 1;
+COMP "resetModule<2>" LOCATE = SITE "P127" LEVEL 1;
+COMP "resetModule<3>" LOCATE = SITE "P124" LEVEL 1;
+COMP "reset" LOCATE = SITE "P45" LEVEL 1;
+COMP "toggleTimerSerial" LOCATE = SITE "P47" LEVEL 1;
+COMP "strike<0>" LOCATE = SITE "P102" LEVEL 1;
+COMP "strike<1>" LOCATE = SITE "P101" LEVEL 1;
+COMP "strike<2>" LOCATE = SITE "P100" LEVEL 1;
+COMP "strikeLED<0>" LOCATE = SITE "P67" LEVEL 1;
+COMP "strike<3>" LOCATE = SITE "P99" LEVEL 1;
+COMP "strikeLED<1>" LOCATE = SITE "P74" LEVEL 1;
+COMP "win<0>" LOCATE = SITE "P112" LEVEL 1;
+SCHEMATIC END;
+

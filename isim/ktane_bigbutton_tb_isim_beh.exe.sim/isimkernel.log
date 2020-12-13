@@ -1,0 +1,28 @@
+Command line:
+   ktane_bigbutton_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  10915
+
+Sat Dec 12 20:54:03 2020
+
+
+ Elaboration Time: 0.046875 sec
+
+ Current Memory Usage: 5164.9 Meg
+
+ Total Signals          : 27
+ Total Nets             : 26
+ Total Signal Drivers   : 14
+ Total Blocks           : 4
+ Total Primitive Blocks : 2
+ Total Processes        : 6
+ Total Traceable Variables  : 14
+ Total Scalar Nets and Variables : 412
+
+ Total Simulation Time: 0.0625 sec
+
+ Current Memory Usage: 5164.9 Meg
+
+Sat Dec 12 20:54:21 2020
+

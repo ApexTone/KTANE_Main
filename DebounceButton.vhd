@@ -45,9 +45,8 @@ begin
 		if rising_edge(clk) then --3 clock pulses debounce: MAY NEED LESS DELAY
 			d1 <= inp;
 			d2 <= d1;
-			d3 <= d2;
 		end if;
 	end process;
-	deb_inp <= d1 and d2 and d3;
+	deb_inp <= d1 and d2;
 end Behavioral;
 
