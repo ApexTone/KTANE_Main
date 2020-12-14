@@ -1,7 +1,8 @@
+NET "clk" LOC = P123;
 
+#GPIO Test
 
 NET "button" LOC = P11;
-NET "clk" LOC = P123;
 NET "reset" LOC = P7;
 NET "start" LOC = P5;
 NET "toggleTimerSerial" LOC = P9;
@@ -21,10 +22,12 @@ NET "segment_out[0]" LOC = P1;
 
 # PlanAhead Generated physical constraints 
 
-NET "segment_common[3]" LOC = P126;
-NET "segment_common[2]" LOC = P131;
-NET "segment_common[1]" LOC = P133;
-NET "segment_common[0]" LOC = P137;
+NET "segment_common[3]" LOC = P137;
+NET "segment_common[2]" LOC = P133;
+NET "segment_common[1]" LOC = P131;
+NET "segment_common[0]" LOC = P126;
+
+
 NET "strike[3]" LOC = P139;
 NET "strike[2]" LOC = P141;
 NET "strike[1]" LOC = P143;
@@ -45,3 +48,55 @@ NET "enableGame[3]" LOC = P6;
 NET "enableGame[2]" LOC = P8;
 NET "enableGame[1]" LOC = P10;
 NET "enableGame[0]" LOC = P12;
+
+
+#FPGA Board Test
+#
+#NET "segment_common[3]" LOC = P44;
+#NET "segment_common[2]" LOC = P43;
+#NET "segment_common[1]" LOC = P33;
+#NET "segment_common[0]" LOC = P30;
+#NET "segment_out[7]" LOC = P41;
+#NET "segment_out[6]" LOC = P40;
+#NET "segment_out[5]" LOC = P35;
+#NET "segment_out[4]" LOC = P34;
+#NET "segment_out[3]" LOC = P32;
+#NET "segment_out[2]" LOC = P29;
+#NET "segment_out[1]" LOC = P27;
+#NET "segment_out[0]" LOC = P26;
+#
+#NET "button" LOC = P45;
+#NET "reset" LOC = P46;
+#NET "start" LOC = P47;
+#NET "toggleTimerSerial" LOC = P48;
+#
+#NET "winLED" LOC = P95;
+#
+#NET "win[3]" LOC = P59;
+#NET "win[2]" LOC = P61;
+#NET "win[1]" LOC = P62;
+#NET "win[0]" LOC = P66;
+#
+#NET "strike[3]" LOC = P139;
+#NET "strike[2]" LOC = P141;
+#NET "strike[1]" LOC = P143;
+#NET "strike[0]" LOC = P2;
+#
+#NET "strikeLED[1]" LOC = P67;
+#NET "strikeLED[0]" LOC = P74;
+#
+## this net list is okay for board test (can't be monitored)
+#NET "resetModule[3]" LOC = P99;
+#NET "resetModule[2]" LOC = P100;
+#NET "resetModule[1]" LOC = P101;
+#NET "resetModule[0]" LOC = P102;
+#NET "randomMode[5]" LOC = P116;
+#NET "randomMode[4]" LOC = P117;
+#NET "randomMode[3]" LOC = P118;
+#NET "randomMode[2]" LOC = P119;
+#NET "randomMode[1]" LOC = P120;
+#NET "randomMode[0]" LOC = P121;
+#NET "enableGame[3]" LOC = P6;
+#NET "enableGame[2]" LOC = P8;
+#NET "enableGame[1]" LOC = P10;
+#NET "enableGame[0]" LOC = P12;
