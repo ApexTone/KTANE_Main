@@ -50,12 +50,16 @@ entity KTANE_Main is
 end KTANE_Main;
 
 architecture Behavioral of KTANE_Main is
-	constant startState: std_logic_vector(3 downto 0) := "0001";
-	constant gameState: std_logic_vector(3 downto 0) := "0010";
-	constant winState: std_logic_vector(3 downto 0) := "0100";
-	constant lossState: std_logic_vector(3 downto 0) := "1000";
+	constant startState: std_logic_vector(4 downto 0) := "00001";
+	constant gameState: std_logic_vector(4 downto 0) := "00010";
+	constant winState: std_logic_vector(4 downto 0) := "00100";
+	constant lossState: std_logic_vector(4 downto 0) := "01000";
+	constant resetState: std_logic_vector(4 downto 0) := "10000";
+	signal currentState: std_logic_vector(4 downto 0) := startState;
+	
+	signal lossReset: std_logic := '0';
 
-	signal currentState: std_logic_vector(3 downto 0);
+	
 	signal startRandom: std_logic := '0';
 	signal debouncedReset,debouncedStart,debouncedToggle: std_logic;
 	signal timeout, isWin, isLoss: std_logic := '0';
@@ -63,6 +67,9 @@ architecture Behavioral of KTANE_Main is
 	signal strikeCount: std_logic_vector(1 downto 0);--if >= "11" end game
 	signal serialSegment,timerSegment,selBuffer,winSegment,loseSegment: std_logic_vector(7 downto 0) := (others=>'0');
 	signal timerCommon, serialCommon,winCommon,loseCommon: std_logic_vector(3 downto 0) := (others=>'1');
+	signal ce: std_logic;
+	
+	signal tmp: std_logic;
 
 	component DebounceButton is
 		port(
@@ -73,6 +80,7 @@ architecture Behavioral of KTANE_Main is
 	end component;
 	component SegmentDisplay is
 		port(
+			ce: in std_logic;
 			clk,reset: in std_logic;
 			seg_out: out std_logic_vector(7 downto 0);
 			common_out: out std_logic_vector(3 downto 0);
@@ -142,10 +150,12 @@ begin
 			deb_inp => debouncedToggle
 		);
 		
+	tmp <= debouncedReset or lossReset;
 	Segment: SegmentDisplay
 		port map(
+			ce => ce,
 			clk => clk,
-			reset => debouncedReset,
+			reset => tmp,
 			seg_out => timerSegment,
 			common_out => timerCommon,
 			sec2_bcd => sec2_bigButton,
@@ -176,7 +186,7 @@ begin
 		port map(
 			clk => clk,
 			enable => startRandom,
-			reset => debouncedReset,
+			reset => '0',
 			Q => selBuffer
 		);
 	randomMode <= selBuffer;
@@ -211,20 +221,24 @@ begin
 					--NSL
 						if(debouncedStart = '1') then
 							currentState <= gameState;
+						elsif (debouncedReset = '1') then
+							currentState <= resetState;
 						else
 							currentState <= startState;
 						end if;
 					--OFL
-						resetModule <= (others => '1');
+						resetModule <= (others => '0');
 						enableGame <= (others => '0');
 						startRandom <= '1';
 						segment_out <= "11111111";
 						segment_common <= "0000";
 						buzzer <= '0';
+						lossReset <= '0';
+						ce <= '0';
 					when gameState =>
 					--NSL
 						if (debouncedReset = '1') then
-							currentState <= startState;
+							currentState <= resetState;
 						elsif (isLoss = '1') then
 							currentState <= lossState;
 						elsif (isWin = '1') then
@@ -244,10 +258,12 @@ begin
 							segment_out <= serialSegment;
 							segment_common <= serialCommon;
 						end if;
+						lossReset <= '0';
+						ce <= '1';
 					when winState =>
 					--NSL
 						if (debouncedReset = '1') then
-							currentState <= startState;
+							currentState <= resetState;
 						else
 							currentState <= winState;
 						end if;
@@ -258,10 +274,12 @@ begin
 						segment_out <= winSegment;
 						segment_common <= winCommon;
 						buzzer <= '0';
+						lossReset <= '0';
+						ce <= '0';
 					when lossState =>
 					--NSL
 						if (debouncedReset = '1') then
-							currentState <= startState;
+							currentState <= resetState;
 						else
 							currentState <= lossState;
 						end if;
@@ -272,6 +290,20 @@ begin
 						startRandom <= '0';
 						segment_out <= loseSegment;
 						segment_common <= loseCommon;
+						lossReset <= '1';
+						ce <= '0';
+					when resetState =>
+					--NSL
+						currentState <= startState;
+					--OFL
+						resetModule <= (others => '1');
+						enableGame <= (others => '0');
+						startRandom <= '1';
+						segment_out <= "11111111";
+						segment_common <= "0000";
+						buzzer <= '0';
+						lossReset <= '0';
+						ce <= '0';
 					when others =>
 						currentState <= startState;
 						resetModule <= (others => '0');
@@ -280,15 +312,12 @@ begin
 						segment_out <= "00000000";
 						segment_common <= "1111";
 						buzzer <= '0';
+						lossReset <= '0';
+						ce <= '0';
 				end case;
 			end if;
 		end if;
 	end process;
-	
-	
---	--should this be in FSM?: for now, yes
---	resetModule <= (others => '1') when debouncedReset = '1' else
---						(others => '0');	
 
 	--controlling strike LEDs
 	with strikeCount select strikeLED <=

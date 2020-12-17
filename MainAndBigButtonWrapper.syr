@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Reading design: MainAndBigButtonWrapper.prj
 
@@ -120,9 +120,6 @@ Parsing architecture <Behavioral> of entity <segmentserialmultiplexer>.
 Parsing VHDL file "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\CountdownTimer_130.vhd" into library work
 Parsing entity <CountdownTimer_130>.
 Parsing architecture <Behavioral> of entity <countdowntimer_130>.
-Parsing VHDL file "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\ClockDivider1K.vhd" into library work
-Parsing entity <ClockDivider1K>.
-Parsing architecture <Behavioral> of entity <clockdivider1k>.
 Parsing VHDL file "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\CharacterIn7Seg.vhd" into library work
 Parsing entity <CharacterIn7Seg>.
 Parsing architecture <Behavioral> of entity <characterin7seg>.
@@ -176,9 +173,9 @@ Elaborating entity <KTANE_BigButton> (architecture <Behavioral>) from library <w
 
 Elaborating entity <DebounceButton> (architecture <Behavioral>) from library <work>.
 
-Elaborating entity <ClockDivider1K> (architecture <Behavioral>) from library <work>.
-
 Elaborating entity <Oneshot> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <ClockDivider100K> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <KTANE_Main> (architecture <Behavioral>) from library <work>.
 
@@ -191,8 +188,6 @@ Elaborating entity <ClockDivider20M> (architecture <Behavioral>) from library <w
 Elaborating entity <BCDto7Seg> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <SegmentTimerMultiplexer> (architecture <Behavioral>) from library <work>.
-
-Elaborating entity <ClockDivider100K> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <SegmentSerialDisplay> (architecture <Behavioral>) from library <work>.
 
@@ -230,7 +225,7 @@ Synthesizing Unit <KTANE_BigButton>.
     -----------------------------------------------------------------------
     | States             | 5                                              |
     | Transitions        | 15                                             |
-    | Inputs             | 4                                              |
+    | Inputs             | 5                                              |
     | Outputs            | 2                                              |
     | Clock              | clk (rising_edge)                              |
     | Reset              | reset (positive)                               |
@@ -240,7 +235,7 @@ Synthesizing Unit <KTANE_BigButton>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 4-bit comparator equal for signal <winCondition[3]_sec_in[3]_equal_4_o> created at line 136
+    Found 4-bit comparator equal for signal <winCondition[3]_sec_in[3]_equal_4_o> created at line 143
     Summary:
 	inferred   3 D-type flip-flop(s).
 	inferred   1 Comparator(s).
@@ -254,20 +249,14 @@ Synthesizing Unit <DebounceButton>.
     Found 1-bit register for signal <d4>.
     Found 1-bit register for signal <d5>.
     Found 1-bit register for signal <d6>.
+    Found 1-bit register for signal <d7>.
+    Found 1-bit register for signal <d8>.
+    Found 1-bit register for signal <d9>.
+    Found 1-bit register for signal <d10>.
     Found 1-bit register for signal <d1>.
     Summary:
-	inferred   6 D-type flip-flop(s).
-Unit <DebounceButton> synthesized.
-
-Synthesizing Unit <ClockDivider1K>.
-    Related source file is "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\ClockDivider1K.vhd".
-    Found 1-bit register for signal <tmp>.
-    Found 9-bit register for signal <count>.
-    Found 9-bit adder for signal <count[8]_GND_6_o_add_1_OUT> created at line 54.
-    Summary:
-	inferred   1 Adder/Subtractor(s).
 	inferred  10 D-type flip-flop(s).
-Unit <ClockDivider1K> synthesized.
+Unit <DebounceButton> synthesized.
 
 Synthesizing Unit <Oneshot>.
     Related source file is "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\Oneshot.vhd".
@@ -277,35 +266,49 @@ Synthesizing Unit <Oneshot>.
 	inferred   2 D-type flip-flop(s).
 Unit <Oneshot> synthesized.
 
+Synthesizing Unit <ClockDivider100K>.
+    Related source file is "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\ClockDivider100K.vhd".
+    Found 16-bit register for signal <count>.
+    Found 1-bit register for signal <tmp>.
+    Found 16-bit adder for signal <count[15]_GND_7_o_add_1_OUT> created at line 54.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  17 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <ClockDivider100K> synthesized.
+
 Synthesizing Unit <KTANE_Main>.
     Related source file is "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\KTANE_Main.vhd".
     Found 5-bit register for signal <resetModule>.
     Found 1-bit register for signal <buzzer>.
     Found 5-bit register for signal <enableGame>.
-    Found 4-bit register for signal <currentState>.
+    Found 5-bit register for signal <currentState>.
     Found 1-bit register for signal <startRandom>.
     Found 8-bit register for signal <segment_out>.
     Found 4-bit register for signal <segment_common>.
+    Found 1-bit register for signal <lossReset>.
+    Found 1-bit register for signal <ce>.
     Found finite state machine <FSM_1> for signal <currentState>.
     -----------------------------------------------------------------------
-    | States             | 4                                              |
-    | Transitions        | 10                                             |
+    | States             | 5                                              |
+    | Transitions        | 12                                             |
     | Inputs             | 4                                              |
-    | Outputs            | 28                                             |
+    | Outputs            | 18                                             |
     | Clock              | clk (rising_edge)                              |
     | Reset              | debouncedReset (positive)                      |
     | Reset type         | asynchronous                                   |
-    | Reset State        | 0001                                           |
+    | Reset State        | 00001                                          |
+    | Power Up State     | 00001                                          |
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
     Found 4x2-bit Read Only RAM for signal <strikeLED>
-    Found 2-bit comparator lessequal for signal <n0027> created at line 300
+    Found 2-bit comparator lessequal for signal <n0034> created at line 329
     Summary:
 	inferred   1 RAM(s).
-	inferred  24 D-type flip-flop(s).
+	inferred  26 D-type flip-flop(s).
 	inferred   1 Comparator(s).
-	inferred  20 Multiplexer(s).
+	inferred   8 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <KTANE_Main> synthesized.
 
@@ -324,8 +327,8 @@ Synthesizing Unit <CountdownTimer_130>.
     Found finite state machine <FSM_2> for signal <min>.
     -----------------------------------------------------------------------
     | States             | 2                                              |
-    | Transitions        | 6                                              |
-    | Inputs             | 2                                              |
+    | Transitions        | 8                                              |
+    | Inputs             | 3                                              |
     | Outputs            | 8                                              |
     | Clock              | dividedClk (falling_edge)                      |
     | Reset              | reset (positive)                               |
@@ -335,8 +338,8 @@ Synthesizing Unit <CountdownTimer_130>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 4-bit subtractor for signal <GND_14_o_GND_14_o_sub_7_OUT<3:0>> created at line 87.
-    Found 4-bit subtractor for signal <GND_14_o_GND_14_o_sub_14_OUT<3:0>> created at line 96.
+    Found 4-bit subtractor for signal <GND_14_o_GND_14_o_sub_7_OUT<3:0>> created at line 88.
+    Found 4-bit subtractor for signal <GND_14_o_GND_14_o_sub_14_OUT<3:0>> created at line 97.
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred   9 D-type flip-flop(s).
@@ -375,17 +378,6 @@ Synthesizing Unit <SegmentTimerMultiplexer>.
 	inferred   2 Multiplexer(s).
 Unit <SegmentTimerMultiplexer> synthesized.
 
-Synthesizing Unit <ClockDivider100K>.
-    Related source file is "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\ClockDivider100K.vhd".
-    Found 16-bit register for signal <count>.
-    Found 1-bit register for signal <tmp>.
-    Found 16-bit adder for signal <count[15]_GND_19_o_add_1_OUT> created at line 54.
-    Summary:
-	inferred   1 Adder/Subtractor(s).
-	inferred  17 D-type flip-flop(s).
-	inferred   1 Multiplexer(s).
-Unit <ClockDivider100K> synthesized.
-
 Synthesizing Unit <SegmentSerialDisplay>.
     Related source file is "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\SegmentSerialDisplay.vhd".
     Summary:
@@ -402,7 +394,7 @@ Unit <CharacterIn7Seg> synthesized.
 Synthesizing Unit <SegmentSerialMultiplexer>.
     Related source file is "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\SegmentSerialMultiplexer.vhd".
     Found 2-bit register for signal <count>.
-    Found 2-bit adder for signal <count[1]_GND_22_o_add_1_OUT> created at line 70.
+    Found 2-bit adder for signal <count[1]_GND_21_o_add_1_OUT> created at line 70.
     Found 4x4-bit Read Only RAM for signal <common_out>
     Found 8-bit 4-to-1 multiplexer for signal <seg_out> created at line 76.
     Summary:
@@ -415,7 +407,7 @@ Unit <SegmentSerialMultiplexer> synthesized.
 Synthesizing Unit <StrikeCounter>.
     Related source file is "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\StrikeCounter.vhd".
     Found 2-bit register for signal <count>.
-    Found 2-bit adder for signal <count[1]_GND_23_o_add_1_OUT> created at line 56.
+    Found 2-bit adder for signal <count[1]_GND_22_o_add_1_OUT> created at line 56.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred   2 D-type flip-flop(s).
@@ -456,31 +448,29 @@ Macro Statistics
  4x2-bit single-port Read Only RAM                     : 1
  4x4-bit single-port Read Only RAM                     : 4
  4x8-bit single-port Read Only RAM                     : 4
-# Adders/Subtractors                                   : 16
- 16-bit adder                                          : 4
+# Adders/Subtractors                                   : 14
+ 16-bit adder                                          : 6
  2-bit adder                                           : 5
  24-bit adder                                          : 1
  4-bit subtractor                                      : 2
- 9-bit adder                                           : 4
-# Registers                                            : 62
- 1-bit register                                        : 41
- 16-bit register                                       : 4
+# Registers                                            : 78
+ 1-bit register                                        : 59
+ 16-bit register                                       : 6
  2-bit register                                        : 5
  24-bit register                                       : 1
  4-bit register                                        : 3
  5-bit register                                        : 2
  8-bit register                                        : 2
- 9-bit register                                        : 4
 # Comparators                                          : 2
  2-bit comparator lessequal                            : 1
  4-bit comparator equal                                : 1
-# Multiplexers                                         : 39
+# Multiplexers                                         : 29
  1-bit 2-to-1 multiplexer                              : 2
- 16-bit 2-to-1 multiplexer                             : 4
+ 16-bit 2-to-1 multiplexer                             : 6
  2-bit 2-to-1 multiplexer                              : 5
  24-bit 2-to-1 multiplexer                             : 1
- 4-bit 2-to-1 multiplexer                              : 13
- 8-bit 2-to-1 multiplexer                              : 10
+ 4-bit 2-to-1 multiplexer                              : 7
+ 8-bit 2-to-1 multiplexer                              : 4
  8-bit 4-to-1 multiplexer                              : 4
 # FSMs                                                 : 3
 # Xors                                                 : 1
@@ -526,10 +516,6 @@ Synthesizing (advanced) Unit <ClockDivider100K>.
 The following registers are absorbed into counter <count>: 1 register on signal <count>.
 Unit <ClockDivider100K> synthesized (advanced).
 
-Synthesizing (advanced) Unit <ClockDivider1K>.
-The following registers are absorbed into counter <count>: 1 register on signal <count>.
-Unit <ClockDivider1K> synthesized (advanced).
-
 Synthesizing (advanced) Unit <ClockDivider20M>.
 The following registers are absorbed into counter <count>: 1 register on signal <count>.
 Unit <ClockDivider20M> synthesized (advanced).
@@ -553,7 +539,7 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_strikeLED> will be implemented on LU
 Unit <KTANE_Main> synthesized (advanced).
 
 Synthesizing (advanced) Unit <SegmentSerialMultiplexer>.
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_common_out> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+INFO:Xst:3231 - The small RAM <Mram_common_out> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -593,21 +579,20 @@ Macro Statistics
 # Adders/Subtractors                                   : 5
  2-bit adder                                           : 4
  4-bit subtractor                                      : 1
-# Counters                                             : 11
- 16-bit up counter                                     : 4
+# Counters                                             : 9
+ 16-bit up counter                                     : 6
  2-bit up counter                                      : 1
  24-bit up counter                                     : 1
  4-bit down counter                                    : 1
- 9-bit up counter                                      : 4
-# Registers                                            : 83
- Flip-Flops                                            : 83
+# Registers                                            : 101
+ Flip-Flops                                            : 101
 # Comparators                                          : 2
  2-bit comparator lessequal                            : 1
  4-bit comparator equal                                : 1
-# Multiplexers                                         : 28
+# Multiplexers                                         : 16
  1-bit 2-to-1 multiplexer                              : 2
- 4-bit 2-to-1 multiplexer                              : 12
- 8-bit 2-to-1 multiplexer                              : 10
+ 4-bit 2-to-1 multiplexer                              : 6
+ 8-bit 2-to-1 multiplexer                              : 4
  8-bit 4-to-1 multiplexer                              : 4
 # FSMs                                                 : 3
 # Xors                                                 : 1
@@ -631,14 +616,15 @@ Optimizing FSM <BigButton/FSM_0> on signal <currentState[1:3]> with gray encodin
  10000 | 110
 -------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <Main/FSM_1> on signal <currentState[1:4]> with user encoding.
+Optimizing FSM <Main/FSM_1> on signal <currentState[1:5]> with user encoding.
 -------------------
  State | Encoding
 -------------------
- 0001  | 0001
- 0010  | 0010
- 0100  | 0100
- 1000  | 1000
+ 00001 | 00001
+ 10000 | 10000
+ 00010 | 00010
+ 00100 | 00100
+ 01000 | 01000
 -------------------
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <Main/Segment/Timer/FSM_2> on signal <min[1:1]> with sequential encoding.
@@ -664,37 +650,44 @@ WARNING:Xst:1293 - FF/Latch <sec1_3> has a constant value of 0 in block <Countdo
 WARNING:Xst:1293 - FF/Latch <sec1_3> has a constant value of 0 in block <CountdownTimer_130>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <LFSRRandom> ...
-INFO:Xst:2261 - The FF/Latch <Main/WinDisplay/Segment/ClockDivider/count_0> in Unit <MainAndBigButtonWrapper> is equivalent to the following 3 FFs/Latches, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/count_0> <Main/LoseDisplay/Segment/ClockDivider/count_0> <Main/Segment/Multiplex/ClockDivider/count_0> 
-INFO:Xst:2261 - The FF/Latch <Main/WinDisplay/Segment/ClockDivider/count_1> in Unit <MainAndBigButtonWrapper> is equivalent to the following 3 FFs/Latches, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/count_1> <Main/LoseDisplay/Segment/ClockDivider/count_1> <Main/Segment/Multiplex/ClockDivider/count_1> 
-INFO:Xst:2261 - The FF/Latch <Main/WinDisplay/Segment/ClockDivider/count_2> in Unit <MainAndBigButtonWrapper> is equivalent to the following 3 FFs/Latches, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/count_2> <Main/LoseDisplay/Segment/ClockDivider/count_2> <Main/Segment/Multiplex/ClockDivider/count_2> 
-INFO:Xst:2261 - The FF/Latch <Main/WinDisplay/Segment/ClockDivider/count_3> in Unit <MainAndBigButtonWrapper> is equivalent to the following 3 FFs/Latches, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/count_3> <Main/LoseDisplay/Segment/ClockDivider/count_3> <Main/Segment/Multiplex/ClockDivider/count_3> 
-INFO:Xst:2261 - The FF/Latch <Main/WinDisplay/Segment/ClockDivider/count_4> in Unit <MainAndBigButtonWrapper> is equivalent to the following 3 FFs/Latches, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/count_4> <Main/LoseDisplay/Segment/ClockDivider/count_4> <Main/Segment/Multiplex/ClockDivider/count_4> 
-INFO:Xst:2261 - The FF/Latch <Main/WinDisplay/Segment/ClockDivider/count_5> in Unit <MainAndBigButtonWrapper> is equivalent to the following 3 FFs/Latches, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/count_5> <Main/LoseDisplay/Segment/ClockDivider/count_5> <Main/Segment/Multiplex/ClockDivider/count_5> 
-INFO:Xst:2261 - The FF/Latch <Main/WinDisplay/Segment/ClockDivider/count_6> in Unit <MainAndBigButtonWrapper> is equivalent to the following 3 FFs/Latches, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/count_6> <Main/LoseDisplay/Segment/ClockDivider/count_6> <Main/Segment/Multiplex/ClockDivider/count_6> 
-INFO:Xst:2261 - The FF/Latch <Main/WinDisplay/Segment/ClockDivider/count_7> in Unit <MainAndBigButtonWrapper> is equivalent to the following 3 FFs/Latches, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/count_7> <Main/LoseDisplay/Segment/ClockDivider/count_7> <Main/Segment/Multiplex/ClockDivider/count_7> 
-INFO:Xst:2261 - The FF/Latch <Main/WinDisplay/Segment/ClockDivider/count_8> in Unit <MainAndBigButtonWrapper> is equivalent to the following 3 FFs/Latches, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/count_8> <Main/LoseDisplay/Segment/ClockDivider/count_8> <Main/Segment/Multiplex/ClockDivider/count_8> 
-INFO:Xst:2261 - The FF/Latch <Main/WinDisplay/Segment/ClockDivider/count_9> in Unit <MainAndBigButtonWrapper> is equivalent to the following 3 FFs/Latches, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/count_9> <Main/LoseDisplay/Segment/ClockDivider/count_9> <Main/Segment/Multiplex/ClockDivider/count_9> 
-INFO:Xst:2261 - The FF/Latch <BigButton/BigButtonDebounce/ClockDivider/tmp> in Unit <MainAndBigButtonWrapper> is equivalent to the following 3 FFs/Latches, which will be removed : <Main/StartDebounce/ClockDivider/tmp> <Main/ResetDebounce/ClockDivider/tmp> <Main/ToggleDebounce/ClockDivider/tmp> 
-INFO:Xst:2261 - The FF/Latch <BigButton/BigButtonDebounce/ClockDivider/count_0> in Unit <MainAndBigButtonWrapper> is equivalent to the following 3 FFs/Latches, which will be removed : <Main/StartDebounce/ClockDivider/count_0> <Main/ResetDebounce/ClockDivider/count_0> <Main/ToggleDebounce/ClockDivider/count_0> 
-INFO:Xst:2261 - The FF/Latch <BigButton/BigButtonDebounce/ClockDivider/count_1> in Unit <MainAndBigButtonWrapper> is equivalent to the following 3 FFs/Latches, which will be removed : <Main/StartDebounce/ClockDivider/count_1> <Main/ResetDebounce/ClockDivider/count_1> <Main/ToggleDebounce/ClockDivider/count_1> 
-INFO:Xst:2261 - The FF/Latch <BigButton/BigButtonDebounce/ClockDivider/count_2> in Unit <MainAndBigButtonWrapper> is equivalent to the following 3 FFs/Latches, which will be removed : <Main/StartDebounce/ClockDivider/count_2> <Main/ResetDebounce/ClockDivider/count_2> <Main/ToggleDebounce/ClockDivider/count_2> 
-INFO:Xst:2261 - The FF/Latch <BigButton/BigButtonDebounce/ClockDivider/count_3> in Unit <MainAndBigButtonWrapper> is equivalent to the following 3 FFs/Latches, which will be removed : <Main/StartDebounce/ClockDivider/count_3> <Main/ResetDebounce/ClockDivider/count_3> <Main/ToggleDebounce/ClockDivider/count_3> 
-INFO:Xst:2261 - The FF/Latch <BigButton/BigButtonDebounce/ClockDivider/count_4> in Unit <MainAndBigButtonWrapper> is equivalent to the following 3 FFs/Latches, which will be removed : <Main/StartDebounce/ClockDivider/count_4> <Main/ResetDebounce/ClockDivider/count_4> <Main/ToggleDebounce/ClockDivider/count_4> 
-INFO:Xst:2261 - The FF/Latch <BigButton/BigButtonDebounce/ClockDivider/count_5> in Unit <MainAndBigButtonWrapper> is equivalent to the following 3 FFs/Latches, which will be removed : <Main/StartDebounce/ClockDivider/count_5> <Main/ResetDebounce/ClockDivider/count_5> <Main/ToggleDebounce/ClockDivider/count_5> 
-INFO:Xst:2261 - The FF/Latch <BigButton/BigButtonDebounce/ClockDivider/count_6> in Unit <MainAndBigButtonWrapper> is equivalent to the following 3 FFs/Latches, which will be removed : <Main/StartDebounce/ClockDivider/count_6> <Main/ResetDebounce/ClockDivider/count_6> <Main/ToggleDebounce/ClockDivider/count_6> 
-INFO:Xst:2261 - The FF/Latch <BigButton/BigButtonDebounce/ClockDivider/count_7> in Unit <MainAndBigButtonWrapper> is equivalent to the following 3 FFs/Latches, which will be removed : <Main/StartDebounce/ClockDivider/count_7> <Main/ResetDebounce/ClockDivider/count_7> <Main/ToggleDebounce/ClockDivider/count_7> 
-INFO:Xst:2261 - The FF/Latch <BigButton/BigButtonDebounce/ClockDivider/count_8> in Unit <MainAndBigButtonWrapper> is equivalent to the following 3 FFs/Latches, which will be removed : <Main/StartDebounce/ClockDivider/count_8> <Main/ResetDebounce/ClockDivider/count_8> <Main/ToggleDebounce/ClockDivider/count_8> 
-INFO:Xst:2261 - The FF/Latch <Main/WinDisplay/Segment/ClockDivider/count_10> in Unit <MainAndBigButtonWrapper> is equivalent to the following 3 FFs/Latches, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/count_10> <Main/LoseDisplay/Segment/ClockDivider/count_10> <Main/Segment/Multiplex/ClockDivider/count_10> 
-INFO:Xst:2261 - The FF/Latch <Main/WinDisplay/Segment/ClockDivider/count_11> in Unit <MainAndBigButtonWrapper> is equivalent to the following 3 FFs/Latches, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/count_11> <Main/LoseDisplay/Segment/ClockDivider/count_11> <Main/Segment/Multiplex/ClockDivider/count_11> 
-INFO:Xst:2261 - The FF/Latch <Main/WinDisplay/Segment/ClockDivider/count_12> in Unit <MainAndBigButtonWrapper> is equivalent to the following 3 FFs/Latches, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/count_12> <Main/LoseDisplay/Segment/ClockDivider/count_12> <Main/Segment/Multiplex/ClockDivider/count_12> 
-INFO:Xst:2261 - The FF/Latch <Main/WinDisplay/Segment/ClockDivider/count_13> in Unit <MainAndBigButtonWrapper> is equivalent to the following 3 FFs/Latches, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/count_13> <Main/LoseDisplay/Segment/ClockDivider/count_13> <Main/Segment/Multiplex/ClockDivider/count_13> 
-INFO:Xst:2261 - The FF/Latch <Main/WinDisplay/Segment/ClockDivider/count_14> in Unit <MainAndBigButtonWrapper> is equivalent to the following 3 FFs/Latches, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/count_14> <Main/LoseDisplay/Segment/ClockDivider/count_14> <Main/Segment/Multiplex/ClockDivider/count_14> 
-INFO:Xst:2261 - The FF/Latch <Main/WinDisplay/Segment/ClockDivider/count_15> in Unit <MainAndBigButtonWrapper> is equivalent to the following 3 FFs/Latches, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/count_15> <Main/LoseDisplay/Segment/ClockDivider/count_15> <Main/Segment/Multiplex/ClockDivider/count_15> 
-INFO:Xst:2261 - The FF/Latch <Main/Segment/Multiplex/ClockDivider/tmp> in Unit <MainAndBigButtonWrapper> is equivalent to the following FF/Latch, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/tmp> 
+INFO:Xst:2261 - The FF/Latch <BigButton/ButtonOneShot/ClockDivider/count_10> in Unit <MainAndBigButtonWrapper> is equivalent to the following FF/Latch, which will be removed : <BigButton/StrikeShot/ClockDivider/count_10> 
+INFO:Xst:2261 - The FF/Latch <BigButton/ButtonOneShot/ClockDivider/count_11> in Unit <MainAndBigButtonWrapper> is equivalent to the following FF/Latch, which will be removed : <BigButton/StrikeShot/ClockDivider/count_11> 
+INFO:Xst:2261 - The FF/Latch <BigButton/ButtonOneShot/ClockDivider/count_12> in Unit <MainAndBigButtonWrapper> is equivalent to the following FF/Latch, which will be removed : <BigButton/StrikeShot/ClockDivider/count_12> 
+INFO:Xst:2261 - The FF/Latch <BigButton/ButtonOneShot/ClockDivider/count_13> in Unit <MainAndBigButtonWrapper> is equivalent to the following FF/Latch, which will be removed : <BigButton/StrikeShot/ClockDivider/count_13> 
+INFO:Xst:2261 - The FF/Latch <BigButton/ButtonOneShot/ClockDivider/count_14> in Unit <MainAndBigButtonWrapper> is equivalent to the following FF/Latch, which will be removed : <BigButton/StrikeShot/ClockDivider/count_14> 
+INFO:Xst:2261 - The FF/Latch <BigButton/ButtonOneShot/ClockDivider/count_15> in Unit <MainAndBigButtonWrapper> is equivalent to the following FF/Latch, which will be removed : <BigButton/StrikeShot/ClockDivider/count_15> 
+INFO:Xst:2261 - The FF/Latch <BigButton/ButtonOneShot/ClockDivider/tmp> in Unit <MainAndBigButtonWrapper> is equivalent to the following FF/Latch, which will be removed : <BigButton/StrikeShot/ClockDivider/tmp> 
+INFO:Xst:2261 - The FF/Latch <Main/WinDisplay/Segment/ClockDivider/count_0> in Unit <MainAndBigButtonWrapper> is equivalent to the following 2 FFs/Latches, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/count_0> <Main/LoseDisplay/Segment/ClockDivider/count_0> 
+INFO:Xst:2261 - The FF/Latch <Main/WinDisplay/Segment/ClockDivider/count_1> in Unit <MainAndBigButtonWrapper> is equivalent to the following 2 FFs/Latches, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/count_1> <Main/LoseDisplay/Segment/ClockDivider/count_1> 
+INFO:Xst:2261 - The FF/Latch <Main/WinDisplay/Segment/ClockDivider/count_2> in Unit <MainAndBigButtonWrapper> is equivalent to the following 2 FFs/Latches, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/count_2> <Main/LoseDisplay/Segment/ClockDivider/count_2> 
+INFO:Xst:2261 - The FF/Latch <Main/WinDisplay/Segment/ClockDivider/count_3> in Unit <MainAndBigButtonWrapper> is equivalent to the following 2 FFs/Latches, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/count_3> <Main/LoseDisplay/Segment/ClockDivider/count_3> 
+INFO:Xst:2261 - The FF/Latch <Main/WinDisplay/Segment/ClockDivider/count_4> in Unit <MainAndBigButtonWrapper> is equivalent to the following 2 FFs/Latches, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/count_4> <Main/LoseDisplay/Segment/ClockDivider/count_4> 
+INFO:Xst:2261 - The FF/Latch <Main/WinDisplay/Segment/ClockDivider/count_5> in Unit <MainAndBigButtonWrapper> is equivalent to the following 2 FFs/Latches, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/count_5> <Main/LoseDisplay/Segment/ClockDivider/count_5> 
+INFO:Xst:2261 - The FF/Latch <Main/WinDisplay/Segment/ClockDivider/count_6> in Unit <MainAndBigButtonWrapper> is equivalent to the following 2 FFs/Latches, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/count_6> <Main/LoseDisplay/Segment/ClockDivider/count_6> 
+INFO:Xst:2261 - The FF/Latch <Main/WinDisplay/Segment/ClockDivider/count_7> in Unit <MainAndBigButtonWrapper> is equivalent to the following 2 FFs/Latches, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/count_7> <Main/LoseDisplay/Segment/ClockDivider/count_7> 
+INFO:Xst:2261 - The FF/Latch <Main/WinDisplay/Segment/ClockDivider/count_8> in Unit <MainAndBigButtonWrapper> is equivalent to the following 2 FFs/Latches, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/count_8> <Main/LoseDisplay/Segment/ClockDivider/count_8> 
+INFO:Xst:2261 - The FF/Latch <Main/WinDisplay/Segment/ClockDivider/count_9> in Unit <MainAndBigButtonWrapper> is equivalent to the following 2 FFs/Latches, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/count_9> <Main/LoseDisplay/Segment/ClockDivider/count_9> 
+INFO:Xst:2261 - The FF/Latch <BigButton/ButtonOneShot/ClockDivider/count_0> in Unit <MainAndBigButtonWrapper> is equivalent to the following FF/Latch, which will be removed : <BigButton/StrikeShot/ClockDivider/count_0> 
+INFO:Xst:2261 - The FF/Latch <BigButton/ButtonOneShot/ClockDivider/count_1> in Unit <MainAndBigButtonWrapper> is equivalent to the following FF/Latch, which will be removed : <BigButton/StrikeShot/ClockDivider/count_1> 
+INFO:Xst:2261 - The FF/Latch <BigButton/ButtonOneShot/ClockDivider/count_2> in Unit <MainAndBigButtonWrapper> is equivalent to the following FF/Latch, which will be removed : <BigButton/StrikeShot/ClockDivider/count_2> 
+INFO:Xst:2261 - The FF/Latch <BigButton/ButtonOneShot/ClockDivider/count_3> in Unit <MainAndBigButtonWrapper> is equivalent to the following FF/Latch, which will be removed : <BigButton/StrikeShot/ClockDivider/count_3> 
+INFO:Xst:2261 - The FF/Latch <BigButton/ButtonOneShot/ClockDivider/count_4> in Unit <MainAndBigButtonWrapper> is equivalent to the following FF/Latch, which will be removed : <BigButton/StrikeShot/ClockDivider/count_4> 
+INFO:Xst:2261 - The FF/Latch <BigButton/ButtonOneShot/ClockDivider/count_5> in Unit <MainAndBigButtonWrapper> is equivalent to the following FF/Latch, which will be removed : <BigButton/StrikeShot/ClockDivider/count_5> 
+INFO:Xst:2261 - The FF/Latch <BigButton/ButtonOneShot/ClockDivider/count_6> in Unit <MainAndBigButtonWrapper> is equivalent to the following FF/Latch, which will be removed : <BigButton/StrikeShot/ClockDivider/count_6> 
+INFO:Xst:2261 - The FF/Latch <BigButton/ButtonOneShot/ClockDivider/count_7> in Unit <MainAndBigButtonWrapper> is equivalent to the following FF/Latch, which will be removed : <BigButton/StrikeShot/ClockDivider/count_7> 
+INFO:Xst:2261 - The FF/Latch <BigButton/ButtonOneShot/ClockDivider/count_8> in Unit <MainAndBigButtonWrapper> is equivalent to the following FF/Latch, which will be removed : <BigButton/StrikeShot/ClockDivider/count_8> 
+INFO:Xst:2261 - The FF/Latch <BigButton/ButtonOneShot/ClockDivider/count_9> in Unit <MainAndBigButtonWrapper> is equivalent to the following FF/Latch, which will be removed : <BigButton/StrikeShot/ClockDivider/count_9> 
+INFO:Xst:2261 - The FF/Latch <Main/WinDisplay/Segment/ClockDivider/count_10> in Unit <MainAndBigButtonWrapper> is equivalent to the following 2 FFs/Latches, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/count_10> <Main/LoseDisplay/Segment/ClockDivider/count_10> 
+INFO:Xst:2261 - The FF/Latch <Main/WinDisplay/Segment/ClockDivider/count_11> in Unit <MainAndBigButtonWrapper> is equivalent to the following 2 FFs/Latches, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/count_11> <Main/LoseDisplay/Segment/ClockDivider/count_11> 
+INFO:Xst:2261 - The FF/Latch <Main/WinDisplay/Segment/ClockDivider/count_12> in Unit <MainAndBigButtonWrapper> is equivalent to the following 2 FFs/Latches, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/count_12> <Main/LoseDisplay/Segment/ClockDivider/count_12> 
+INFO:Xst:2261 - The FF/Latch <Main/WinDisplay/Segment/ClockDivider/count_13> in Unit <MainAndBigButtonWrapper> is equivalent to the following 2 FFs/Latches, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/count_13> <Main/LoseDisplay/Segment/ClockDivider/count_13> 
+INFO:Xst:2261 - The FF/Latch <Main/WinDisplay/Segment/ClockDivider/count_14> in Unit <MainAndBigButtonWrapper> is equivalent to the following 2 FFs/Latches, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/count_14> <Main/LoseDisplay/Segment/ClockDivider/count_14> 
+INFO:Xst:2261 - The FF/Latch <Main/WinDisplay/Segment/ClockDivider/count_15> in Unit <MainAndBigButtonWrapper> is equivalent to the following 2 FFs/Latches, which will be removed : <Main/SegmentSerial/Multiplex/ClockDivider/count_15> <Main/LoseDisplay/Segment/ClockDivider/count_15> 
+INFO:Xst:2261 - The FF/Latch <Main/SegmentSerial/Multiplex/ClockDivider/tmp> in Unit <MainAndBigButtonWrapper> is equivalent to the following 2 FFs/Latches, which will be removed : <Main/WinDisplay/Segment/ClockDivider/tmp> <Main/LoseDisplay/Segment/ClockDivider/tmp> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block MainAndBigButtonWrapper, actual ratio is 5.
+Found area constraint ratio of 100 (+ 5) on block MainAndBigButtonWrapper, actual ratio is 6.
 
 Final Macro Processing ...
 
@@ -702,8 +695,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 132
- Flip-Flops                                            : 132
+# Registers                                            : 175
+ Flip-Flops                                            : 175
 
 =========================================================================
 
@@ -726,32 +719,29 @@ Top Level Output File Name         : MainAndBigButtonWrapper.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 299
+# BELS                             : 426
 #      GND                         : 1
 #      INV                         : 10
-#      LUT1                        : 46
-#      LUT2                        : 24
-#      LUT3                        : 11
-#      LUT4                        : 16
-#      LUT5                        : 39
-#      LUT6                        : 51
-#      MUXCY                       : 46
+#      LUT1                        : 68
+#      LUT2                        : 70
+#      LUT3                        : 9
+#      LUT4                        : 17
+#      LUT5                        : 47
+#      LUT6                        : 58
+#      MUXCY                       : 68
 #      MUXF7                       : 5
 #      VCC                         : 1
-#      XORCY                       : 49
-# FlipFlops/Latches                : 132
-#      FD                          : 27
-#      FDC                         : 63
+#      XORCY                       : 72
+# FlipFlops/Latches                : 175
+#      FD                          : 65
+#      FDC                         : 78
 #      FDC_1                       : 2
-#      FDCE                        : 12
+#      FDCE                        : 6
 #      FDCE_1                      : 1
-#      FDE                         : 13
+#      FDE                         : 19
 #      FDP                         : 2
-#      FDPE                        : 1
 #      FDPE_1                      : 2
-#      FDR                         : 9
-# Clock Buffers                    : 2
-#      BUFG                        : 1
+# Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 42
 #      IBUF                        : 12
@@ -764,23 +754,23 @@ Selected Device : 6slx9tqg144-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             132  out of  11440     1%  
- Number of Slice LUTs:                  197  out of   5720     3%  
-    Number used as Logic:               197  out of   5720     3%  
+ Number of Slice Registers:             175  out of  11440     1%  
+ Number of Slice LUTs:                  279  out of   5720     4%  
+    Number used as Logic:               279  out of   5720     4%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    222
-   Number with an unused Flip Flop:      90  out of    222    40%  
-   Number with an unused LUT:            25  out of    222    11%  
-   Number of fully used LUT-FF pairs:   107  out of    222    48%  
-   Number of unique control sets:        16
+ Number of LUT Flip Flop pairs used:    320
+   Number with an unused Flip Flop:     145  out of    320    45%  
+   Number with an unused LUT:            41  out of    320    12%  
+   Number of fully used LUT-FF pairs:   134  out of    320    41%  
+   Number of unique control sets:        17
 
 IO Utilization: 
  Number of IOs:                          43
  Number of bonded IOBs:                  43  out of    102    42%  
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
 
 ---------------------------
 Partition Resource Summary:
@@ -800,17 +790,16 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
-------------------------------------------------------------+---------------------------------------+-------+
-Clock Signal                                                | Clock buffer(FF name)                 | Load  |
-------------------------------------------------------------+---------------------------------------+-------+
-clk                                                         | BUFGP                                 | 89    |
-BigButton/BigButtonDebounce/ClockDivider/tmp                | BUFG                                  | 24    |
-Main/Segment/Multiplex/ClockDivider/tmp                     | NONE(Main/Segment/Multiplex/count_1)  | 4     |
-Main/WinDisplay/Segment/ClockDivider/tmp                    | NONE(Main/WinDisplay/Segment/count_0) | 2     |
-Main/LoseDisplay/Segment/ClockDivider/tmp                   | NONE(Main/LoseDisplay/Segment/count_0)| 2     |
-Main/StrikeResult/isStrike(Main/StrikeResult/isStrike<0>1:O)| NONE(*)(Main/StrikeResult/count_0)    | 2     |
-Main/Segment/Timer/ClockDivider/tmp                         | NONE(Main/Segment/Timer/sec2_3)       | 9     |
-------------------------------------------------------------+---------------------------------------+-------+
+------------------------------------------------------------+-------------------------------------------+-------+
+Clock Signal                                                | Clock buffer(FF name)                     | Load  |
+------------------------------------------------------------+-------------------------------------------+-------+
+clk                                                         | BUFGP                                     | 152   |
+BigButton/ButtonOneShot/ClockDivider/tmp                    | NONE(BigButton/StrikeShot/d1)             | 4     |
+Main/Segment/Multiplex/ClockDivider/tmp                     | NONE(Main/Segment/Multiplex/count_1)      | 2     |
+Main/SegmentSerial/Multiplex/ClockDivider/tmp               | NONE(Main/SegmentSerial/Multiplex/count_0)| 6     |
+Main/StrikeResult/isStrike(Main/StrikeResult/isStrike<0>1:O)| NONE(*)(Main/StrikeResult/count_0)        | 2     |
+Main/Segment/Timer/ClockDivider/tmp                         | NONE(Main/Segment/Timer/sec2_3)           | 9     |
+------------------------------------------------------------+-------------------------------------------+-------+
 (*) This 1 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
@@ -824,7 +813,7 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 3.934ns (Maximum Frequency: 254.217MHz)
+   Minimum period: 4.069ns (Maximum Frequency: 245.773MHz)
    Minimum input arrival time before clock: 3.501ns
    Maximum output required time after clock: 4.619ns
    Maximum combinational path delay: No path found
@@ -835,55 +824,54 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 3.934ns (frequency: 254.217MHz)
-  Total number of paths / destination ports: 1624 / 116
+  Clock period: 4.069ns (frequency: 245.773MHz)
+  Total number of paths / destination ports: 3407 / 241
 -------------------------------------------------------------------------
-Delay:               3.934ns (Levels of Logic = 3)
-  Source:            Main/WinDisplay/Segment/ClockDivider/count_1 (FF)
+Delay:               4.069ns (Levels of Logic = 2)
+  Source:            Main/ResetDebounce/d8 (FF)
   Destination:       Main/WinDisplay/Segment/ClockDivider/count_15 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: Main/WinDisplay/Segment/ClockDivider/count_1 to Main/WinDisplay/Segment/ClockDivider/count_15
+  Data Path: Main/ResetDebounce/d8 to Main/WinDisplay/Segment/ClockDivider/count_15
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              2   0.447   0.981  Main/WinDisplay/Segment/ClockDivider/count_1 (Main/WinDisplay/Segment/ClockDivider/count_1)
-     LUT6:I0->O            4   0.203   0.788  Main/WinDisplay/Segment/ClockDivider/PWR_17_o_count[15]_equal_1_o<15>2 (Main/LoseDisplay/Segment/ClockDivider/PWR_17_o_count[15]_equal_1_o<15>1)
-     LUT6:I4->O           16   0.203   1.005  Main/WinDisplay/Segment/ClockDivider/PWR_17_o_count[15]_equal_1_o<15>3 (Main/WinDisplay/Segment/ClockDivider/PWR_17_o_count[15]_equal_1_o)
-     LUT2:I1->O            1   0.205   0.000  Main/WinDisplay/Segment/ClockDivider/Mcount_count_eqn_151 (Main/WinDisplay/Segment/ClockDivider/Mcount_count_eqn_15)
-     FDC:D                     0.102          Main/WinDisplay/Segment/ClockDivider/count_15
+     FD:C->Q               2   0.447   0.961  Main/ResetDebounce/d8 (Main/ResetDebounce/d8)
+     LUT5:I0->O            7   0.203   0.774  Main/ResetDebounce/deb_inp_SW0 (N8)
+     LUT6:I5->O           18   0.205   1.049  Main/ResetDebounce/deb_inp_1 (Main/ResetDebounce/deb_inp)
+     FDC:CLR                   0.430          Main/currentState_FSM_FFd1
     ----------------------------------------
-    Total                      3.934ns (1.160ns logic, 2.774ns route)
-                                       (29.5% logic, 70.5% route)
+    Total                      4.069ns (1.285ns logic, 2.784ns route)
+                                       (31.6% logic, 68.4% route)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'BigButton/BigButtonDebounce/ClockDivider/tmp'
+Timing constraint: Default period analysis for Clock 'BigButton/ButtonOneShot/ClockDivider/tmp'
   Clock period: 1.199ns (frequency: 833.854MHz)
-  Total number of paths / destination ports: 20 / 20
+  Total number of paths / destination ports: 2 / 2
 -------------------------------------------------------------------------
 Delay:               1.199ns (Levels of Logic = 0)
-  Source:            Main/ResetDebounce/d1 (FF)
-  Destination:       Main/ResetDebounce/d2 (FF)
-  Source Clock:      BigButton/BigButtonDebounce/ClockDivider/tmp rising
-  Destination Clock: BigButton/BigButtonDebounce/ClockDivider/tmp rising
+  Source:            BigButton/ButtonOneShot/d1 (FF)
+  Destination:       BigButton/ButtonOneShot/d2 (FF)
+  Source Clock:      BigButton/ButtonOneShot/ClockDivider/tmp rising
+  Destination Clock: BigButton/ButtonOneShot/ClockDivider/tmp rising
 
-  Data Path: Main/ResetDebounce/d1 to Main/ResetDebounce/d2
+  Data Path: BigButton/ButtonOneShot/d1 to BigButton/ButtonOneShot/d2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               3   0.447   0.650  Main/ResetDebounce/d1 (Main/ResetDebounce/d1)
-     FD:D                      0.102          Main/ResetDebounce/d2
+     FD:C->Q               3   0.447   0.650  BigButton/ButtonOneShot/d1 (BigButton/ButtonOneShot/d1)
+     FD:D                      0.102          BigButton/ButtonOneShot/d2
     ----------------------------------------
     Total                      1.199ns (0.549ns logic, 0.650ns route)
                                        (45.8% logic, 54.2% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'Main/Segment/Multiplex/ClockDivider/tmp'
-  Clock period: 2.291ns (frequency: 436.500MHz)
-  Total number of paths / destination ports: 6 / 4
+  Clock period: 2.361ns (frequency: 423.612MHz)
+  Total number of paths / destination ports: 3 / 2
 -------------------------------------------------------------------------
-Delay:               2.291ns (Levels of Logic = 1)
+Delay:               2.361ns (Levels of Logic = 1)
   Source:            Main/Segment/Multiplex/count_0 (FF)
   Destination:       Main/Segment/Multiplex/count_0 (FF)
   Source Clock:      Main/Segment/Multiplex/ClockDivider/tmp rising
@@ -893,56 +881,34 @@ Delay:               2.291ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             14   0.447   0.957  Main/Segment/Multiplex/count_0 (Main/Segment/Multiplex/count_0)
+     FDC:C->Q             17   0.447   1.027  Main/Segment/Multiplex/count_0 (Main/Segment/Multiplex/count_0)
      INV:I->O              1   0.206   0.579  Main/Segment/Multiplex/Mcount_count_xor<0>11_INV_0 (Main/Segment/Multiplex/Mcount_count)
      FDC:D                     0.102          Main/Segment/Multiplex/count_0
     ----------------------------------------
+    Total                      2.361ns (0.755ns logic, 1.606ns route)
+                                       (32.0% logic, 68.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'Main/SegmentSerial/Multiplex/ClockDivider/tmp'
+  Clock period: 2.291ns (frequency: 436.500MHz)
+  Total number of paths / destination ports: 9 / 6
+-------------------------------------------------------------------------
+Delay:               2.291ns (Levels of Logic = 1)
+  Source:            Main/SegmentSerial/Multiplex/count_0 (FF)
+  Destination:       Main/SegmentSerial/Multiplex/count_0 (FF)
+  Source Clock:      Main/SegmentSerial/Multiplex/ClockDivider/tmp rising
+  Destination Clock: Main/SegmentSerial/Multiplex/ClockDivider/tmp rising
+
+  Data Path: Main/SegmentSerial/Multiplex/count_0 to Main/SegmentSerial/Multiplex/count_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             14   0.447   0.957  Main/SegmentSerial/Multiplex/count_0 (Main/SegmentSerial/Multiplex/count_0)
+     INV:I->O              1   0.206   0.579  Main/SegmentSerial/Multiplex/Mmux_count[1]_GND_21_o_mux_2_OUT11_INV_0 (Main/SegmentSerial/Multiplex/count[1]_GND_21_o_mux_2_OUT<0>)
+     FDC:D                     0.102          Main/SegmentSerial/Multiplex/count_0
+    ----------------------------------------
     Total                      2.291ns (0.755ns logic, 1.536ns route)
                                        (33.0% logic, 67.0% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'Main/WinDisplay/Segment/ClockDivider/tmp'
-  Clock period: 2.216ns (frequency: 451.233MHz)
-  Total number of paths / destination ports: 3 / 2
--------------------------------------------------------------------------
-Delay:               2.216ns (Levels of Logic = 1)
-  Source:            Main/WinDisplay/Segment/count_0 (FF)
-  Destination:       Main/WinDisplay/Segment/count_0 (FF)
-  Source Clock:      Main/WinDisplay/Segment/ClockDivider/tmp rising
-  Destination Clock: Main/WinDisplay/Segment/ClockDivider/tmp rising
-
-  Data Path: Main/WinDisplay/Segment/count_0 to Main/WinDisplay/Segment/count_0
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDC:C->Q             11   0.447   0.882  Main/WinDisplay/Segment/count_0 (Main/WinDisplay/Segment/count_0)
-     INV:I->O              1   0.206   0.579  Main/WinDisplay/Segment/Mmux_count[1]_GND_22_o_mux_2_OUT11_INV_0 (Main/WinDisplay/Segment/count[1]_GND_22_o_mux_2_OUT<0>)
-     FDC:D                     0.102          Main/WinDisplay/Segment/count_0
-    ----------------------------------------
-    Total                      2.216ns (0.755ns logic, 1.461ns route)
-                                       (34.1% logic, 65.9% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'Main/LoseDisplay/Segment/ClockDivider/tmp'
-  Clock period: 2.190ns (frequency: 456.663MHz)
-  Total number of paths / destination ports: 3 / 2
--------------------------------------------------------------------------
-Delay:               2.190ns (Levels of Logic = 1)
-  Source:            Main/LoseDisplay/Segment/count_0 (FF)
-  Destination:       Main/LoseDisplay/Segment/count_0 (FF)
-  Source Clock:      Main/LoseDisplay/Segment/ClockDivider/tmp rising
-  Destination Clock: Main/LoseDisplay/Segment/ClockDivider/tmp rising
-
-  Data Path: Main/LoseDisplay/Segment/count_0 to Main/LoseDisplay/Segment/count_0
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDC:C->Q             10   0.447   0.856  Main/LoseDisplay/Segment/count_0 (Main/LoseDisplay/Segment/count_0)
-     INV:I->O              1   0.206   0.579  Main/LoseDisplay/Segment/Mmux_count[1]_GND_22_o_mux_2_OUT11_INV_0 (Main/LoseDisplay/Segment/count[1]_GND_22_o_mux_2_OUT<0>)
-     FDC:D                     0.102          Main/LoseDisplay/Segment/count_0
-    ----------------------------------------
-    Total                      2.190ns (0.755ns logic, 1.435ns route)
-                                       (34.5% logic, 65.5% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'Main/StrikeResult/isStrike'
@@ -960,7 +926,7 @@ Delay:               2.048ns (Levels of Logic = 1)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDC:C->Q              5   0.447   0.714  Main/StrikeResult/count_0 (Main/StrikeResult/count_0)
-     INV:I->O              1   0.206   0.579  Main/StrikeResult/Mmux_count[1]_GND_23_o_mux_2_OUT11_INV_0 (Main/StrikeResult/count[1]_GND_23_o_mux_2_OUT<0>)
+     INV:I->O              1   0.206   0.579  Main/StrikeResult/Mmux_count[1]_GND_22_o_mux_2_OUT11_INV_0 (Main/StrikeResult/count[1]_GND_22_o_mux_2_OUT<0>)
      FDC:D                     0.102          Main/StrikeResult/count_0
     ----------------------------------------
     Total                      2.048ns (0.755ns logic, 1.293ns route)
@@ -968,63 +934,44 @@ Delay:               2.048ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'Main/Segment/Timer/ClockDivider/tmp'
-  Clock period: 3.091ns (frequency: 323.546MHz)
-  Total number of paths / destination ports: 68 / 12
+  Clock period: 3.165ns (frequency: 315.996MHz)
+  Total number of paths / destination ports: 72 / 12
 -------------------------------------------------------------------------
-Delay:               3.091ns (Levels of Logic = 2)
-  Source:            Main/Segment/Timer/sec2_2 (FF)
+Delay:               3.165ns (Levels of Logic = 2)
+  Source:            Main/Segment/Timer/sec2_3 (FF)
   Destination:       Main/Segment/Timer/sec2_3 (FF)
   Source Clock:      Main/Segment/Timer/ClockDivider/tmp falling
   Destination Clock: Main/Segment/Timer/ClockDivider/tmp falling
 
-  Data Path: Main/Segment/Timer/sec2_2 to Main/Segment/Timer/sec2_3
+  Data Path: Main/Segment/Timer/sec2_3 to Main/Segment/Timer/sec2_3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             15   0.447   1.210  Main/Segment/Timer/sec2_2 (Main/Segment/Timer/sec2_2)
-     LUT3:I0->O            1   0.205   0.924  Main/Segment/Timer/Mcount_sec2_xor<3>1_SW0 (N20)
-     LUT6:I1->O            1   0.203   0.000  Main/Segment/Timer/Mcount_sec2_xor<3>1 (Main/Segment/Timer/Mcount_sec23)
-     FDC:D                     0.102          Main/Segment/Timer/sec2_3
+     FDCE:C->Q            16   0.447   1.233  Main/Segment/Timer/sec2_3 (Main/Segment/Timer/sec2_3)
+     LUT4:I1->O            6   0.205   0.973  Main/Segment/Timer/sec2[3]_GND_14_o_equal_1_o<3>1 (Main/Segment/Timer/sec2[3]_GND_14_o_equal_1_o)
+     LUT6:I3->O            1   0.205   0.000  Main/Segment/Timer/Mcount_sec2_xor<3>11 (Main/Segment/Timer/Mcount_sec23)
+     FDCE:D                    0.102          Main/Segment/Timer/sec2_3
     ----------------------------------------
-    Total                      3.091ns (0.957ns logic, 2.134ns route)
-                                       (31.0% logic, 69.0% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'BigButton/BigButtonDebounce/ClockDivider/tmp'
-  Total number of paths / destination ports: 4 / 4
--------------------------------------------------------------------------
-Offset:              1.903ns (Levels of Logic = 1)
-  Source:            button (PAD)
-  Destination:       BigButton/BigButtonDebounce/d1 (FF)
-  Destination Clock: BigButton/BigButtonDebounce/ClockDivider/tmp rising
-
-  Data Path: button to BigButton/BigButtonDebounce/d1
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O             1   1.222   0.579  button_IBUF (button_IBUF)
-     FD:D                      0.102          BigButton/BigButtonDebounce/d1
-    ----------------------------------------
-    Total                      1.903ns (1.324ns logic, 0.579ns route)
-                                       (69.6% logic, 30.4% route)
+    Total                      3.165ns (0.959ns logic, 2.206ns route)
+                                       (30.3% logic, 69.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 8 / 2
+  Total number of paths / destination ports: 12 / 6
 -------------------------------------------------------------------------
 Offset:              3.501ns (Levels of Logic = 3)
   Source:            win<0> (PAD)
-  Destination:       Main/currentState_FSM_FFd3 (FF)
+  Destination:       Main/currentState_FSM_FFd4 (FF)
   Destination Clock: clk rising
 
-  Data Path: win<0> to Main/currentState_FSM_FFd3
+  Data Path: win<0> to Main/currentState_FSM_FFd4
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O             1   1.222   0.924  win_0_IBUF (win_0_IBUF)
      LUT5:I0->O            2   0.203   0.845  Main/CheckWin/win_out<0>1 (Main/isWin)
-     LUT6:I3->O            1   0.205   0.000  Main/currentState_FSM_FFd3-In1 (Main/currentState_FSM_FFd3-In)
-     FDC:D                     0.102          Main/currentState_FSM_FFd3
+     LUT6:I3->O            1   0.205   0.000  Main/currentState_FSM_FFd4-In1 (Main/currentState_FSM_FFd4-In)
+     FDC:D                     0.102          Main/currentState_FSM_FFd4
     ----------------------------------------
     Total                      3.501ns (1.732ns logic, 1.769ns route)
                                        (49.5% logic, 50.5% route)
@@ -1073,84 +1020,75 @@ Offset:              4.619ns (Levels of Logic = 2)
 Cross Clock Domains Report:
 --------------------------
 
-Clock to Setup on destination clock BigButton/BigButtonDebounce/ClockDivider/tmp
---------------------------------------------+---------+---------+---------+---------+
-                                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
---------------------------------------------+---------+---------+---------+---------+
-BigButton/BigButtonDebounce/ClockDivider/tmp|    1.199|         |         |         |
---------------------------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock Main/LoseDisplay/Segment/ClockDivider/tmp
---------------------------------------------+---------+---------+---------+---------+
-                                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
---------------------------------------------+---------+---------+---------+---------+
-BigButton/BigButtonDebounce/ClockDivider/tmp|    3.853|         |         |         |
-Main/LoseDisplay/Segment/ClockDivider/tmp   |    2.190|         |         |         |
---------------------------------------------+---------+---------+---------+---------+
+Clock to Setup on destination clock BigButton/ButtonOneShot/ClockDivider/tmp
+----------------------------------------+---------+---------+---------+---------+
+                                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------------------------+---------+---------+---------+---------+
+BigButton/ButtonOneShot/ClockDivider/tmp|    1.199|         |         |         |
+clk                                     |    2.498|         |         |         |
+----------------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock Main/Segment/Multiplex/ClockDivider/tmp
---------------------------------------------+---------+---------+---------+---------+
-                                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
---------------------------------------------+---------+---------+---------+---------+
-BigButton/BigButtonDebounce/ClockDivider/tmp|    3.853|         |         |         |
-Main/Segment/Multiplex/ClockDivider/tmp     |    2.291|         |         |         |
---------------------------------------------+---------+---------+---------+---------+
+---------------------------------------+---------+---------+---------+---------+
+                                       | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                           |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------------------------+---------+---------+---------+---------+
+Main/Segment/Multiplex/ClockDivider/tmp|    2.361|         |         |         |
+clk                                    |    4.069|         |         |         |
+---------------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock Main/Segment/Timer/ClockDivider/tmp
---------------------------------------------+---------+---------+---------+---------+
-                                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
---------------------------------------------+---------+---------+---------+---------+
-BigButton/BigButtonDebounce/ClockDivider/tmp|         |         |    3.853|         |
-Main/Segment/Timer/ClockDivider/tmp         |         |         |    3.091|         |
---------------------------------------------+---------+---------+---------+---------+
+-----------------------------------+---------+---------+---------+---------+
+                                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------------------+---------+---------+---------+---------+
+Main/Segment/Timer/ClockDivider/tmp|         |         |    3.165|         |
+clk                                |         |         |    4.069|         |
+-----------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock Main/SegmentSerial/Multiplex/ClockDivider/tmp
+---------------------------------------------+---------+---------+---------+---------+
+                                             | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------------------------------+---------+---------+---------+---------+
+Main/SegmentSerial/Multiplex/ClockDivider/tmp|    2.291|         |         |         |
+clk                                          |    3.902|         |         |         |
+---------------------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock Main/StrikeResult/isStrike
---------------------------------------------+---------+---------+---------+---------+
-                                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
---------------------------------------------+---------+---------+---------+---------+
-BigButton/BigButtonDebounce/ClockDivider/tmp|    3.853|         |         |         |
-Main/StrikeResult/isStrike                  |    2.048|         |         |         |
---------------------------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock Main/WinDisplay/Segment/ClockDivider/tmp
---------------------------------------------+---------+---------+---------+---------+
-                                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
---------------------------------------------+---------+---------+---------+---------+
-BigButton/BigButtonDebounce/ClockDivider/tmp|    3.853|         |         |         |
-Main/WinDisplay/Segment/ClockDivider/tmp    |    2.216|         |         |         |
---------------------------------------------+---------+---------+---------+---------+
+--------------------------+---------+---------+---------+---------+
+                          | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock              |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+--------------------------+---------+---------+---------+---------+
+Main/StrikeResult/isStrike|    2.048|         |         |         |
+clk                       |    3.902|         |         |         |
+--------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clk
---------------------------------------------+---------+---------+---------+---------+
-                                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
---------------------------------------------+---------+---------+---------+---------+
-BigButton/BigButtonDebounce/ClockDivider/tmp|    4.330|         |         |         |
-Main/LoseDisplay/Segment/ClockDivider/tmp   |    2.738|         |         |         |
-Main/Segment/Multiplex/ClockDivider/tmp     |    4.531|         |         |         |
-Main/Segment/Timer/ClockDivider/tmp         |         |    4.534|         |         |
-Main/StrikeResult/isStrike                  |    2.621|         |         |         |
-Main/WinDisplay/Segment/ClockDivider/tmp    |    2.790|         |         |         |
-clk                                         |    3.934|         |         |         |
---------------------------------------------+---------+---------+---------+---------+
+---------------------------------------------+---------+---------+---------+---------+
+                                             | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------------------------------+---------+---------+---------+---------+
+BigButton/ButtonOneShot/ClockDivider/tmp     |    2.292|         |         |         |
+Main/Segment/Multiplex/ClockDivider/tmp      |    4.006|         |         |         |
+Main/Segment/Timer/ClockDivider/tmp          |         |    3.986|         |         |
+Main/SegmentSerial/Multiplex/ClockDivider/tmp|    3.775|         |         |         |
+Main/StrikeResult/isStrike                   |    2.755|         |         |         |
+clk                                          |    4.069|         |         |         |
+---------------------------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 4.92 secs
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.68 secs
  
 --> 
 
-Total memory usage is 4513500 kilobytes
+Total memory usage is 4512732 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    2 (   0 filtered)
-Number of infos    :   37 (   0 filtered)
+Number of infos    :   44 (   0 filtered)
 

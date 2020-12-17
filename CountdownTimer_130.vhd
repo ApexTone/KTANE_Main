@@ -32,6 +32,7 @@ use IEEE.STD_LOGIC_unsigned.ALL;
 
 entity CountdownTimer_130 is
 	port(
+		ce: std_logic;
 		clk, reset: in std_logic;
 		min_out, sec1_out, sec2_out: out std_logic_vector(3 downto 0);
 		timeout: out std_logic
@@ -62,7 +63,7 @@ begin
 			clk_out => dividedClk
 		);
 
-	process(dividedClk, reset)
+	process(dividedClk, reset, ce)
 	begin
 		if reset='1' then
 			min <= "0001";
@@ -70,7 +71,7 @@ begin
 			sec2 <= "0000";
 			tc <= '0';
 		else
-			if falling_edge(dividedClk) then
+			if falling_edge(dividedClk) and ce = '1' then
 				if sec2 = "0000" then
 					sec2 <= "1001";--reset to 9
 					if sec1 = "0000" then

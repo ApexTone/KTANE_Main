@@ -31,6 +31,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity SegmentDisplay is
 	port(
+		ce: in std_logic;
 		clk,reset: in std_logic;
 		seg_out: out std_logic_vector(7 downto 0);
 		common_out: out std_logic_vector(3 downto 0);
@@ -43,8 +44,11 @@ architecture Behavioral of SegmentDisplay is
 	signal min_out,sec1_out,sec2_out: std_logic_vector(3 downto 0);
 	signal min_seg,sec1_seg,sec2_seg: std_logic_vector(7 downto 0);
 	
+	signal tmp: std_logic_vector(7 downto 0);
+	
 	component CountdownTimer_130 is
 		port(
+			ce: std_logic;
 			clk, reset: in std_logic;
 			min_out, sec1_out, sec2_out: out std_logic_vector(3 downto 0);
 			timeout: out std_logic
@@ -67,6 +71,7 @@ architecture Behavioral of SegmentDisplay is
 begin
 	Timer: CountdownTimer_130 
 		port map(
+			ce => ce,
 			clk => clk,
 			reset => reset,
 			min_out => min_out,
@@ -93,12 +98,12 @@ begin
 		
 	sec2_bcd <= sec2_out;
 	
-		
+	tmp <= min_seg(7 downto 1) & '1';
 	Multiplex: SegmentTimerMultiplexer
 		port map(
 			clk => clk,
 			reset => reset,
-			min => min_seg,
+			min => tmp,
 			sec1 => sec1_seg,
 			sec2 => sec2_seg,
 			seg_out => seg_out,

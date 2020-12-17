@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date:    15:36:50 12/13/2020 
+-- Create Date:    03:14:10 12/18/2020 
 -- Design Name: 
--- Module Name:    Oneshot - Behavioral 
+-- Module Name:    ClockDivider5M - Behavioral 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
@@ -29,40 +29,33 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity Oneshot is
-	port(
-		clk: in std_logic;
-		enable: in std_logic;
-		shot: out std_logic
-	);
-end Oneshot;
-architecture Behavioral of Oneshot is
-	signal d1,d2: std_logic;
-	signal divided_clk: std_logic;
-	
-	component ClockDivider100K is
+entity ClockDivider5M is
 	port(
 		clk: in std_logic;
 		reset: in std_logic;
 		clk_out: out std_logic
 	);
-	end component;
-begin
+end ClockDivider5M;
 
-	ClockDivider: ClockDivider100K 
-	port map(
-		clk => clk,
-		reset => '0',
-		clk_out => divided_clk
-	);
-	process(divided_clk)
-	begin
-		if rising_edge(divided_clk) then
-			d1 <= enable;
-			d2 <= d1;
+architecture Behavioral of ClockDivider5M is
+signal count: integer range 0 to 2500000 := 0;
+	signal tmp: std_logic := '0';
+begin
+	process(clk, reset)
+	begin 
+		if reset = '1' then
+			count <= 0;
+			tmp <= '0';
+		elsif rising_edge(clk) then
+			if count = 2500000 then
+				tmp <= not tmp;
+				count <= 0;
+			else
+				count <= count + 1;
+			end if;
 		end if;
 	end process;
-	shot <= d1 and (not d2);
-
+	
+	clk_out <= tmp;
 end Behavioral;
 

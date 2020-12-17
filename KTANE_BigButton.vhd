@@ -54,7 +54,7 @@ architecture Behavioral of KTANE_BigButton is
 	signal winCondition: std_logic_vector(3 downto 0) := "0000";
 	signal debouncedButton: std_logic := '0';
 	
-	signal trigger, shot: std_logic := '0';
+	signal trigger, shot, buttonShot: std_logic := '0';
 	
 	component Oneshot is
 		port(
@@ -83,6 +83,13 @@ begin
 			clk => clk,
 			enable => trigger,
 			shot => shot
+		);
+	
+	ButtonOneShot: Oneshot
+		port map(
+			clk => clk,
+			enable => debouncedButton,
+			shot => buttonShot
 		);
 
 	with modeSel select winCondition <=
@@ -132,7 +139,7 @@ begin
 						winLED <= '0';
 					
 					when assertState =>
-						if debouncedButton = '0' then
+						if buttonShot = '1' then
 							if sec_in = winCondition then --win/strike logic
 								currentState <= winState;
 							else
