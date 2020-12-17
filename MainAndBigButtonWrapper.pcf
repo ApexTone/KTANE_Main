@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Wed Dec 16 12:46:39 2020
+// Written by: Map P.20131013 on Thu Dec 17 12:48:02 2020
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -20,6 +20,7 @@ COMP "segment_common<2>" LOCATE = SITE "P133" LEVEL 1;
 COMP "segment_out<6>" LOCATE = SITE "P127" LEVEL 1;
 COMP "segment_common<3>" LOCATE = SITE "P137" LEVEL 1;
 COMP "segment_out<7>" LOCATE = SITE "P124" LEVEL 1;
+COMP "buzzer" LOCATE = SITE "P83" LEVEL 1;
 COMP "enableGame<0>" LOCATE = SITE "P12" LEVEL 1;
 COMP "enableGame<1>" LOCATE = SITE "P10" LEVEL 1;
 COMP "enableGame<2>" LOCATE = SITE "P8" LEVEL 1;

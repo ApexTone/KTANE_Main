@@ -39,9 +39,9 @@ Setup/Hold to clock clk
 Source           | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 -----------------+------------+------------+------------+------------+------------------+--------+
 button           |    0.333(R)|      FAST  |    0.563(R)|      SLOW  |clk_BUFGP         |   0.000|
-reset            |    0.725(R)|      SLOW  |    0.157(R)|      SLOW  |clk_BUFGP         |   0.000|
-start            |    0.997(R)|      SLOW  |   -0.099(R)|      SLOW  |clk_BUFGP         |   0.000|
-toggleTimerSerial|    0.776(R)|      SLOW  |    0.097(R)|      SLOW  |clk_BUFGP         |   0.000|
+reset            |    0.552(R)|      SLOW  |    0.321(R)|      SLOW  |clk_BUFGP         |   0.000|
+start            |    0.897(R)|      SLOW  |   -0.004(R)|      SLOW  |clk_BUFGP         |   0.000|
+toggleTimerSerial|    1.049(R)|      SLOW  |   -0.151(R)|      SLOW  |clk_BUFGP         |   0.000|
 win<0>           |    2.559(R)|      SLOW  |   -1.238(R)|      FAST  |clk_BUFGP         |   0.000|
 win<1>           |    2.680(R)|      SLOW  |   -0.981(R)|      FAST  |clk_BUFGP         |   0.000|
 win<2>           |    2.536(R)|      SLOW  |   -1.215(R)|      FAST  |clk_BUFGP         |   0.000|
@@ -53,33 +53,34 @@ Clock clk to Pad
                  |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
 Destination      |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
 -----------------+-----------------+------------+-----------------+------------+------------------+--------+
-enableGame<0>    |         6.989(R)|      SLOW  |         3.598(R)|      FAST  |clk_BUFGP         |   0.000|
-enableGame<1>    |         7.123(R)|      SLOW  |         3.673(R)|      FAST  |clk_BUFGP         |   0.000|
-enableGame<2>    |         7.176(R)|      SLOW  |         3.709(R)|      FAST  |clk_BUFGP         |   0.000|
-enableGame<3>    |         7.310(R)|      SLOW  |         3.791(R)|      FAST  |clk_BUFGP         |   0.000|
-randomMode<0>    |         7.208(R)|      SLOW  |         3.707(R)|      FAST  |clk_BUFGP         |   0.000|
-randomMode<1>    |         7.208(R)|      SLOW  |         3.707(R)|      FAST  |clk_BUFGP         |   0.000|
-randomMode<2>    |         7.511(R)|      SLOW  |         3.955(R)|      FAST  |clk_BUFGP         |   0.000|
-randomMode<3>    |         7.373(R)|      SLOW  |         3.875(R)|      FAST  |clk_BUFGP         |   0.000|
-randomMode<4>    |         7.563(R)|      SLOW  |         3.989(R)|      FAST  |clk_BUFGP         |   0.000|
-randomMode<5>    |         7.569(R)|      SLOW  |         4.039(R)|      FAST  |clk_BUFGP         |   0.000|
-resetModule<0>   |         7.782(R)|      SLOW  |         4.097(R)|      FAST  |clk_BUFGP         |   0.000|
-resetModule<1>   |         7.871(R)|      SLOW  |         4.174(R)|      FAST  |clk_BUFGP         |   0.000|
-resetModule<2>   |         7.577(R)|      SLOW  |         3.989(R)|      FAST  |clk_BUFGP         |   0.000|
-resetModule<3>   |         7.711(R)|      SLOW  |         4.078(R)|      FAST  |clk_BUFGP         |   0.000|
-segment_common<0>|         7.233(R)|      SLOW  |         3.776(R)|      FAST  |clk_BUFGP         |   0.000|
-segment_common<1>|         7.144(R)|      SLOW  |         3.725(R)|      FAST  |clk_BUFGP         |   0.000|
+buzzer           |         6.561(R)|      SLOW  |         3.260(R)|      FAST  |clk_BUFGP         |   0.000|
+enableGame<0>    |         7.452(R)|      SLOW  |         3.900(R)|      FAST  |clk_BUFGP         |   0.000|
+enableGame<1>    |         7.699(R)|      SLOW  |         4.045(R)|      FAST  |clk_BUFGP         |   0.000|
+enableGame<2>    |         7.670(R)|      SLOW  |         4.016(R)|      FAST  |clk_BUFGP         |   0.000|
+enableGame<3>    |         7.926(R)|      SLOW  |         4.196(R)|      FAST  |clk_BUFGP         |   0.000|
+randomMode<0>    |         7.320(R)|      SLOW  |         3.795(R)|      FAST  |clk_BUFGP         |   0.000|
+randomMode<1>    |         7.299(R)|      SLOW  |         3.809(R)|      FAST  |clk_BUFGP         |   0.000|
+randomMode<2>    |         7.878(R)|      SLOW  |         4.218(R)|      FAST  |clk_BUFGP         |   0.000|
+randomMode<3>    |         7.498(R)|      SLOW  |         3.951(R)|      FAST  |clk_BUFGP         |   0.000|
+randomMode<4>    |         7.525(R)|      SLOW  |         4.009(R)|      FAST  |clk_BUFGP         |   0.000|
+randomMode<5>    |         7.508(R)|      SLOW  |         3.954(R)|      FAST  |clk_BUFGP         |   0.000|
+resetModule<0>   |         8.333(R)|      SLOW  |         4.532(R)|      FAST  |clk_BUFGP         |   0.000|
+resetModule<1>   |         7.819(R)|      SLOW  |         4.158(R)|      FAST  |clk_BUFGP         |   0.000|
+resetModule<2>   |         7.894(R)|      SLOW  |         4.236(R)|      FAST  |clk_BUFGP         |   0.000|
+resetModule<3>   |         7.899(R)|      SLOW  |         4.241(R)|      FAST  |clk_BUFGP         |   0.000|
+segment_common<0>|         7.363(R)|      SLOW  |         3.854(R)|      FAST  |clk_BUFGP         |   0.000|
+segment_common<1>|         6.977(R)|      SLOW  |         3.596(R)|      FAST  |clk_BUFGP         |   0.000|
 segment_common<2>|         7.143(R)|      SLOW  |         3.678(R)|      FAST  |clk_BUFGP         |   0.000|
-segment_common<3>|         7.391(R)|      SLOW  |         3.891(R)|      FAST  |clk_BUFGP         |   0.000|
-segment_out<0>   |         7.628(R)|      SLOW  |         3.970(R)|      FAST  |clk_BUFGP         |   0.000|
-segment_out<1>   |         7.715(R)|      SLOW  |         4.075(R)|      FAST  |clk_BUFGP         |   0.000|
-segment_out<2>   |         7.690(R)|      SLOW  |         4.062(R)|      FAST  |clk_BUFGP         |   0.000|
-segment_out<3>   |         7.578(R)|      SLOW  |         3.993(R)|      FAST  |clk_BUFGP         |   0.000|
-segment_out<4>   |         7.072(R)|      SLOW  |         3.653(R)|      FAST  |clk_BUFGP         |   0.000|
-segment_out<5>   |         7.220(R)|      SLOW  |         3.743(R)|      FAST  |clk_BUFGP         |   0.000|
-segment_out<6>   |         7.614(R)|      SLOW  |         4.035(R)|      FAST  |clk_BUFGP         |   0.000|
-segment_out<7>   |         7.332(R)|      SLOW  |         3.880(R)|      FAST  |clk_BUFGP         |   0.000|
-winLED           |         8.307(R)|      SLOW  |         4.452(R)|      FAST  |clk_BUFGP         |   0.000|
+segment_common<3>|         7.540(R)|      SLOW  |         3.966(R)|      FAST  |clk_BUFGP         |   0.000|
+segment_out<0>   |         7.588(R)|      SLOW  |         3.945(R)|      FAST  |clk_BUFGP         |   0.000|
+segment_out<1>   |         7.740(R)|      SLOW  |         4.090(R)|      FAST  |clk_BUFGP         |   0.000|
+segment_out<2>   |         7.830(R)|      SLOW  |         4.144(R)|      FAST  |clk_BUFGP         |   0.000|
+segment_out<3>   |         7.631(R)|      SLOW  |         4.021(R)|      FAST  |clk_BUFGP         |   0.000|
+segment_out<4>   |         7.204(R)|      SLOW  |         3.740(R)|      FAST  |clk_BUFGP         |   0.000|
+segment_out<5>   |         6.955(R)|      SLOW  |         3.574(R)|      FAST  |clk_BUFGP         |   0.000|
+segment_out<6>   |         7.500(R)|      SLOW  |         4.010(R)|      FAST  |clk_BUFGP         |   0.000|
+segment_out<7>   |         6.982(R)|      SLOW  |         3.581(R)|      FAST  |clk_BUFGP         |   0.000|
+winLED           |         8.272(R)|      SLOW  |         4.433(R)|      FAST  |clk_BUFGP         |   0.000|
 -----------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock strike<0> to Pad
@@ -87,8 +88,8 @@ Clock strike<0> to Pad
             |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                          | Clock  |
 Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s)         | Phase  |
 ------------+-----------------+------------+-----------------+------------+--------------------------+--------+
-strikeLED<0>|         9.937(R)|      SLOW  |         5.764(R)|      FAST  |Main/StrikeResult/isStrike|   0.000|
-strikeLED<1>|         8.822(R)|      SLOW  |         5.129(R)|      FAST  |Main/StrikeResult/isStrike|   0.000|
+strikeLED<0>|        10.121(R)|      SLOW  |         5.884(R)|      FAST  |Main/StrikeResult/isStrike|   0.000|
+strikeLED<1>|         9.006(R)|      SLOW  |         5.249(R)|      FAST  |Main/StrikeResult/isStrike|   0.000|
 ------------+-----------------+------------+-----------------+------------+--------------------------+--------+
 
 Clock strike<1> to Pad
@@ -114,8 +115,8 @@ Clock strike<3> to Pad
             |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                          | Clock  |
 Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s)         | Phase  |
 ------------+-----------------+------------+-----------------+------------+--------------------------+--------+
-strikeLED<0>|         9.982(R)|      SLOW  |         5.817(R)|      FAST  |Main/StrikeResult/isStrike|   0.000|
-strikeLED<1>|         8.867(R)|      SLOW  |         5.182(R)|      FAST  |Main/StrikeResult/isStrike|   0.000|
+strikeLED<0>|         9.823(R)|      SLOW  |         5.708(R)|      FAST  |Main/StrikeResult/isStrike|   0.000|
+strikeLED<1>|         8.708(R)|      SLOW  |         5.073(R)|      FAST  |Main/StrikeResult/isStrike|   0.000|
 ------------+-----------------+------------+-----------------+------------+--------------------------+--------+
 
 Clock to Setup on destination clock clk
@@ -123,11 +124,11 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    3.850|         |         |         |
-strike<0>      |    4.385|         |         |         |
-strike<1>      |    4.385|         |         |         |
-strike<2>      |    4.385|         |         |         |
-strike<3>      |    4.385|         |         |         |
+clk            |    4.936|         |         |         |
+strike<0>      |    4.524|         |         |         |
+strike<1>      |    4.524|         |         |         |
+strike<2>      |    4.524|         |         |         |
+strike<3>      |    4.524|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock strike<0>
@@ -135,7 +136,7 @@ Clock to Setup on destination clock strike<0>
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    4.060|         |         |         |
+clk            |    4.257|         |         |         |
 strike<0>      |    1.248|         |         |         |
 strike<1>      |    1.248|         |         |         |
 strike<2>      |    1.248|         |         |         |
@@ -147,7 +148,7 @@ Clock to Setup on destination clock strike<1>
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    4.060|         |         |         |
+clk            |    4.257|         |         |         |
 strike<0>      |    1.248|         |         |         |
 strike<1>      |    1.248|         |         |         |
 strike<2>      |    1.248|         |         |         |
@@ -159,7 +160,7 @@ Clock to Setup on destination clock strike<2>
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    4.060|         |         |         |
+clk            |    4.257|         |         |         |
 strike<0>      |    1.248|         |         |         |
 strike<1>      |    1.248|         |         |         |
 strike<2>      |    1.248|         |         |         |
@@ -171,7 +172,7 @@ Clock to Setup on destination clock strike<3>
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    4.060|         |         |         |
+clk            |    4.257|         |         |         |
 strike<0>      |    1.248|         |         |         |
 strike<1>      |    1.248|         |         |         |
 strike<2>      |    1.248|         |         |         |
@@ -179,7 +180,7 @@ strike<3>      |    1.248|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Wed Dec 16 12:46:49 2020 
+Analysis completed Thu Dec 17 12:48:12 2020 
 --------------------------------------------------------------------------------
 
 Trace Settings:

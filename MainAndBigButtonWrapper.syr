@@ -261,6 +261,7 @@ Unit <Oneshot> synthesized.
 Synthesizing Unit <KTANE_Main>.
     Related source file is "C:\Users\Predator\Desktop\Learning Resources\DigitalSystem\KTANE_Main\KTANE_Main.vhd".
     Found 5-bit register for signal <resetModule>.
+    Found 1-bit register for signal <buzzer>.
     Found 5-bit register for signal <enableGame>.
     Found 4-bit register for signal <currentState>.
     Found 1-bit register for signal <startRandom>.
@@ -271,7 +272,7 @@ Synthesizing Unit <KTANE_Main>.
     | States             | 4                                              |
     | Transitions        | 10                                             |
     | Inputs             | 4                                              |
-    | Outputs            | 15                                             |
+    | Outputs            | 16                                             |
     | Clock              | clk (rising_edge)                              |
     | Reset              | debouncedReset (positive)                      |
     | Reset type         | asynchronous                                   |
@@ -280,10 +281,10 @@ Synthesizing Unit <KTANE_Main>.
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
     Found 4x2-bit Read Only RAM for signal <strikeLED>
-    Found 2-bit comparator lessequal for signal <n0025> created at line 293
+    Found 2-bit comparator lessequal for signal <n0027> created at line 300
     Summary:
 	inferred   1 RAM(s).
-	inferred  23 D-type flip-flop(s).
+	inferred  24 D-type flip-flop(s).
 	inferred   1 Comparator(s).
 	inferred  20 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
@@ -441,8 +442,8 @@ Macro Statistics
  2-bit adder                                           : 5
  24-bit adder                                          : 1
  4-bit subtractor                                      : 2
-# Registers                                            : 37
- 1-bit register                                        : 20
+# Registers                                            : 38
+ 1-bit register                                        : 21
  16-bit register                                       : 4
  2-bit register                                        : 5
  24-bit register                                       : 1
@@ -572,8 +573,8 @@ Macro Statistics
  2-bit up counter                                      : 1
  24-bit up counter                                     : 1
  4-bit down counter                                    : 1
-# Registers                                            : 62
- Flip-Flops                                            : 62
+# Registers                                            : 63
+ Flip-Flops                                            : 63
 # Comparators                                          : 2
  2-bit comparator lessequal                            : 1
  4-bit comparator equal                                : 1
@@ -663,8 +664,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 105
- Flip-Flops                                            : 105
+# Registers                                            : 106
+ Flip-Flops                                            : 106
 
 =========================================================================
 
@@ -700,9 +701,9 @@ Primitive and Black Box Usage:
 #      MUXF7                       : 5
 #      VCC                         : 1
 #      XORCY                       : 40
-# FlipFlops/Latches                : 105
+# FlipFlops/Latches                : 106
 #      FD                          : 10
-#      FDC                         : 62
+#      FDC                         : 63
 #      FDC_1                       : 2
 #      FDCE                        : 12
 #      FDCE_1                      : 1
@@ -712,9 +713,9 @@ Primitive and Black Box Usage:
 #      FDPE_1                      : 2
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 41
+# IO Buffers                       : 42
 #      IBUF                        : 12
-#      OBUF                        : 29
+#      OBUF                        : 30
 
 Device utilization summary:
 ---------------------------
@@ -723,20 +724,20 @@ Selected Device : 6slx9tqg144-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             105  out of  11440     0%  
+ Number of Slice Registers:             106  out of  11440     0%  
  Number of Slice LUTs:                  186  out of   5720     3%  
     Number used as Logic:               186  out of   5720     3%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    200
-   Number with an unused Flip Flop:      95  out of    200    47%  
-   Number with an unused LUT:            14  out of    200     7%  
-   Number of fully used LUT-FF pairs:    91  out of    200    45%  
+ Number of LUT Flip Flop pairs used:    201
+   Number with an unused Flip Flop:      95  out of    201    47%  
+   Number with an unused LUT:            15  out of    201     7%  
+   Number of fully used LUT-FF pairs:    91  out of    201    45%  
    Number of unique control sets:        14
 
 IO Utilization: 
- Number of IOs:                          42
- Number of bonded IOBs:                  42  out of    102    41%  
+ Number of IOs:                          43
+ Number of bonded IOBs:                  43  out of    102    42%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
@@ -762,7 +763,7 @@ Clock Information:
 ------------------------------------------------------------+---------------------------------------+-------+
 Clock Signal                                                | Clock buffer(FF name)                 | Load  |
 ------------------------------------------------------------+---------------------------------------+-------+
-clk                                                         | BUFGP                                 | 86    |
+clk                                                         | BUFGP                                 | 87    |
 Main/Segment/Multiplex/ClockDivider/tmp                     | NONE(Main/Segment/Multiplex/count_1)  | 4     |
 Main/WinDisplay/Segment/ClockDivider/tmp                    | NONE(Main/WinDisplay/Segment/count_0) | 2     |
 Main/LoseDisplay/Segment/ClockDivider/tmp                   | NONE(Main/LoseDisplay/Segment/count_0)| 2     |
@@ -794,7 +795,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 3.934ns (frequency: 254.217MHz)
-  Total number of paths / destination ports: 1688 / 171
+  Total number of paths / destination ports: 1691 / 173
 -------------------------------------------------------------------------
 Delay:               3.934ns (Levels of Logic = 3)
   Source:            Main/WinDisplay/Segment/ClockDivider/count_1 (FF)
@@ -949,7 +950,7 @@ Offset:              3.518ns (Levels of Logic = 3)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 27 / 27
+  Total number of paths / destination ports: 28 / 28
 -------------------------------------------------------------------------
 Offset:              3.926ns (Levels of Logic = 1)
   Source:            Main/resetModule_0 (FF)
@@ -997,7 +998,7 @@ Clock to Setup on destination clock Main/LoseDisplay/Segment/ClockDivider/tmp
 Source Clock                             |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------------------------------+---------+---------+---------+---------+
 Main/LoseDisplay/Segment/ClockDivider/tmp|    2.135|         |         |         |
-clk                                      |    3.631|         |         |         |
+clk                                      |    3.637|         |         |         |
 -----------------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock Main/Segment/Multiplex/ClockDivider/tmp
@@ -1006,7 +1007,7 @@ Clock to Setup on destination clock Main/Segment/Multiplex/ClockDivider/tmp
 Source Clock                           |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------------------------------+---------+---------+---------+---------+
 Main/Segment/Multiplex/ClockDivider/tmp|    2.291|         |         |         |
-clk                                    |    3.631|         |         |         |
+clk                                    |    3.637|         |         |         |
 ---------------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock Main/Segment/Timer/ClockDivider/tmp
@@ -1015,7 +1016,7 @@ Clock to Setup on destination clock Main/Segment/Timer/ClockDivider/tmp
 Source Clock                       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------------------------+---------+---------+---------+---------+
 Main/Segment/Timer/ClockDivider/tmp|         |         |    3.091|         |
-clk                                |         |         |    3.631|         |
+clk                                |         |         |    3.637|         |
 -----------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock Main/StrikeResult/isStrike
@@ -1024,7 +1025,7 @@ Clock to Setup on destination clock Main/StrikeResult/isStrike
 Source Clock              |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 --------------------------+---------+---------+---------+---------+
 Main/StrikeResult/isStrike|    2.016|         |         |         |
-clk                       |    3.631|         |         |         |
+clk                       |    3.637|         |         |         |
 --------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock Main/WinDisplay/Segment/ClockDivider/tmp
@@ -1033,7 +1034,7 @@ Clock to Setup on destination clock Main/WinDisplay/Segment/ClockDivider/tmp
 Source Clock                            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ----------------------------------------+---------+---------+---------+---------+
 Main/WinDisplay/Segment/ClockDivider/tmp|    2.190|         |         |         |
-clk                                     |    3.631|         |         |         |
+clk                                     |    3.637|         |         |         |
 ----------------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clk
@@ -1053,11 +1054,11 @@ clk                                      |    3.934|         |         |        
 
 
 Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 4.84 secs
+Total CPU time to Xst completion: 4.76 secs
  
 --> 
 
-Total memory usage is 4512156 kilobytes
+Total memory usage is 4512476 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    2 (   0 filtered)

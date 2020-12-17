@@ -44,7 +44,8 @@ entity MainAndBigButtonWrapper is
 			randomMode: out std_logic_vector(5 downto 0);-- 2 x 3 pins + 2
 			resetModule: out std_logic_vector(3 downto 0);--1 x 4 pins + 1
 			
-			winLED: out std_logic
+			winLED: out std_logic;
+			buzzer: out std_logic
 			
 	);
 end MainAndBigButtonWrapper;
@@ -77,8 +78,8 @@ architecture Behavioral of MainAndBigButtonWrapper is
 			enableGame: out std_logic_vector(4 downto 0);
 			randomMode: out std_logic_vector(7 downto 0);-- 2 x 4 pins
 			resetModule: out std_logic_vector(4 downto 0);--1 x 5 pins
-			sec2_bigButton: out std_logic_vector(3 downto 0)
-		
+			sec2_bigButton: out std_logic_vector(3 downto 0);
+			buzzer: out std_logic
 		);
 	end component;
 	component KTANE_BigButton is
@@ -124,7 +125,8 @@ begin
 			enableGame => enableBuffer,
 			randomMode => randomModeBuffer,
 			resetModule => resetModuleBuffer,
-			sec2_bigButton => sec2Signal
+			sec2_bigButton => sec2Signal,
+			buzzer => buzzer
 		);
 		
 	allWin <= winBigButton & win;

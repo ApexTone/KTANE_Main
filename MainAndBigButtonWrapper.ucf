@@ -1,4 +1,5 @@
 NET "clk" LOC = P123;
+NET "buzzer" LOC = P83;
 
 #GPIO Test
 

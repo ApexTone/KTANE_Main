@@ -43,7 +43,8 @@ entity KTANE_Main is
 		enableGame: out std_logic_vector(4 downto 0);
 		randomMode: out std_logic_vector(7 downto 0);-- 2 x 4 pins
 		resetModule: out std_logic_vector(4 downto 0);--1 x 5 pins
-		sec2_bigButton: out std_logic_vector(3 downto 0)
+		sec2_bigButton: out std_logic_vector(3 downto 0);
+		buzzer: out std_logic
 		
 	);
 end KTANE_Main;
@@ -202,6 +203,7 @@ begin
 			currentState <= startState;
 			resetModule <= (others => '1');
 			enableGame <= (others => '0');
+			buzzer <= '0';
 		else
 			if rising_edge(clk) then
 				case currentState is
@@ -218,6 +220,7 @@ begin
 						startRandom <= '1';
 						segment_out <= "00000000";
 						segment_common <= "1111";
+						buzzer <= '0';
 					when gameState =>
 					--NSL
 						if (debouncedReset = '1') then
@@ -233,6 +236,7 @@ begin
 						resetModule <= (others => '0');
 						enableGame <= (others => '1');
 						startRandom <= '0';
+						buzzer <= '0';
 						if debouncedToggle = '0' then
 							segment_out <= timerSegment;
 							segment_common <= timerCommon;
@@ -253,6 +257,7 @@ begin
 						startRandom <= '0';
 						segment_out <= winSegment;
 						segment_common <= winCommon;
+						buzzer <= '0';
 					when lossState =>
 					--NSL
 						if (debouncedReset = '1') then
@@ -261,6 +266,7 @@ begin
 							currentState <= lossState;
 						end if;
 					--OFL
+						buzzer <= '1';
 						resetModule <= (others => '0');
 						enableGame <= (others => '0');
 						startRandom <= '0';
@@ -273,6 +279,7 @@ begin
 						startRandom <= '0';
 						segment_out <= "00000000";
 						segment_common <= "1111";
+						buzzer <= '0';
 				end case;
 			end if;
 		end if;

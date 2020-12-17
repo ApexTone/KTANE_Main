@@ -1,7 +1,7 @@
 
 # PlanAhead Launch Script for Pre-Synthesis Floorplanning, created by Project Navigator
 
-create_project -name KTANE_Main -dir "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/planAhead_run_3" -part xc6slx9tqg144-3
+create_project -name KTANE_Main -dir "C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/planAhead_run_1" -part xc6slx9tqg144-3
 set_param project.pinAheadLayout yes
 set srcset [get_property srcset [current_run -impl]]
 set_property target_constrs_file "MainAndBigButtonWrapper.ucf" [current_fileset -constrset]
