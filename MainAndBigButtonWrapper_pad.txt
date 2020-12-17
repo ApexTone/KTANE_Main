@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Thu Dec 17 12:48:08 2020
+Fri Dec 18 02:08:29 2020
 
 
 INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
@@ -24,13 +24,13 @@ Pinout by Pin Number:
 |P2        |strike<0>        |IOB      |IO_L83P_3                 |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |P3        |                 |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |P4        |                 |         |VCCO_3                    |         |           |3             |          |         |           |         |2.50     |          |           |                |
-|P5        |start            |IOB      |IO_L52N_3                 |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
+|P5        |button           |IOB      |IO_L52N_3                 |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |P6        |enableGame<3>    |IOB      |IO_L52P_3                 |OUTPUT   |LVCMOS25*  |3             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
-|P7        |reset            |IOB      |IO_L51N_3                 |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
+|P7        |toggleTimerSerial|IOB      |IO_L51N_3                 |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |P8        |enableGame<2>    |IOB      |IO_L51P_3                 |OUTPUT   |LVCMOS25*  |3             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
-|P9        |toggleTimerSerial|IOB      |IO_L50N_3                 |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
+|P9        |reset            |IOB      |IO_L50N_3                 |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |P10       |enableGame<1>    |IOB      |IO_L50P_3                 |OUTPUT   |LVCMOS25*  |3             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
-|P11       |button           |IOB      |IO_L49N_3                 |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
+|P11       |start            |IOB      |IO_L49N_3                 |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |P12       |enableGame<0>    |IOB      |IO_L49P_3                 |OUTPUT   |LVCMOS25*  |3             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
 |P13       |                 |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |P14       |win<3>           |IOB      |IO_L44N_GCLK20_3          |INPUT    |LVCMOS25*  |3             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |

@@ -68,6 +68,36 @@
 <msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">Main/WinDisplay/Segment/ClockDivider/count_9</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MainAndBigButtonWrapper</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Main/SegmentSerial/Multiplex/ClockDivider/count_9&gt; &lt;Main/LoseDisplay/Segment/ClockDivider/count_9&gt; &lt;Main/Segment/Multiplex/ClockDivider/count_9&gt; </arg>
 </msg>
 
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">BigButton/BigButtonDebounce/ClockDivider/tmp</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MainAndBigButtonWrapper</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Main/StartDebounce/ClockDivider/tmp&gt; &lt;Main/ResetDebounce/ClockDivider/tmp&gt; &lt;Main/ToggleDebounce/ClockDivider/tmp&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">BigButton/BigButtonDebounce/ClockDivider/count_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MainAndBigButtonWrapper</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Main/StartDebounce/ClockDivider/count_0&gt; &lt;Main/ResetDebounce/ClockDivider/count_0&gt; &lt;Main/ToggleDebounce/ClockDivider/count_0&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">BigButton/BigButtonDebounce/ClockDivider/count_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MainAndBigButtonWrapper</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Main/StartDebounce/ClockDivider/count_1&gt; &lt;Main/ResetDebounce/ClockDivider/count_1&gt; &lt;Main/ToggleDebounce/ClockDivider/count_1&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">BigButton/BigButtonDebounce/ClockDivider/count_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MainAndBigButtonWrapper</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Main/StartDebounce/ClockDivider/count_2&gt; &lt;Main/ResetDebounce/ClockDivider/count_2&gt; &lt;Main/ToggleDebounce/ClockDivider/count_2&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">BigButton/BigButtonDebounce/ClockDivider/count_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MainAndBigButtonWrapper</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Main/StartDebounce/ClockDivider/count_3&gt; &lt;Main/ResetDebounce/ClockDivider/count_3&gt; &lt;Main/ToggleDebounce/ClockDivider/count_3&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">BigButton/BigButtonDebounce/ClockDivider/count_4</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MainAndBigButtonWrapper</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Main/StartDebounce/ClockDivider/count_4&gt; &lt;Main/ResetDebounce/ClockDivider/count_4&gt; &lt;Main/ToggleDebounce/ClockDivider/count_4&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">BigButton/BigButtonDebounce/ClockDivider/count_5</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MainAndBigButtonWrapper</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Main/StartDebounce/ClockDivider/count_5&gt; &lt;Main/ResetDebounce/ClockDivider/count_5&gt; &lt;Main/ToggleDebounce/ClockDivider/count_5&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">BigButton/BigButtonDebounce/ClockDivider/count_6</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MainAndBigButtonWrapper</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Main/StartDebounce/ClockDivider/count_6&gt; &lt;Main/ResetDebounce/ClockDivider/count_6&gt; &lt;Main/ToggleDebounce/ClockDivider/count_6&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">BigButton/BigButtonDebounce/ClockDivider/count_7</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MainAndBigButtonWrapper</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Main/StartDebounce/ClockDivider/count_7&gt; &lt;Main/ResetDebounce/ClockDivider/count_7&gt; &lt;Main/ToggleDebounce/ClockDivider/count_7&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">BigButton/BigButtonDebounce/ClockDivider/count_8</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MainAndBigButtonWrapper</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Main/StartDebounce/ClockDivider/count_8&gt; &lt;Main/ResetDebounce/ClockDivider/count_8&gt; &lt;Main/ToggleDebounce/ClockDivider/count_8&gt; </arg>
+</msg>
+
 <msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">Main/WinDisplay/Segment/ClockDivider/count_10</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">MainAndBigButtonWrapper</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Main/SegmentSerial/Multiplex/ClockDivider/count_10&gt; &lt;Main/LoseDisplay/Segment/ClockDivider/count_10&gt; &lt;Main/Segment/Multiplex/ClockDivider/count_10&gt; </arg>
 </msg>
 

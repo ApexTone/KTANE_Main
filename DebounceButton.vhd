@@ -38,15 +38,36 @@ entity DebounceButton is
 end DebounceButton;
 
 architecture Behavioral of DebounceButton is
-	signal d1,d2,d3: std_logic;
+	signal d1,d2,d3,d4,d5,d6: std_logic;
+	signal divided_clk: std_logic := '0';
+	
+	component ClockDivider1K is
+		port(
+			clk: in std_logic;
+			reset: in std_logic;
+			clk_out: out std_logic
+		);
+	end component;
 begin	
-	process(clk)
+	
+	ClockDivider: ClockDivider1K 
+		port map(
+			clk => clk,
+			reset => '0',
+			clk_out => divided_clk
+		);
+	
+	process(divided_clk)
 	begin
-		if rising_edge(clk) then --3 clock pulses debounce: MAY NEED LESS DELAY
+		if rising_edge(divided_clk) then
 			d1 <= inp;
 			d2 <= d1;
+			d3 <= d2;
+			d4 <= d3;
+			d5 <= d4;
+			d6 <= d5;
 		end if;
 	end process;
-	deb_inp <= d1 and d2;
+	deb_inp <= d1 and d2 and d3 and d4 and d5 and d6;
 end Behavioral;
 

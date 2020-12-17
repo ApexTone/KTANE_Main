@@ -129,7 +129,7 @@ begin
 			buzzer => buzzer
 		);
 		
-	allWin <= winBigButton & win;
+	allWin <= winBigButton & win(3 downto 1) & win(0);
 	allStrike <= strikeBigButton & strike;
 		
 	enableGame <= enableBuffer(4 downto 1);

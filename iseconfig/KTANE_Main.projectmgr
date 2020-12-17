@@ -23,13 +23,13 @@
          <ClosedNode>Design Utilities</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem/>
+         <SelectedItem></SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001e7000000010000000100000000000000000000000064ffffffff000000810000000000000001000001e70000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000115000000010000000100000000000000000000000064ffffffff000000810000000000000001000001150000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem/>
+      <CurrentItem></CurrentItem>
    </ItemView>
    <ItemView guiview="File" >
       <ClosedNodes>
@@ -38,7 +38,7 @@
       <SelectedItems/>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000392000000040101000100000000000000000000000064ffffffff000000810000000000000004000000420000000100000000000000240000000100000000000000660000000100000000000002c60000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000130000000040101000100000000000000000000000064ffffffff000000810000000000000004000000420000000100000000000000240000000100000000000000660000000100000000000000640000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>BCDto7Seg.vhd</CurrentItem>
    </ItemView>
@@ -75,7 +75,6 @@
    <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
-         <ClosedNode>/MainAndBigButtonWrapper - Behavioral C:|Users|Predator|Desktop|Learning Resources|DigitalSystem|KTANE_Main|MainAndBigButtonWrapper.vhd/BigButton - KTANE_BigButton - Behavioral</ClosedNode>
          <ClosedNode>/MainAndBigButtonWrapper - Behavioral C:|Users|Predator|Desktop|Learning Resources|DigitalSystem|KTANE_Main|MainAndBigButtonWrapper.vhd/Main - KTANE_Main - Behavioral</ClosedNode>
          <ClosedNode>/character7seg_tb - behavior C:|Users|Predator|Desktop|Learning Resources|DigitalSystem|KTANE_Main|character7seg_tb.vhd</ClosedNode>
          <ClosedNode>/clockdivider20m_tb - behavior C:|Users|Predator|Desktop|Learning Resources|DigitalSystem|KTANE_Main|clockdivider20m_tb.vhd</ClosedNode>
@@ -95,13 +94,13 @@
          <ClosedNode>/winchecker_tb - behavior C:|Users|Predator|Desktop|Learning Resources|DigitalSystem|KTANE_Main|winchecker_tb.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>countdowntimer_130_tb - behavior (C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/countdowntimer_130_tb.vhd)</SelectedItem>
+         <SelectedItem>debouncebutton_tb - behavior (C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/debouncebutton_tb.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >2</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001ce000000020000000000000000000000000200000064ffffffff000000810000000300000002000001ce0000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001fa000000020000000000000000000000000200000064ffffffff000000810000000300000002000001fa0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>countdowntimer_130_tb - behavior (C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/countdowntimer_130_tb.vhd)</CurrentItem>
+      <CurrentItem>debouncebutton_tb - behavior (C:/Users/Predator/Desktop/Learning Resources/DigitalSystem/KTANE_Main/debouncebutton_tb.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -122,13 +121,13 @@
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Simulate Behavioral Model</SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000017e000000010000000100000000000000000000000064ffffffff0000008100000000000000010000017e0000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000115000000010000000100000000000000000000000064ffffffff000000810000000000000001000001150000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>Simulate Behavioral Model</CurrentItem>
+      <CurrentItem/>
    </ItemView>
    <SourceProcessView>000000ff00000000000000020000011b0000011b01000000050100000002</SourceProcessView>
    <CurrentView>Implementation</CurrentView>

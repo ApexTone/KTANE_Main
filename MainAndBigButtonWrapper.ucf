@@ -3,10 +3,10 @@ NET "buzzer" LOC = P83;
 
 #GPIO Test
 
-NET "button" LOC = P11;
-NET "reset" LOC = P7;
-NET "start" LOC = P5;
-NET "toggleTimerSerial" LOC = P9;
+NET "button" LOC = P5;
+NET "reset" LOC = P9;
+NET "start" LOC = P11;
+NET "toggleTimerSerial" LOC = P7;
 NET "winLED" LOC = P104;
 NET "win[3]" LOC = P14;
 NET "win[2]" LOC = P16;

@@ -52,6 +52,7 @@ ARCHITECTURE behavior OF debouncebutton_tb IS
    signal clk : std_logic := '0';
    signal inp : std_logic := '0';
 
+
  	--Outputs
    signal deb_inp : std_logic;
 

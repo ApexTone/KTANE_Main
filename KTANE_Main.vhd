@@ -218,8 +218,8 @@ begin
 						resetModule <= (others => '1');
 						enableGame <= (others => '0');
 						startRandom <= '1';
-						segment_out <= "00000000";
-						segment_common <= "1111";
+						segment_out <= "11111111";
+						segment_common <= "0000";
 						buzzer <= '0';
 					when gameState =>
 					--NSL
